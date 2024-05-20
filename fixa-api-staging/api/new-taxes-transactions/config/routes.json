@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/new-taxes-transactions",
+      "handler": "new-taxes-transactions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-taxes-transactions/count",
+      "handler": "new-taxes-transactions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-taxes-transactions/:id",
+      "handler": "new-taxes-transactions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-taxes-transactions",
+      "handler": "new-taxes-transactions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/new-taxes-transactions/:id",
+      "handler": "new-taxes-transactions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/new-taxes-transactions/:id",
+      "handler": "new-taxes-transactions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

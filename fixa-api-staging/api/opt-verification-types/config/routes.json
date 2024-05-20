@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/opt-verification-types",
+      "handler": "opt-verification-types.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/opt-verification-types/count",
+      "handler": "opt-verification-types.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/opt-verification-types/:id",
+      "handler": "opt-verification-types.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/opt-verification-types",
+      "handler": "opt-verification-types.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/opt-verification-types/:id",
+      "handler": "opt-verification-types.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/opt-verification-types/:id",
+      "handler": "opt-verification-types.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

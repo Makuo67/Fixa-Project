@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platform_settings",
+  "info": {
+    "name": "Platform settings",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "identifier": {
+      "type": "uid"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

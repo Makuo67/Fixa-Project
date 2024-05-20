@@ -1,0 +1,100 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/corporate/migrate-users",
+      "handler": "build-log.migrateCorporateUsers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/corporate/sign-in",
+      "handler": "build-log.login",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/corporate/users/edit",
+      "handler": "build-log.updateUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/corporate/invite-user",
+      "handler": "build-log.inviteCorporateUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/corporate/set-password",
+      "handler": "build-log.setPassword",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/corporate/change-password",
+      "handler": "build-log.changePassword",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/build-logs",
+      "handler": "build-log.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/build-logs/count",
+      "handler": "build-log.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/build-logs/:id",
+      "handler": "build-log.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/build-logs",
+      "handler": "build-log.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/build-logs/:id",
+      "handler": "build-log.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/build-logs/:id",
+      "handler": "build-log.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

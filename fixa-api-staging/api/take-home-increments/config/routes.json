@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/take-home-increments",
+      "handler": "take-home-increments.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/take-home-increments/count",
+      "handler": "take-home-increments.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/take-home-increments/:id",
+      "handler": "take-home-increments.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/take-home-increments",
+      "handler": "take-home-increments.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/take-home-increments/app/increment",
+      "handler": "take-home-increments.addTakeHome",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/take-home-increments/:id",
+      "handler": "take-home-increments.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/take-home-increments/:id",
+      "handler": "take-home-increments.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

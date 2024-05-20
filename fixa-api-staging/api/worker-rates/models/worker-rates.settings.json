@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "worker_rates",
+  "info": {
+    "name": "worker_rates",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "assigned_worker_id": {
+      "type": "integer",
+      "required": true
+    },
+    "service_id": {
+      "type": "integer",
+      "required": true
+    },
+    "value": {
+      "type": "float"
+    },
+    "rate_type": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "negotiated"
+      ]
+    }
+  }
+}

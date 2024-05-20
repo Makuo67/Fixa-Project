@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sms_recipients",
+  "info": {
+    "name": "sms-recipients",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Position": {
+      "type": "string"
+    }
+  }
+}

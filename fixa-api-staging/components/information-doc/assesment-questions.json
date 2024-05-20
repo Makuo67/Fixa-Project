@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_information_doc_assesment_questions",
+  "info": {
+    "name": "assesment_questions",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "question_description": {
+      "model": "assessment-questions"
+    }
+  }
+}

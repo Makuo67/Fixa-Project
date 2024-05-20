@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_payroll_details",
+  "info": {
+    "name": "new_payroll_details",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "assigned_worker_id": {
+      "type": "integer"
+    },
+    "payroll_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "transaction_reference_id": {
+      "type": "integer"
+    },
+    "error_message": {
+      "type": "text"
+    },
+    "total_earnings": {
+      "type": "float"
+    },
+    "take_home": {
+      "type": "float"
+    },
+    "total_deductions": {
+      "type": "float"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "successful",
+        "initiated",
+        "failed"
+      ]
+    },
+    "total_shifts": {
+      "type": "float"
+    },
+    "on_hold": {
+      "type": "boolean"
+    },
+    "payroll_type_id": {
+      "type": "integer"
+    },
+    "deductions": {
+      "collection": "deductions"
+    }
+  }
+}

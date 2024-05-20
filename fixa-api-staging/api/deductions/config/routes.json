@@ -1,0 +1,124 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deductions",
+      "handler": "deductions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deductions/count",
+      "handler": "deductions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deductions/worker/:id",
+      "handler": "deductions.findWorkerDeduction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deductions/mobile_deduction/:id/:date",
+      "handler": "deductions.getMobileAttendanceDeductions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deductions/payroll_deduction/:id",
+      "handler": "deductions.getPayrollDeductions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deductions/:id",
+      "handler": "deductions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deductions",
+      "handler": "deductions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deductions/attendance-deduction",
+      "handler": "deductions.createAttendanceDeduction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deductions/payroll-internal-deduction",
+      "handler": "deductions.createInternalPayrollDeduction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deductions/send-email",
+      "handler": "deductions.sendPayeeEmails",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deductions/app",
+      "handler": "deductions.app_create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deductions/app/many",
+      "handler": "deductions.createBulkInternalDeduction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/deductions/:id",
+      "handler": "deductions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/deductions/app/update",
+      "handler": "deductions.app_update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deductions/:id",
+      "handler": "deductions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payrolls",
+  "info": {
+    "name": "Payroll",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date_range": {
+      "type": "string"
+    },
+    "payroll_status": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "paid",
+        "invalid"
+      ]
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "year": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "float",
+      "default": 0
+    },
+    "total_shifts": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "deducted_amount": {
+      "type": "float"
+    },
+    "failed_transactions": {
+      "type": "integer",
+      "default": 0
+    },
+    "successful_transactions": {
+      "type": "integer",
+      "default": 0
+    },
+    "total_workers": {
+      "type": "integer"
+    },
+    "payroll_type_id": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/run-payrolls",
+      "handler": "run-payroll.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/run-payrolls/count",
+      "handler": "run-payroll.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/run-payrolls/:id",
+      "handler": "run-payroll.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/run-payrolls/:id",
+      "handler": "run-payroll.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/run-payrolls/:id",
+      "handler": "run-payroll.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

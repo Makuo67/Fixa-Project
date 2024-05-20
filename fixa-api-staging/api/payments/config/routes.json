@@ -1,0 +1,180 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payments",
+      "handler": "payments.find",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/all_payments",
+      "handler": "payments.getAllPayments",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/count",
+      "handler": "payments.count",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/:id",
+      "handler": "payments.findOne",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/deductions-summary/:id",
+      "handler": "payments.getPaymentDeductionSummary",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/details/:id",
+      "handler": "payments.paymentDetails",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/momo_verification/:id",
+      "handler": "payments.paymentMomoVerification",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/status/:payment_id",
+      "handler": "payments.checkStatus",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/build/existing/payments",
+      "handler": "payments.runScripts",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments",
+      "handler": "payments.create",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/update_payment_transaction_verifications",
+      "handler": "payments.updatePaymentVerification",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/payroll",
+      "handler": "payments.createPayroll",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/payout-claim",
+      "handler": "payments.createPaymentClaim",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/payout",
+      "handler": "payments.createPayout",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/checking_status",
+      "handler": "payments.checkPaymentStatus",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/run",
+      "handler": "payments.run",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/kremit/account/validation",
+      "handler": "payments.kRemitAccountValidation",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/kremit/transfer/found",
+      "handler": "payments.kRemitTransferFound",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payments/kremit/transaction/status",
+      "handler": "payments.kRemitTransactionStatus",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payments/closing/:id",
+      "handler": "payments.closePayment",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/payments/:id",
+      "handler": "payments.update",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payments/:id",
+      "handler": "payments.delete",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    }
+  ]
+}

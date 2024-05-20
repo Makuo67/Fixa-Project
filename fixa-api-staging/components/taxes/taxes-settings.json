@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_taxes_taxes_settings",
+  "info": {
+    "name": "taxes_settings",
+    "icon": "balance-scale-right",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "casual": {
+      "type": "boolean"
+    },
+    "permanent": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

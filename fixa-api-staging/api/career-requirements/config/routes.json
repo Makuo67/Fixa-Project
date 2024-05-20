@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/career-requirements",
+      "handler": "career-requirements.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/career-requirements/count",
+      "handler": "career-requirements.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/career-requirements/:id",
+      "handler": "career-requirements.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/career-requirements",
+      "handler": "career-requirements.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/career-requirements/:id",
+      "handler": "career-requirements.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/career-requirements/:id",
+      "handler": "career-requirements.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

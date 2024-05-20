@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "text_messages",
+  "info": {
+    "name": "text-message",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "supervisors": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "workers": {
+      "collection": "service-providers"
+    },
+    "group_name": {
+      "type": "text"
+    },
+    "chats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "chats.chats"
+    },
+    "project": {
+      "model": "projects"
+    }
+  }
+}

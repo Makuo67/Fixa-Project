@@ -1,0 +1,180 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payroll-details",
+      "handler": "payroll-details.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/payroll-details/worker/payment/history",
+      "handler": "payroll-details.getSinglePayrollHistory",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details",
+      "handler": "payroll-details.findByPayroll",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/summary",
+      "handler": "payroll-details.getSummary",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/run-routine-payroll",
+      "handler": "payroll-details.run_routine_payroll",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/check-routine-payroll-transaction-status",
+      "handler": "payroll-details.check_routine_payroll_transaction_status",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/payroll-details/momo/balance",
+      "handler": "payroll-details.momoCheckBalance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/run-payroll",
+      "handler": "payroll-details.runPayroll",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/run-payroll/specific",
+      "handler": "payroll-details.specifyReRunPayroll",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/momo/phone/validation",
+      "handler": "payroll-details.validateAccountHolder",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/momo/transfer/status",
+      "handler": "payroll-details.transferStatus",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/momo/specific/transfer/status",
+      "handler": "payroll-details.specifyTransferStatus",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/deduct",
+      "handler": "payroll-details.deduct",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/hold-worker",
+      "handler": "payroll-details.holdWorker",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/enable-worker",
+      "handler": "payroll-details.enableWorker",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/populate-table",
+      "handler": "payroll-details.populateTable",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-details/populate-total-shifts",
+      "handler": "payroll-details.populateTotalShifts",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-details/count",
+      "handler": "payroll-details.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-details/:id",
+      "handler": "payroll-details.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payroll-details",
+      "handler": "payroll-details.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/payroll-details/:id",
+      "handler": "payroll-details.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payroll-details/:id",
+      "handler": "payroll-details.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

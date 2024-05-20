@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workers_assessments",
+  "info": {
+    "name": "workers_assessments",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker_id": {
+      "type": "integer"
+    },
+    "assessment_level": {
+      "type": "integer"
+    },
+    "assessments_results": {
+      "type": "component",
+      "repeatable": true,
+      "component": "information-doc.ranks"
+    },
+    "date": {
+      "type": "date"
+    },
+    "done_by": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "service_id": {
+      "type": "integer"
+    },
+    "mean_score": {
+      "max": 100,
+      "min": 0,
+      "type": "integer"
+    }
+  }
+}

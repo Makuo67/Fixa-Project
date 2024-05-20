@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "compensation_confirmations",
+  "info": {
+    "name": "compensation-confirmation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message": {
+      "type": "string"
+    }
+  }
+}

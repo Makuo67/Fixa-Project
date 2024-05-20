@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deducted-workers",
+      "handler": "deducted-workers.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deducted-workers/count",
+      "handler": "deducted-workers.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deducted-workers/:id",
+      "handler": "deducted-workers.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deducted-workers",
+      "handler": "deducted-workers.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/deducted-workers/:id",
+      "handler": "deducted-workers.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deducted-workers/:id",
+      "handler": "deducted-workers.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

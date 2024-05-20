@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/compensation-confirmations",
+      "handler": "compensation-confirmation.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/compensation-confirmations/count",
+      "handler": "compensation-confirmation.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/compensation-confirmations/:id",
+      "handler": "compensation-confirmation.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/compensation-confirmations",
+      "handler": "compensation-confirmation.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/compensation-confirmations/:id",
+      "handler": "compensation-confirmation.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/compensation-confirmations/:id",
+      "handler": "compensation-confirmation.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

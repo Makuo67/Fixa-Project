@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendance_details",
+  "info": {
+    "name": "attendance_details",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "assigned_worker_id": {
+      "type": "integer"
+    },
+    "attendance_id": {
+      "type": "integer"
+    },
+    "worker_rate_id": {
+      "type": "integer"
+    },
+    "working_time": {
+      "type": "enumeration",
+      "enum": [
+        "full",
+        "half"
+      ],
+      "default": "full"
+    },
+    "worker_service_id": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/companies",
+      "handler": "companies.getCompany",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/companies/get-logo",
+      "handler": "companies.getLogo",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/companies/payment-methods",
+      "handler": "companies.getPaymentMethods",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/companies",
+      "handler": "companies.createCompany",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/companies/remove-payment-method",
+      "handler": "companies.removePaymentMethod",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/companies/:id",
+      "handler": "companies.editComapny",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

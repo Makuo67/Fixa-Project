@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendances",
+  "info": {
+    "name": "attendance",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "date": {
+      "type": "date"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "services.services"
+    },
+    "supervisor": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "updated_timestamp": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "waiting_for_approval",
+        "approved",
+        "denied"
+      ]
+    },
+    "confirmed_users": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "json_status": {
+      "type": "json"
+    }
+  }
+}

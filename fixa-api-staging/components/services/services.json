@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_services_services",
+  "info": {
+    "name": "services",
+    "icon": "calendar-check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "workers": {
+      "collection": "service-providers"
+    },
+    "service": {
+      "model": "services"
+    },
+    "timestamp": {
+      "type": "datetime"
+    },
+    "shift": {
+      "type": "enumeration",
+      "enum": [
+        "day",
+        "night"
+      ],
+      "default": "day"
+    }
+  }
+}

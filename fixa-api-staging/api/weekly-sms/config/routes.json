@@ -1,0 +1,13 @@
+{
+    "routes": [
+      {
+        "method": "POST",
+        "path": "/weekly-sms",
+        "handler": "weekly-sms.sendSMS",
+        "config": {
+          "policies": []
+        }
+      }
+    ]
+  }
+  

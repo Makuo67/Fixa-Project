@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/new-payroll-details",
+      "handler": "new-payroll-details.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-payroll-details/count",
+      "handler": "new-payroll-details.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-payroll-details/:id",
+      "handler": "new-payroll-details.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-payroll-details",
+      "handler": "new-payroll-details.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/new-payroll-details/:id",
+      "handler": "new-payroll-details.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/new-payroll-details/:id",
+      "handler": "new-payroll-details.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

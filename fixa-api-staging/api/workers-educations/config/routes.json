@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/workers-educations",
+      "handler": "workers-educations.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workers-educations/count",
+      "handler": "workers-educations.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workers-educations/:id",
+      "handler": "workers-educations.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/workers-educations",
+      "handler": "workers-educations.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/workers-educations/:id",
+      "handler": "workers-educations.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/workers-educations/:id",
+      "handler": "workers-educations.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,826 @@
+{
+  "level_0": {
+    "pages": [
+      {
+        "page_name": "Dashboard",
+        "is_active": true,
+        "page_entities": [],
+        "sub_pages": []
+      },
+      {
+        "page_name": "Project",
+        "is_active": false,
+        "page_entities": [
+          {
+            "entity_name": "New project",
+            "is_active": false,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Edit Project",
+            "is_active": false,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Details",
+            "is_active": false,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Attendance",
+            "is_active": false,
+            "sub_entities": [
+              {
+                "entity_name": "Approved",
+                "is_active": false
+              },
+              {
+                "entity_name": "Declined",
+                "is_active": false
+              }
+            ]
+          },
+          {
+            "entity_name": "Trades",
+            "is_active": false,
+            "sub_entities": [
+              {
+                "entity_name": "Delete",
+                "is_active": false
+              },
+              {
+                "entity_name": "Add new",
+                "is_active": false
+              }
+            ]
+          },
+          {
+            "entity_name": "Supervisors",
+            "is_active": false,
+            "sub_entities": [
+              {
+                "entity_name": "Delete",
+                "is_active": false
+              },
+              {
+                "entity_name": "Link existing",
+                "is_active": false
+              }
+            ]
+          },
+          {
+            "entity_name": "Suppliers",
+            "is_active": false,
+            "sub_entities": [
+              {
+                "entity_name": "Delete",
+                "is_active": false
+              },
+              {
+                "entity_name": "Link existing",
+                "is_active": false
+              }
+            ]
+          }
+        ],
+        "sub_pages": []
+      },
+      {
+        "page_name": "Workforce",
+        "is_active": false,
+        "page_entities": [],
+        "sub_pages": [
+          {
+            "sub_page_name": "Workers",
+            "is_active": false,
+            "entities": [
+              {
+                "entity_name": "bulk_actions",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Register workers",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Send message",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Details",
+                "is_active": false,
+                "sub_entities": [
+                  {
+                    "entity_name": "Edit contact details",
+                    "is_active": false
+                  },
+                  {
+                    "entity_name": "Edit personal details",
+                    "is_active": false
+                  }
+                ]
+              },
+              {
+                "entity_name": "Work History",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Payment Details",
+                "is_active": false,
+                "sub_entities": [
+                  {
+                    "entity_name": "Edit payment method",
+                    "is_active": false
+                  }
+                ]
+              },
+              {
+                "entity_name": "Scores",
+                "is_active": false,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "sub_page_name": "Leaderboard",
+            "is_active": false,
+            "entities": []
+          }
+        ]
+      },
+      {
+        "page_name": "Finance",
+        "is_active": false,
+        "page_entities": [],
+        "sub_pages": [
+          {
+            "sub_page_name": "Payment",
+            "is_active": false,
+            "entities": [
+              {
+                "entity_name": "New Payment",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete Payment",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Add Claim",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete worker in payment",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Send Confirmation SMS",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Pay",
+                "is_active": false,
+                "sub_entities": []
+              },
+            
+              {
+                "entity_name": "Send deduction",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit deduction",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Close Payment",
+                "is_active": false,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "sub_page_name": "Taxes",
+            "is_active": false,
+            "entities": [
+              {
+                "entity_name": "Generate",
+                "is_active": false,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "sub_page_name": "Wallet",
+            "is_active": false,
+            "entities": [
+              {
+                "entity_name": "Wallet Request",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Wallet Top up",
+                "is_active": false,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "sub_page_name": "Billing",
+            "is_active": false,
+            "entities": []
+          }
+        ]
+      },
+      {
+        "page_name": "Settings",
+        "is_active": false,
+        "page_entities": [
+          {
+            "entity_name": "Edit Company Info",
+            "is_active": false,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Office Team",
+            "is_active": false,
+            "sub_entities": [
+              {
+                "entity_name": "Invite office user",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit office user",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete office user",
+                "is_active": true,
+                "sub_entities": []
+            },
+              {
+                "entity_name": "Deactivate office user",
+                "is_active": false,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "entity_name": "Supervisors",
+            "is_active": false,
+            "sub_entities": [
+              {
+                "entity_name": "Add New supervisor",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete a supervisor",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit a supervisor",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Deactivate a supervisor",
+                "is_active": false,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "entity_name": "Clients",
+            "is_active": false,
+            "sub_entities": [
+                {
+                    "entity_name": "Add Client",
+                    "is_active": false,
+                    "sub_entities": []
+                },
+                {
+                    "entity_name": "Delete client",
+                    "is_active": false,
+                    "sub_entities": []
+                },
+                {
+                    "entity_name": "Edit client",
+                    "is_active": false,
+                    "sub_entities": []
+                },
+                {
+                    "entity_name": "Deactivate client",
+                    "is_active": false,
+                    "sub_entities": []
+                }
+            ]
+          },
+          {
+            "entity_name": "Supplier",
+            "is_active": false,
+            "sub_entities": [
+              {
+                "entity_name": "Add Supplier",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete Supplier",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit Supplier",
+                "is_active": false,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Deactivate Supplier",
+                "is_active": true,
+                "sub_entities": []
+            }
+            ]
+          }
+        ],
+        "sub_pages": []
+      }
+    ]
+  },
+  "level_1": {
+    "pages": [
+      {
+        "page_name": "Dashboard",
+        "is_active": true,
+        "page_entities": [],
+        "sub_pages": []
+      },
+      {
+        "page_name": "Project",
+        "is_active": true,
+        "page_entities": [
+          {
+            "entity_name": "New project",
+            "is_active": true,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Edit Project",
+            "is_active": true,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Details",
+            "is_active": true,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Attendance",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Approved",
+                "is_active": true
+              },
+              {
+                "entity_name": "Declined",
+                "is_active": true
+              }
+            ]
+          },
+          {
+            "entity_name": "Trades",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Delete",
+                "is_active": true
+              },
+              {
+                "entity_name": "Add new",
+                "is_active": true
+              }
+            ]
+          },
+          {
+            "entity_name": "Supervisors",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Delete",
+                "is_active": true
+              },
+              {
+                "entity_name": "Link existing",
+                "is_active": true
+              }
+            ]
+          },
+          {
+            "entity_name": "Suppliers",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Delete",
+                "is_active": true
+              },
+              {
+                "entity_name": "Link existing",
+                "is_active": true
+              }
+            ]
+          }
+        ],
+        "sub_pages": []
+      },
+      {
+        "page_name": "Workforce",
+        "is_active": true,
+        "page_entities": [],
+        "sub_pages": [
+          {
+            "sub_page_name": "Workers",
+            "is_active": true,
+            "entities": [
+              {
+                "entity_name": "bulk_actions",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Register workers",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Send message",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Details",
+                "is_active": true,
+                "sub_entities": [
+                  {
+                    "entity_name": "Edit contact details",
+                    "is_active": true
+                  },
+                  {
+                    "entity_name": "Edit personal details",
+                    "is_active": true
+                  }
+                ]
+              },
+              {
+                "entity_name": "Work History",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Payment Details",
+                "is_active": true,
+                "sub_entities": [
+                  {
+                    "entity_name": "Edit payment method",
+                    "is_active": true
+                  }
+                ]
+              },
+              {
+                "entity_name": "Scores",
+                "is_active": true,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "sub_page_name": "Leaderboard",
+            "is_active": true,
+            "entities": []
+          }
+        ]
+      },
+      {
+        "page_name": "Finance",
+        "is_active": true,
+        "page_entities": [],
+        "sub_pages": [
+          {
+            "sub_page_name": "Payment",
+            "is_active": true,
+            "entities": [
+              {
+                "entity_name": "New Payment",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete Payment",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Add Claim",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete worker in payment",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Send Confirmation SMS",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Pay",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Send deduction",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit deduction",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Close Payment",
+                "is_active": true,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "sub_page_name": "Taxes",
+            "is_active": true,
+            "entities": [
+              {
+                "entity_name": "Generate",
+                "is_active": true,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "sub_page_name": "Wallet",
+            "is_active": true,
+            "entities": [
+              {
+                "entity_name": "Wallet Request",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Wallet Top up",
+                "is_active": true,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "sub_page_name": "Billing",
+            "is_active": true,
+            "entities": []
+          }
+        ]
+      },
+      {
+        "page_name": "Settings",
+        "is_active": true,
+        "page_entities": [
+          {
+            "entity_name": "Edit Company Info",
+            "is_active": true,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Office Team",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Invite office user",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit office user",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete office user",
+                "is_active": true,
+                "sub_entities": []
+            },
+              {
+                "entity_name": "Deactivate office user",
+                "is_active": true,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "entity_name": "Supervisors",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Add New supervisor",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete a supervisor",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit a supervisor",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Deactivate a supervisor",
+                "is_active": true,
+                "sub_entities": []
+              }
+            ]
+          },
+          {
+            "entity_name": "Clients",
+            "is_active": true,
+            "sub_entities": [
+                {
+                    "entity_name": "Add Client",
+                    "is_active": true,
+                    "sub_entities": []
+                },
+                {
+                    "entity_name": "Delete client",
+                    "is_active": true,
+                    "sub_entities": []
+                },
+                {
+                    "entity_name": "Edit client",
+                    "is_active": true,
+                    "sub_entities": []
+                },
+                {
+                    "entity_name": "Deactivate client",
+                    "is_active": true,
+                    "sub_entities": []
+                }
+            ]
+          },
+          {
+            "entity_name": "Supplier",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Add Supplier",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Delete Supplier",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit Supplier",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Deactivate Supplier",
+                "is_active": true,
+                "sub_entities": []
+            }
+            ]
+          }
+        ],
+        "sub_pages": []
+      }
+    ]
+  },
+  "level_2": {
+    "pages": [
+      {
+        "page_name": "Dashboard",
+        "is_active": true,
+        "page_entities": [],
+        "sub_pages": []
+      },
+      {
+        "page_name": "Project",
+        "is_active": true,
+        "page_entities": [
+         
+          {
+            "entity_name": "Details",
+            "is_active": true,
+            "sub_entities": []
+          },
+          {
+            "entity_name": "Attendance",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Approved",
+                "is_active": true
+              },
+              {
+                "entity_name": "Declined",
+                "is_active": true
+              }
+            ]
+          }     
+        ],
+        "sub_pages": []
+      },
+      {
+        "page_name": "Workforce",
+        "is_active": true,
+        "page_entities": [],
+        "sub_pages": [
+          {
+            "sub_page_name": "Workers",
+            "is_active": true,
+            "entities": [
+            
+              {
+                "entity_name": "Details",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Work History",
+                "is_active": true,
+                "sub_entities": []
+              } 
+            ]
+          }
+        ]
+      },
+      {
+        "page_name": "Finance",
+        "is_active": true,
+        "page_entities": [],
+        "sub_pages": [{
+            "sub_page_name": "Billing",
+            "is_active": true,
+            "entities": []
+          }
+        ]
+      },
+      {
+        "page_name": "Settings",
+        "is_active": true,
+        "page_entities": [
+         
+          {
+            "entity_name": "Office Team",
+            "is_active": true,
+            "sub_entities": [
+              {
+                "entity_name": "Invite office user",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Edit office user",
+                "is_active": true,
+                "sub_entities": []
+              },
+              {
+                "entity_name": "Deactivate office user",
+                "is_active": true,
+                "sub_entities": []
+              }
+            ]
+          }
+        ],
+        "sub_pages": []
+      }
+    ]
+  }
+}

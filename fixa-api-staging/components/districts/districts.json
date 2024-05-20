@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_districts_districts",
+  "info": {
+    "name": "districts",
+    "icon": "place-of-worship"
+  },
+  "options": {},
+  "attributes": {
+    "district_name": {
+      "type": "string"
+    }
+  }
+}

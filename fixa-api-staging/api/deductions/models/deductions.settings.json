@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deductions",
+  "info": {
+    "name": "Deductions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "assigned_worker_id": {
+      "type": "integer"
+    },
+    "payroll_id": {
+      "type": "integer"
+    },
+    "deduction_amount": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "deduction_type_id": {
+      "type": "integer"
+    },
+    "payment_id": {
+      "type": "biginteger"
+    },
+    "date": {
+      "type": "date"
+    },
+    "done_by": {
+      "type": "integer"
+    },
+    "payee_name_id": {
+      "type": "integer"
+    }
+  }
+}

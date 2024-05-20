@@ -1,0 +1,59 @@
+{
+  "permanent": [
+    {
+      "A": "Employee RSSB No/No d'affiliation de l'employé",
+      "B": "Employee National ID/ No de la carte d'identité",
+      "C": "Employee Last Name/ Nom de l'employé",
+      "D": "Employee First Name/Prenom de l'employé",
+      "E": "Sex M-Male F- Female",
+      "F": "Return Type/Type de declaration O-Original R- Revised",
+      "G": "Is the Employer RAMA member ? If Yes put Y or if No put N",
+      "H": "Basic Salary/Salaire de Base",
+      "I": "Benefit in Kind Transport/ Indemnités de transport en nature",
+      "J": "Benefit in Kind House/ Indemnités de logement en nature",
+      "K": "Other Benefits in Kind/ Autre indemnités en nature",
+      "L": "Cash Allowance Transport/Indemnités de transport en numéraire",
+      "M": "Cash Allowance House/ Indemnités de logement en numéraire",
+      "N": "Other cash Allowance/ Autre Indemnités en numéraire",
+      "O": "Terminal Benefits-end contract/ Décomptes finals fin de contrant",
+      "P": "Retirement Benefits / Décomptes finals à retraite",
+      "Q": "Other recognized medical deductions / Autre déductions medicales reconnues",
+      "R": "PAYE Taxable Base/Salaire Brut",
+      "S": "PAYE Due/TPR à payer",
+      "T": "Pension Base/ Assiette des cotisations en Pension",
+      "U": "Employee 3% Pension/ Part personnel",
+      "V": "Employer 5% Pension/ Part Patronale",
+      "W": "Employer 2% Occupational Hazards(OH)/ Part Patronale aux risques professionels",
+      "X": "Total PENSION & OH Contributions/ Cotisations Totales en Pension et au RP",
+      "Y": "Employee 0.3% Maternity( (T-O)0.3%) )/Part Personnel des cotisations Maternité",
+      "Z": "Employer 0.3% Maternity( (T-O)0.3%) )/Part Patronales des Cotisations Maternité",
+      "AA": "Total Maternity leave Contributions(0.6%)/Cotisations Totales Maternité",
+      "AB": "Employee 7.5% RAMA/ Part Personnel RAMA",
+      "AC": "Employer 7.5% RAMA/ Part Patronale RAMA",
+      "AD": "Total RAMA (15%)/ Cotisations Totales en RAMA",
+      "AE": "Employee CBHI Subsidies (0.5%)/Subventions au regime des Mutuelles de Santé"
+    }
+  ],
+  "casual": [
+    {
+      "A": "Employee RSSB No/No d'affiliation de l'employé",
+      "B": "Employee National ID/ No de la carte d'identité",
+      "C": "Employee Last Name/ Nom de l'employé",
+      "D": "Employee First Name/Prenom de l'employé",
+      "E": "Sex M-Male F- Female",
+      "F": "Return Type/Type de declaration O-Original R- Revised",
+      "R": "PAYE Taxable Base/Salaire Brut",
+      "S": "PAYE Due/TPR à payer",
+      "T": "Pension Base/ Assiette des cotisations en Pension",
+      "U": "Employee 3% Pension/ Part personnel",
+      "V": "Employer 5% Pension/ Part Patronale",
+      "W": "Employer 2% Occupational Hazards(OH)/ Part Patronale aux risques professionels",
+      "X": "Total PENSION & OH Contributions/ Cotisations Totales en Pension et au RP",
+      "Y": "Employee 0.3% Maternity( (T-O)0.3%) )/Part Personnel des cotisations Maternité",
+      "Z": "Employer 0.3% Maternity( (T-O)0.3%) )/Part Patronales des Cotisations Maternité",
+      "AA": "Total Maternity leave Contributions(0.6%)/Cotisations Totales Maternité",
+      "AE": "Employee CBHI Subsidies (0.5%)/Subventions au regime des Mutuelles de Santé",
+      "AF": "Job Type/Type d'emploi C-Casual Worker/Occassionels"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contract_terms_types",
+  "info": {
+    "name": "contract_terms_types"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type_name": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payroll-details-deductions",
+      "handler": "payroll-details-deductions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-details-deductions/count",
+      "handler": "payroll-details-deductions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-details-deductions/:id",
+      "handler": "payroll-details-deductions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payroll-details-deductions",
+      "handler": "payroll-details-deductions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payroll-details-deductions/app",
+      "handler": "payroll-details-deductions.appCreate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/payroll-details-deductions/:id",
+      "handler": "payroll-details-deductions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payroll-details-deductions/:id",
+      "handler": "payroll-details-deductions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assessment_metrics",
+  "info": {
+    "name": "Assessment_metrics",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "metric_name": {
+      "type": "string"
+    },
+    "is_available": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fixa_website_tweets",
+  "info": {
+    "name": "fixa-website-tweets",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "tweet_url": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "name": {
+      "type": "string"
+    },
+    "job_position": {
+      "type": "string"
+    },
+    "people_thoughts": {
+      "type": "boolean"
+    },
+    "image": {
+      "type": "string"
+    }
+  }
+}

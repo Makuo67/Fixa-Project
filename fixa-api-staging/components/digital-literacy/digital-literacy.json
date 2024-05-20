@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_digital_literacy_digital_literacies",
+  "info": {
+    "name": "digital_literacy",
+    "icon": "laptop-medical",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "skill_name": {
+      "type": "string"
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    },
+    "endorsed_by": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

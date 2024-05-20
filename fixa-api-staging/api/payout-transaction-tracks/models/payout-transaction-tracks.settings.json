@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payout_transaction_tracks",
+  "info": {
+    "name": "payout_transaction_tracks",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payroll_details_id": {
+      "type": "integer"
+    },
+    "reference_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    }
+  }
+}

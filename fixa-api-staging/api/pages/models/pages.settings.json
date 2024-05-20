@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "name": "pages",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "page": {
+      "type": "enumeration",
+      "enum": [
+        "service_providers_registration",
+        "services_page",
+        "orders_page",
+        "payment_page",
+        "profile_overview_page",
+        "update_company_info_page",
+        "add_contact_page",
+        "update_contact_page",
+        "messages_page",
+        "calendar_page",
+        "tasks_page"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "translation": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "user": {
+      "via": "pages",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

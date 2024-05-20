@@ -1,0 +1,100 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payroll_transactions",
+  "info": {
+    "name": "payroll_transactions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payee_type_id": {
+      "type": "biginteger"
+    },
+    "payment_id": {
+      "type": "biginteger"
+    },
+    "total_earnings": {
+      "type": "biginteger"
+    },
+    "take_home": {
+      "type": "biginteger"
+    },
+    "total_deductions": {
+      "type": "biginteger"
+    },
+    "status": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "total_shifts": {
+      "type": "decimal"
+    },
+    "assigned_worker_id": {
+      "type": "biginteger"
+    },
+    "worker_name": {
+      "type": "string"
+    },
+    "is_momo": {
+      "type": "boolean"
+    },
+    "worker_id": {
+      "type": "biginteger"
+    },
+    "day_shifts": {
+      "type": "decimal"
+    },
+    "night_shifts": {
+      "type": "decimal"
+    },
+    "service_name": {
+      "type": "string"
+    },
+    "daily_rate": {
+      "type": "biginteger"
+    },
+    "id_number": {
+      "type": "string"
+    },
+    "is_momo_verified_and_rssb": {
+      "type": "string"
+    },
+    "is_momo_verified_and_rssb_desc": {
+      "type": "string"
+    },
+    "worker_name_momo": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "string"
+    },
+    "payment_method": {
+      "type": "string"
+    },
+    "payment_method_id": {
+      "type": "string"
+    },
+    "account_name": {
+      "type": "string"
+    },
+    "is_payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "blue",
+        "red",
+        "nothing"
+      ]
+    },
+    "payment_method_verification_desc": {
+      "type": "string"
+    }
+  }
+}

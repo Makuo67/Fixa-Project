@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/wallet-requests",
+      "handler": "wallet-request.find",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wallet-requests/count",
+      "handler": "wallet-request.count",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wallet-requests/:id",
+      "handler": "wallet-request.findOne",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet-requests",
+      "handler": "wallet-request.create",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet-requests/create-request",
+      "handler": "wallet-request.requestWallet",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet-requests/update-request",
+      "handler": "wallet-request.updateWalletRequest",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/wallet-requests/:id",
+      "handler": "wallet-request.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/wallet-requests/:id",
+      "handler": "wallet-request.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

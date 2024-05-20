@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ussd_workers",
+  "info": {
+    "name": "Ussd-Workers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker_id": {
+      "type": "biginteger"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "pin": {
+      "type": "biginteger"
+    },
+    "language_id": {
+      "type": "biginteger"
+    },
+    "is_accepted": {
+      "type": "boolean"
+    },
+    "id_number": {
+      "type": "string"
+    }
+  }
+}

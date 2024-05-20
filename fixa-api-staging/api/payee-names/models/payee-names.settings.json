@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payee_names",
+  "info": {
+    "name": "payee_names",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "names": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string",
+      "unique": true,
+      "maxLength": 10,
+      "minLength": 10,
+      "required": true
+    },
+    "payee_type_id": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "string"
+    },
+    "deduction_types": {
+      "collection": "deduction-types"
+    },
+    "payment_methods": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment-methods.payment-methods"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

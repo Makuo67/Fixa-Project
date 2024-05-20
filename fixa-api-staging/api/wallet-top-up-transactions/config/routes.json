@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/wallet-top-up-transactions",
+      "handler": "wallet-top-up-transactions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wallet-top-up-transactions/count",
+      "handler": "wallet-top-up-transactions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wallet-top-up-transactions/:id",
+      "handler": "wallet-top-up-transactions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wallet-top-up-transactions",
+      "handler": "wallet-top-up-transactions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/custom/wallet-top-up-transactions/load",
+      "handler": "wallet-top-up-transactions.topUpWalletBalance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/custom/wallet-top-up-transactions/list",
+      "handler": "wallet-top-up-transactions.getTopUpWalletBalance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/wallet-top-up-transactions/:id",
+      "handler": "wallet-top-up-transactions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/wallet-top-up-transactions/:id",
+      "handler": "wallet-top-up-transactions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

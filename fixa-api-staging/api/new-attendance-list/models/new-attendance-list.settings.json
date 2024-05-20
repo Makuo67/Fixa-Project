@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_attendance_lists",
+  "info": {
+    "name": "new_attendance_list"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "attendance_created_at": {
+      "type": "datetime"
+    },
+    "shift_name": {
+      "type": "string"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "total_workers": {
+      "type": "integer"
+    },
+    "approved_by": {
+      "type": "integer"
+    },
+    "approved_by_name": {
+      "type": "string"
+    },
+    "attendance_status_id": {
+      "type": "integer"
+    },
+    "approved_time": {
+      "type": "datetime"
+    },
+    "attendance_status": {
+      "type": "string"
+    },
+    "attendance_id": {
+      "type": "biginteger"
+    }
+  }
+}

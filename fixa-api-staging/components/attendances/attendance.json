@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_attendances_attendances",
+  "info": {
+    "name": "attendance",
+    "icon": "calendar-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "services.services"
+    },
+    "supervisor": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "updated_time": {
+      "type": "datetime"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "waiting_for_approval",
+        "approved"
+      ]
+    },
+    "confirmed_users": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}

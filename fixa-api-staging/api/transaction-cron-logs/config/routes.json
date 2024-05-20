@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/transaction-cron-logs",
+      "handler": "transaction-cron-logs.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transaction-cron-logs/count",
+      "handler": "transaction-cron-logs.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/transaction-cron-logs/:id",
+      "handler": "transaction-cron-logs.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/transaction-cron-logs",
+      "handler": "transaction-cron-logs.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/transaction-cron-logs/:id",
+      "handler": "transaction-cron-logs.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/transaction-cron-logs/:id",
+      "handler": "transaction-cron-logs.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

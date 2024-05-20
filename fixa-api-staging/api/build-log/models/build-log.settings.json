@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "build_logs",
+  "info": {
+    "name": "build-log"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "item": {
+      "type": "uid"
+    },
+    "is_building": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

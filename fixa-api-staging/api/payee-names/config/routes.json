@@ -1,0 +1,116 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payee-names",
+      "handler": "payee-names.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payees-names/build/momo",
+      "handler": "payee-names.momoSupplierVerification",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payee-names/count",
+      "handler": "payee-names.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payee-names/:id",
+      "handler": "payee-names.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payee-names",
+      "handler": "payee-names.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/custom/payee-names",
+      "handler": "payee-names.addPayee",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/custom/list/payee-names/:project_id",
+      "handler": "payee-names.getListSupplierByProject",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/custom/list/payee-names",
+      "handler": "payee-names.getListSuppliers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/custom/add/payee-names/:project_id",
+      "handler": "payee-names.addSupplierProject",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/custom/remove/payee-names/:project_id",
+      "handler": "payee-names.removeSupplierProject",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/payee-names/:id",
+      "handler": "payee-names.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/custom/payee-names/:supplier_id",
+      "handler": "payee-names.updateSupplier",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payee-names/:id",
+      "handler": "payee-names.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/custom/payee-names/:supplier_id",
+      "handler": "payee-names.deleteSupplier",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "value_propositions",
+  "info": {
+    "name": "value_proposition",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_information_doc_assessments",
+  "info": {
+    "name": "assessments",
+    "icon": "align-right"
+  },
+  "options": {},
+  "attributes": {
+    "assessment_metrics": {
+      "collection": "assessment-metrics"
+    },
+    "questions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "information-doc.assesment-questions"
+    },
+    "is_available": {
+      "type": "boolean"
+    }
+  }
+}

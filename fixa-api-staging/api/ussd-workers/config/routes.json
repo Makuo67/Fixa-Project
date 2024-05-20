@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/ussd-workers",
+      "handler": "ussd-workers.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/ussd-workers/ussd",
+      "handler": "ussd-workers.ussdWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ussd-workers/count",
+      "handler": "ussd-workers.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ussd-workers/:id",
+      "handler": "ussd-workers.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/ussd-workers",
+      "handler": "ussd-workers.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/ussd-workers/:id",
+      "handler": "ussd-workers.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/ussd-workers/:id",
+      "handler": "ussd-workers.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

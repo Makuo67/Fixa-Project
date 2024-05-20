@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'circular-std-book';
+  src: url('../assets/fonts/circular-std-font-family/CircularStd-Book.ttf')
+    format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'circular-std';
+  src: url('../assets/fonts/circular-std-font-family/CircularStd-Medium.ttf')
+    format('truetype');
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  word-spacing: -0.3rem;
+  background-color: #f2fafd !important;
+}
+
+/* body::-webkit-scrollbar {
+  display: none;
+} */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'circular-std-book' !important;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'circular-std' !important;
+}
+
+.text-gray {
+  color: rgb(132, 132, 132);
+}
+
+.text-blue-primary {
+  color: #017aad;
+}
+
+.text-neutral {
+  color: #6a7178;
+}
+
+.ant-modal-content {
+  border-radius: 8px !important;
+}
+
+.ant-modal-header {
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+.ant-modal-title {
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.close {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  padding: 10px;
+  gap: 10px;
+  width: 34px;
+  height: 34px;
+  background: #e4eef3;
+  border-radius: 44px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.ant-modal-footer {
+  text-align: center;
+}
+.ant-form-item {
+  margin-bottom: 8px;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.table-row-disabled {
+  background-color: rgba(255, 255, 0);
+}
+
+#apiSpreadsheetsImportModal > div {
+  width: 50vw !important;
+}
+
+#apiSpreadsheetsImportModal > div > div {
+  padding: 0 !important;
+  width: 50vw;
+}
+
+#apiSpreadsheetsImportModal > div > div > iframe {
+  height: 200px !important;
+}
+
+/* SPACINGS */
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.warning-class-name {
+  background-color: #fcf6d8;
+}
+
+.warning-class-name .ant-table-cell-row-hover {
+  background-color: #fcf6d8 !important;
+}
+
+.error-class-name {
+  background-color: #fce6e6;
+}
+
+.error-class-name .ant-table-cell-row-hover {
+  background-color: #fce6e6 !important;
+}
+.login-form label {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.login-form input {
+  background: rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.login-form input:focus {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+.ant-input-affix-wrapper > .ant-input {
+  background: transparent !important;
+}
+.ant-input-affix-wrapper > .ant-input:focus {
+  background: transparent !important;
+  border: none;
+}
+.ant-input-affix-wrapper > .ant-input:hover {
+  border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: 1px solid #fff;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #fff;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.ant-input-password-icon.anticon {
+  color: rgb(255 255 255);
+}
+.ant-input-password-icon.anticon:hover {
+  color: rgb(255 255 255);
+}
+.ant-tabs-large > .ant-tabs-nav .ant-tabs-tab {
+  padding: 20px 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #798c9a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #000;
+}
+.ant-tabs-ink-bar {
+  background: black;
+  /* width: 130px !important; */
+}
+
+.ant-upload-drag {
+  padding: 0 12px !important;
+}
+
+.ant-dropdown {
+  z-index: 1000 !important;
+}

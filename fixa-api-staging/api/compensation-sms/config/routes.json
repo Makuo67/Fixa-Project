@@ -1,0 +1,13 @@
+{
+    "routes": [
+      {
+        "method": "POST",
+        "path": "/compensation-sms",
+        "handler": "compensation-sms.sendSMS",
+        "config": {
+          "policies": []
+        }
+      }
+    ]
+  }
+  

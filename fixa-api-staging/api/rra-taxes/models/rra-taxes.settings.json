@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rra_taxes",
+  "info": {
+    "name": "rra_taxes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "declared_month": {
+      "type": "string"
+    },
+    "total_worker": {
+      "type": "string"
+    },
+    "total_net": {
+      "type": "string"
+    },
+    "total_gross": {
+      "type": "string"
+    },
+    "added_by": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "started",
+        "pending",
+        "finished"
+      ]
+    },
+    "worker_type": {
+      "type": "enumeration",
+      "enum": [
+        "casual",
+        "permanent"
+      ]
+    }
+  }
+}

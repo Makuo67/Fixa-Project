@@ -1,0 +1,214 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses/levelUpdating",
+      "handler": "user-admin-access.updateOldUsersLevel",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses",
+      "handler": "user-admin-access.find",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses/all_users",
+      "handler": "user-admin-access.getAllAdminUsers",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses/all_supervisors_users",
+      "handler": "user-admin-access.getUsersSupervisors",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses/count",
+      "handler": "user-admin-access.count",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses/get-roles",
+      "handler": "user-admin-access.getRoles",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses/getUserProfile",
+      "handler": "user-admin-access.getUserProfile",
+      "config": {
+        "policies": []
+      }
+    },
+    
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses/:id",
+      "handler": "user-admin-access.findOne",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-admin-accesses/user/:id",
+      "handler": "user-admin-access.getUser",
+      "config": {
+        "policies": []
+      }
+    },
+   
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses",
+      "handler": "user-admin-access.create",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/invite_user",
+      "handler": "user-admin-access.inviteUser",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    }, 
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/invite_staff_members",
+      "handler": "user-admin-access.inviteOfficeTeamUser",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/onboarding_invite_staff_members",
+      "handler": "user-admin-access.inviteStaffMember",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/check_staff_email",
+      "handler": "user-admin-access.checkStaffEmail",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/staff-member-profile",
+      "handler": "user-admin-access.completeprofileStaff",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/register-admin",
+      "handler": "user-admin-access.registerAdminUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/add_supervisor",
+      "handler": "user-admin-access.addSupervisor",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/remove_supervisor",
+      "handler": "user-admin-access.removeSupervisor",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/change_password",
+      "handler": "user-admin-access.changePassword",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/reset_password",
+      "handler": "user-admin-access.resetPassword",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-admin-accesses/forgot_password",
+      "handler": "user-admin-access.forgotPassword",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-admin-accesses/:id",
+      "handler": "user-admin-access.update",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-admin-accesses/edit_user/:id",
+      "handler": "user-admin-access.editOfficeTeamUser",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-admin-accesses/edit_user_access/:id",
+      "handler": "user-admin-access.editOfficeTeamUserAccess",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-admin-accesses/edit_user_avatar/:id",
+      "handler": "user-admin-access.editAvatarUrl",
+      "config": {
+        "policies": ["global::settings_policies"]
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/user-admin-accesses/:id",
+      "handler": "user-admin-access.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

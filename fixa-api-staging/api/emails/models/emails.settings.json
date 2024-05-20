@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "emails",
+  "info": {
+    "name": "emails",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "from": {
+      "type": "email"
+    },
+    "to": {
+      "type": "email"
+    },
+    "description": {
+      "type": "text"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "send_by": {
+      "type": "string"
+    }
+  }
+}

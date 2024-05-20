@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_chats_chats",
+  "info": {
+    "name": "chats",
+    "icon": "envelope-open-text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "message": {
+      "type": "richtext"
+    },
+    "timestamp": {
+      "type": "datetime"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

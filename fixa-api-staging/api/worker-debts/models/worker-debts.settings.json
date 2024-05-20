@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "worker_debts",
+  "info": {
+    "name": "worker_debts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker_id": {
+      "type": "integer"
+    },
+    "creditor_id": {
+      "type": "integer"
+    },
+    "amount": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "paid"
+      ]
+    },
+    "issued_on": {
+      "type": "date"
+    }
+  }
+}

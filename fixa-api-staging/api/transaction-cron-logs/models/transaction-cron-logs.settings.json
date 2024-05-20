@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transaction_cron_logs",
+  "info": {
+    "name": "Transaction cron logs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payroll_type_id": {
+      "type": "integer"
+    },
+    "entity_id": {
+      "type": "integer"
+    },
+    "reference_id": {
+      "type": "string"
+    },
+    "payroll_id": {
+      "type": "integer"
+    }
+  }
+}

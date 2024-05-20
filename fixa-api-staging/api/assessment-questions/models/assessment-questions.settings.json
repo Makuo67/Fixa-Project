@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assessment_questions",
+  "info": {
+    "name": "Assessment_questions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "is_available": {
+      "type": "boolean"
+    }
+  }
+}

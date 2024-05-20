@@ -1,0 +1,73 @@
+{
+  "name": "fixa-api",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.5.0"
+  },
+  "dependencies": {
+    "@strapi/provider-email-sendgrid": "^4.3.2",
+    "africastalking": "^0.5.4",
+    "axios": "^0.21.1",
+    "content-type-parser": "1.0.2",
+    "csv-parse": "4.8.2",
+    "date-and-time": "^2.4.1",
+    "dd-trace": "^3.15.0",
+    "exceljs": "^4.3.0",
+    "get-urls": "9.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "knex": "^0.19.5",
+    "mailgun-js": "^0.22.0",
+    "moment": "^2.29.4",
+    "mysql": "latest",
+    "name-parser": "^0.0.1",
+    "natural": "^7.0.0",
+    "node-localstorage": "^2.2.1",
+    "pusher": "^5.1.1-beta",
+    "redis": "^4.6.5",
+    "request": "^2.88.2",
+    "response-format": "^1.2.0",
+    "rss-parser": "3.7.3",
+    "simple-statistics": "7.0.7",
+    "socket.io": "^4.7.2",
+    "strapi": "3.6.3",
+    "strapi-admin": "3.6.3",
+    "strapi-connector-bookshelf": "3.6.3",
+    "strapi-plugin-content-manager": "3.6.3",
+    "strapi-plugin-content-type-builder": "3.6.3",
+    "strapi-plugin-documentation": "3.6.3",
+    "strapi-plugin-email": "3.6.3",
+    "strapi-plugin-i18n": "3.6.3",
+    "strapi-plugin-upload": "3.6.3",
+    "strapi-plugin-users-permissions": "3.6.3",
+    "strapi-provider-email-sendgrid": "^3.6.10",
+    "strapi-utils": "3.6.3",
+    "string-similarity": "^4.0.4",
+    "striptags": "3.1.1",
+    "twilio": "^3.67.1",
+    "underscore": "^1.13.4",
+    "validatorjs": "^3.22.1",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1",
+    "ws": "^8.14.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "f0c1196d-1dd6-40c5-82ff-5ee07ff72ad1"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

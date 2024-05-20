@@ -1,0 +1,140 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/workforces/build/rssb/momo",
+      "handler": "workforce.rssbMomoWorkforceVerification",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforce/export",
+      "handler": "workforce.exportWorkforce",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforces",
+      "handler": "workforce.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforces/count",
+      "handler": "workforce.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforces/get_workers",
+      "handler": "workforce.getWorkersClaim",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforces/:id",
+      "handler": "workforce.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforces/custom/workforce-dashboard-worker",
+      "handler": "workforce.verifyWorkerInDashBoard",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforces/verify/remain/workforce",
+      "handler": "workforce.verifyWorkerInWorkforce",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/workforces",
+      "handler": "workforce.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/workforces/calculte-worker-taxes",
+      "handler": "workforce.workerTaxes",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/workforces/rssb-workers-registration",
+      "handler": "workforce.rssbWorkersRegistration",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/workforces/check-permanent-workers",
+      "handler": "workforce.checkPermanentWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/workforces/workForceBuild",
+      "handler": "workforce.workForceBuild",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforces/build",
+      "handler": "workforce.buildWorkforce",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/workforces/activate-rate-type",
+      "handler": "workforce.activateRateType",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/workforces/:id",
+      "handler": "workforce.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/workforces/:id",
+      "handler": "workforce.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

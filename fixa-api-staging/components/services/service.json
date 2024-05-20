@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_services_services",
+  "info": {
+    "name": "service",
+    "icon": "user-cog"
+  },
+  "options": {},
+  "attributes": {
+    "service": {
+      "model": "services"
+    },
+    "workers": {
+      "collection": "service-providers"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_payment_payments",
+  "info": {
+    "name": "payment",
+    "icon": "money-bill",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "unpaid",
+        "paid"
+      ],
+      "default": "pending"
+    },
+    "quotation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "quotation.quotation"
+    },
+    "invoice": {
+      "type": "component",
+      "repeatable": true,
+      "component": "invoice.invoice"
+    },
+    "receipt": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "total_price": {
+      "type": "biginteger"
+    }
+  }
+}

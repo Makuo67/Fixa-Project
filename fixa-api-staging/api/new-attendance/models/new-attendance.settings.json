@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_attendances",
+  "info": {
+    "name": "new_attendance",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "shift_id": {
+      "type": "integer"
+    },
+    "supervisor_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    }
+  }
+}

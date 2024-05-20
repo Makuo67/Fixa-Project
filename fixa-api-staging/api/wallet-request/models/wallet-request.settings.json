@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wallet_requests",
+  "info": {
+    "name": "wallet_request",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "payment_method": {
+      "model": "payment-methods"
+    },
+    "certificate_link": {
+      "type": "string"
+    },
+    "request_status": {
+      "type": "enumeration",
+      "enum": [
+        "approved",
+        "pending",
+        "declined"
+      ]
+    },
+    "wallet_account_number": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "richtext"
+    }
+  }
+}

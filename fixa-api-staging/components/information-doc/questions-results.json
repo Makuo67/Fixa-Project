@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_information_doc_questions_results",
+  "info": {
+    "name": "questions_results",
+    "icon": "arrow-down",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "assessment_question": {
+      "model": "assessment-questions"
+    },
+    "rate_type": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "name": "Task",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "task_name": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "service_providers": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "comments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "chats.chats"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "accepted",
+        "declined",
+        "completed"
+      ]
+    },
+    "company": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

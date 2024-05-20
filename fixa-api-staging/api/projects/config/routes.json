@@ -1,0 +1,132 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/projects",
+      "handler": "projects.find",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projects/list",
+      "handler": "projects.getProjectList",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projects/all",
+      "handler": "projects.getAllProject",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projects/app/user",
+      "handler": "projects.getProjectsByUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projects/client/user",
+      "handler": "projects.getProjectsByClient",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/projects",
+      "handler": "projects.projectStatistics",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projects/count",
+      "handler": "projects.count",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/projects/:id",
+      "handler": "projects.findOne",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/projects/:id",
+      "handler": "projects.readProject",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects",
+      "handler": "projects.create",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/create-project",
+      "handler": "projects.createProject",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/create-site",
+      "handler": "projects.createSite",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/update-project/:id",
+      "handler": "projects.updateProject",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/:id",
+      "handler": "projects.update",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/:id/rates/:type",
+      "handler": "projects.createProjectRates",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/projects/:id",
+      "handler": "projects.delete",
+      "config": {
+        "policies": ["global::project_policies"]
+      }
+    }
+  ]
+}

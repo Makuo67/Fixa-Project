@@ -1,0 +1,46 @@
+[
+    {
+        "entity": "rssb",
+        "values": [
+            {
+                "name": "green",
+                "color": "green",
+                "description": "The KYC information is marked as green because this worker has a valid NID in the RSSB our database."
+            },
+            {
+                "name": "nothing",
+                "color": "nothing",
+                "description": ""
+            }
+        ]
+    },
+    {
+        "entity": "momo",
+        "values": [
+            {
+                "name": "green",
+                "color": "green",
+                "description": "This worker phone number is marked as green because this phone number is registered under a worker after checking the phone number registered on his National ID, and it is valid to receive money through MOMO."
+            },
+            {
+                "name": "blue",
+                "color": "blue",
+                "description": "This phone number is marked as blue because we have not verified the worker's KYC with RSSB, but the phone number is capable of receiving money."
+            },
+            {
+                "name": "red",
+                "color": "red",
+                "two": [
+                    {
+                        "country": "Rwandan",
+                        "description": "This phone number is marked as red because it does not match any of the worker's phone numbers in RSSB."
+                    },
+                    {
+                        "country": "foreigner",
+                        "description": "This phone number is marked as red because it can't receive money"
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_information_doc_information_docs",
+  "info": {
+    "name": "information_doc",
+    "icon": "info"
+  },
+  "options": {},
+  "attributes": {
+    "file": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "quotation",
+        "invoice"
+      ]
+    }
+  }
+}

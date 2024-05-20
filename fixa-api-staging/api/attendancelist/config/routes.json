@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/attendancelists",
+      "handler": "attendancelist.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendancelists/count",
+      "handler": "attendancelist.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/attendancelists/aggregate",
+      "handler": "attendancelist.getAggregate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/attendancelists/update/worker",
+      "handler": "attendancelist.updateAttendanceList",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendancelists/:id",
+      "handler": "attendancelist.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendancelists",
+      "handler": "attendancelist.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/attendancelists/:id",
+      "handler": "attendancelist.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/attendancelists/:id",
+      "handler": "attendancelist.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendancelists/:id/export",
+      "handler": "attendancelist.exportAttendance",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

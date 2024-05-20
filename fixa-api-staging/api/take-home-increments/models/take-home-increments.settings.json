@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "take_home_increments",
+  "info": {
+    "name": "take_home_increments"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "assigned_worker_id": {
+      "type": "integer"
+    },
+    "payroll_details_id": {
+      "type": "integer"
+    },
+    "initial_take_home": {
+      "type": "float"
+    },
+    "incremented_amount": {
+      "type": "float"
+    },
+    "done_by": {
+      "type": "integer"
+    }
+  }
+}

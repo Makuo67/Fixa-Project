@@ -1,0 +1,109 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payroll-transactions",
+      "handler": "payroll-transactions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-transactions/count",
+      "handler": "payroll-transactions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-transactions/payroll_transactions/:id",
+      "handler": "payroll-transactions.allPayrollTransactions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-transactions/deduction_details/:id",
+      "handler": "payroll-transactions.payrollTransactionDetails",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-transactions/disbursement_details/:id",
+      "handler": "payroll-transactions.payrollDisbursementDetails",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-transactions/attendance_shifts/:id",
+      "handler": "payroll-transactions.allAttendanceShift",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-transactions/deductions/:id",
+      "handler": "payroll-transactions.allDeductions",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-transactions/payroll_transactions_details/:id",
+      "handler": "payroll-transactions.allPayrollTransactionsDetails",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-transactions/:id",
+      "handler": "payroll-transactions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payroll-transactions",
+      "handler": "payroll-transactions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/payroll-transactions/:id",
+      "handler": "payroll-transactions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payroll-transactions/delete/:id",
+      "handler": "payroll-transactions.removePayrollTransaction",
+      "config": {
+        "policies": []
+      }
+    },
+    
+    {
+      "method": "DELETE",
+      "path": "/payroll-transactions/:id",
+      "handler": "payroll-transactions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "kind": "collectionType",
+  "collectionName": "taxes_transactions",
+  "info": {
+    "name": "taxes_transactions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "A": {
+      "type": "string"
+    },
+    "B": {
+      "type": "string"
+    },
+    "C": {
+      "type": "string"
+    },
+    "D": {
+      "type": "string"
+    },
+    "E": {
+      "type": "string"
+    },
+    "F": {
+      "type": "string"
+    },
+    "G": {
+      "type": "string"
+    },
+    "H": {
+      "type": "string"
+    },
+    "I": {
+      "type": "string"
+    },
+    "J": {
+      "type": "string"
+    },
+    "K": {
+      "type": "string"
+    },
+    "L": {
+      "type": "string"
+    },
+    "M": {
+      "type": "string"
+    },
+    "N": {
+      "type": "string"
+    },
+    "O": {
+      "type": "string"
+    },
+    "P": {
+      "type": "string"
+    },
+    "Q": {
+      "type": "string"
+    },
+    "R": {
+      "type": "string"
+    },
+    "S": {
+      "type": "string"
+    },
+    "T": {
+      "type": "string"
+    },
+    "U": {
+      "type": "string"
+    },
+    "V": {
+      "type": "string"
+    },
+    "W": {
+      "type": "string"
+    },
+    "X": {
+      "type": "string"
+    },
+    "Y": {
+      "type": "string"
+    },
+    "Z": {
+      "type": "string"
+    },
+    "AA": {
+      "type": "string"
+    },
+    "AB": {
+      "type": "string"
+    },
+    "AC": {
+      "type": "string"
+    },
+    "AD": {
+      "type": "string"
+    },
+    "AE": {
+      "type": "string"
+    },
+    "worker_id": {
+      "type": "string"
+    },
+    "rra_taxes_id": {
+      "type": "integer"
+    },
+    "gross_amount": {
+      "type": "string"
+    },
+    "verified_net": {
+      "type": "string"
+    },
+    "initial_net": {
+      "type": "string"
+    }
+  }
+}

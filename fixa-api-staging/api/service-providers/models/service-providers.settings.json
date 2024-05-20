@@ -1,0 +1,188 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_providers",
+  "info": {
+    "name": "worker",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "sector": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "street_address": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string",
+      "unique": false
+    },
+    "carrier": {
+      "type": "enumeration",
+      "enum": [
+        "MTN",
+        "AIRTEL",
+        "TIGO"
+      ],
+      "default": "MTN"
+    },
+    "services": {
+      "collection": "services"
+    },
+    "users": {
+      "via": "service_providers",
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "profile_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "date_of_birth": {
+      "type": "date"
+    },
+    "rbc_code": {
+      "type": "string"
+    },
+    "cell": {
+      "type": "string"
+    },
+    "village": {
+      "type": "string"
+    },
+    "next_of_kin": {
+      "type": "component",
+      "repeatable": true,
+      "component": "next-of-kin.next-of-kin"
+    },
+    "highest_level_of_education": {
+      "type": "component",
+      "repeatable": false,
+      "component": "education.education"
+    },
+    "work_history": {
+      "type": "component",
+      "repeatable": true,
+      "component": "work.work-profile"
+    },
+    "fixa_work_history": {
+      "collection": "jobs"
+    },
+    "current_employer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "current_job": {
+      "model": "jobs"
+    },
+    "reviewed": {
+      "type": "boolean"
+    },
+    "reviews": {
+      "collection": "review",
+      "via": "worker"
+    },
+    "languages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "language.language"
+    },
+    "other_skills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "digital-literacy.digital-literacy"
+    },
+    "job": {
+      "via": "workers",
+      "model": "jobs"
+    },
+    "assessments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "information-doc.worker-assessments-rates"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "rssb_code": {
+      "type": "string"
+    },
+    "nid_number": {
+      "type": "string"
+    },
+    "is_rssb_verified": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "nothing"
+      ]
+    },
+    "is_momo_verified_and_rssb": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "blue",
+        "red"
+      ]
+    },
+    "phone_numbers": {
+      "type": "json"
+    },
+    "phone_numbers_masked": {
+      "type": "json"
+    },
+    "country": {
+      "model": "countries"
+    },
+    "district_residence": {
+      "model": "district"
+    },
+    "payment_methods": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment-methods.payment-methods"
+    },
+    "email": {
+      "type": "email"
+    },
+    "is_momo_verified_and_rssb_desc": {
+      "type": "string"
+    },
+    "is_rssb_verified_desc": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/new-attendances",
+      "handler": "new-attendance.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-attendances/app",
+      "handler": "new-attendance.getAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/new-attendances/do",
+      "handler": "new-attendance.doAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/new-attendances/do_multiple_days",
+      "handler": "new-attendance.doAttendanceMultipleDays",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/new-attendances/remove",
+      "handler": "new-attendance.removeWorkerToAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/new-attendances/generate_many_attendance",
+      "handler": "new-attendance.generateManyAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-attendances/count",
+      "handler": "new-attendance.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-attendances/syncAttendance",
+      "handler": "new-attendance.syncRedisAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-attendances/counting",
+      "handler": "new-attendance.counting",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-attendances/:id",
+      "handler": "new-attendance.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-attendances/app/notification/",
+      "handler": "new-attendance.getAttendanceNotification",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-attendances",
+      "handler": "new-attendance.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/new-attendances/:id",
+      "handler": "new-attendance.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/new-attendances/:id",
+      "handler": "new-attendance.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

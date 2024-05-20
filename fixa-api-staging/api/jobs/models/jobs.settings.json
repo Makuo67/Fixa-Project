@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "Jobs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "services": {
+      "collection": "services"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "in_consultation",
+        "consulted",
+        "claimed",
+        "ongoing",
+        "completed",
+        "paid"
+      ],
+      "default": "pending"
+    },
+    "consumer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "service_provider": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "start_datetime": {
+      "type": "datetime"
+    },
+    "end_datetime": {
+      "type": "datetime"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "string"
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "address.location"
+    },
+    "company": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "workers": {
+      "via": "job",
+      "collection": "service-providers"
+    },
+    "supervisors": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "project_id": {
+      "type": "integer"
+    }
+  }
+}

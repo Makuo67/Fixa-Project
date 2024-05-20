@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_invoice_invoices",
+  "info": {
+    "name": "invoice",
+    "icon": "file-invoice-dollar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "file": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "unpaid",
+        "paid"
+      ],
+      "default": "none"
+    },
+    "item": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "biginteger"
+    }
+  }
+}

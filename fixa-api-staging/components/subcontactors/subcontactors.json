@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_subcontactors_subcontactors",
+  "info": {
+    "name": "subcontactors",
+    "icon": "user-check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "service": {
+      "model": "services"
+    },
+    "selected": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "number_of_workers": {
+      "type": "biginteger"
+    }
+  }
+}

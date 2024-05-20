@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "worker_profiles",
+  "info": {
+    "name": "worker_profile",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date_onboarded": {
+      "type": "date"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "trade": {
+      "type": "string"
+    },
+    "trade_id": {
+      "type": "integer"
+    },
+    "working_date": {
+      "type": "date"
+    },
+    "supervisor_name": {
+      "type": "string"
+    },
+    "supervisor_id": {
+      "type": "integer"
+    },
+    "daily_earnings": {
+      "type": "integer"
+    },
+    "worker_id": {
+      "type": "integer"
+    },
+    "shift": {
+      "type": "string"
+    },
+    "shift_id": {
+      "type": "integer"
+    },
+    "attendance_id": {
+      "type": "integer"
+    }
+  }
+}

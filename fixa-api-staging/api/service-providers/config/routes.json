@@ -1,0 +1,252 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/excel/generate",
+      "handler": "service-providers.generateExcel",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/compute_workers_info",
+      "handler": "service-providers.computeWorkersInfo",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforce/test-phone",
+      "handler": "service-providers.testPhone",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workforce/list",
+      "handler": "service-providers.listWorkforce",
+      "config": {
+        "policies": ["global::workforce_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/custom/workforce/list",
+      "handler": "service-providers.getWorkforce",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/admin-dashboard/aggregates",
+      "handler": "service-providers.dashboardMetrics",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/service-providers",
+      "handler": "service-providers.find",
+      "config": {
+        "policies": ["global::workforce_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/service-providers/count",
+      "handler": "service-providers.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/service-providers/:id",
+      "handler": "service-providers.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/service-providers",
+      "handler": "service-providers.registerWorker",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/service-providers/app/verify",
+      "handler": "service-providers.verifyWorker",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/service-providers/app/gender",
+      "handler": "service-providers.guessGender",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/service-providers/:id",
+      "handler": "service-providers.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/app/service-providers/:id",
+      "handler": "service-providers.updateWorker",
+      "config": {
+        "policies": ["global::workforce_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/service-providers/update-worker/:id",
+      "handler": "service-providers.updateSingleWorkerRegistration",
+      "config": {
+        "policies": ["global::workforce_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/service-providers/ussd",
+      "handler": "service-providers.ussdTest",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/service-providers/:id",
+      "handler": "service-providers.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker/app/info/:id",
+      "handler": "service-providers.appFindOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker/web/info/:id",
+      "handler": "service-providers.appFindOneWeb",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker/app/sms",
+      "handler": "service-providers.sendSMS",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker/bulk-registration",
+      "handler": "service-providers.bulkRegistration",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/service-providers/rssb-testing",
+      "handler": "service-providers.rssbApiTesting",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/service-providers/get-nid-information",
+      "handler": "service-providers.nidRssbWorkerInformation",
+      "config": {
+        "policies": ["global::workforce_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/service-providers/is-phone-number-in-momo/:phone",
+      "handler": "service-providers.isPhoneNumberIsInMomo",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/service-providers/single-worker-registration",
+      "handler": "service-providers.singleWorkerRegistration",
+      "config": {
+        "policies": ["global::workforce_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/service-providers/worker-registration",
+      "handler": "service-providers.workerRegistration",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker/app/assign",
+      "handler": "service-providers.assignWorkerToProject",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker/app/unassign",
+      "handler": "service-providers.unAssignWorkerToProject",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker/app/payment_history/:id",
+      "handler": "service-providers.getWorkerPaymentHistory",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/service-providers/files",
+      "handler": "service-providers.registerTempExcel",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/service-providers/files/app",
+      "handler": "service-providers.saveTempExcel",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

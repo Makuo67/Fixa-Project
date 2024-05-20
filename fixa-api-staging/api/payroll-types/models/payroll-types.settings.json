@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payroll_types",
+  "info": {
+    "name": "payroll_types",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

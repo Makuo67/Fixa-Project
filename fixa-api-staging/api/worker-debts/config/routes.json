@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/worker-debts",
+      "handler": "worker-debts.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-debts/count",
+      "handler": "worker-debts.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-debts/:id",
+      "handler": "worker-debts.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker-debts",
+      "handler": "worker-debts.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/worker-debts/:id",
+      "handler": "worker-debts.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/worker-debts/:id",
+      "handler": "worker-debts.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

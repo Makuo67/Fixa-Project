@@ -1,0 +1,84 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/migration/new-assigned-workers",
+      "handler": "new-assigned-workers.migrateAssignedWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-assigned-workers/app-assigned-workers",
+      "handler": "new-assigned-workers.getAllAssignedWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-assigned-workers",
+      "handler": "new-assigned-workers.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-assigned-workers/update-worker-status",
+      "handler": "new-assigned-workers.updateWorkerStatus",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-assigned-workers/count",
+      "handler": "new-assigned-workers.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-assigned-workers/:id",
+      "handler": "new-assigned-workers.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-assigned-workers",
+      "handler": "new-assigned-workers.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-assigned-workers/app-bulk",
+      "handler": "new-assigned-workers.assignBulkWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/new-assigned-workers/:id",
+      "handler": "new-assigned-workers.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/new-assigned-workers/:id",
+      "handler": "new-assigned-workers.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

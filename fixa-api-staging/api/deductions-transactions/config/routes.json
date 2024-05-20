@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deductions-transactions",
+      "handler": "deductions-transactions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deductions-transactions/custom/:payment_id/:payee_name_id",
+      "handler": "deductions-transactions.getDeductionTransactionWithPayrollWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deductions-transactions/count",
+      "handler": "deductions-transactions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deductions-transactions/:id",
+      "handler": "deductions-transactions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deductions-transactions",
+      "handler": "deductions-transactions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/deductions-transactions/:id",
+      "handler": "deductions-transactions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/deductions-transactions/custom/:payment_id/:payee_name_id",
+      "handler": "deductions-transactions.updateDeductionTransactionWithPayrollWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deductions-transactions/:id",
+      "handler": "deductions-transactions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

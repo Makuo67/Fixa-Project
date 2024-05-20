@@ -1,0 +1,100 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/temp-workers-tables",
+      "handler": "temp-workers-table.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/temp-workers-tables/app",
+      "handler": "temp-workers-table.getTempWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/temp-workers-tables/count",
+      "handler": "temp-workers-table.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/temp-workers-tables/:id",
+      "handler": "temp-workers-table.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/temp-workers-tables",
+      "handler": "temp-workers-table.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/temp-workers-tables/:id",
+      "handler": "temp-workers-table.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/temp-workers-tables/user/:id",
+      "handler": "temp-workers-table.workerUpdate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/temp-workers-tables/app",
+      "handler": "temp-workers-table.deleteAll",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/temp-workers-tables/app/:id",
+      "handler": "temp-workers-table.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/temp-workers-tables/discard",
+      "handler": "temp-workers-table.deleteWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/temp-workers-tables/app/recent",
+      "handler": "temp-workers-table.getRecent",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/temp-workers-tables/app/recent",
+      "handler": "temp-workers-table.deleteRecent",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

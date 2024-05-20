@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/attendance-statuses",
+      "handler": "attendance-status.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-statuses/count",
+      "handler": "attendance-status.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-statuses/:id",
+      "handler": "attendance-status.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendance-statuses",
+      "handler": "attendance-status.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/attendance-statuses/:id",
+      "handler": "attendance-status.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/attendance-statuses/app/:id",
+      "handler": "attendance-status.appCreate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/attendance-statuses/:id",
+      "handler": "attendance-status.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

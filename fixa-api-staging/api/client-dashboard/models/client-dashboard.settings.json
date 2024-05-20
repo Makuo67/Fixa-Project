@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client-dashboard",
+  "info": {
+    "name": "Client Dashboard",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "client_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "json"
+    },
+    "period": {
+      "type": "string"
+    },
+    "data_type": {
+      "type": "enumeration",
+      "enum": [
+        "attendance_plot",
+        "aggregates"
+      ]
+    }
+  }
+}

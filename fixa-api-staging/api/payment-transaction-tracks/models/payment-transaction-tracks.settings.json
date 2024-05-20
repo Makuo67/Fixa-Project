@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_transaction_tracks",
+  "info": {
+    "name": "payment_transaction_tracks",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payroll_payout_transaction_id": {
+      "type": "biginteger"
+    },
+    "status": {
+      "type": "string"
+    },
+    "reference_id": {
+      "type": "string"
+    },
+    "momo_msg": {
+      "type": "string"
+    },
+    "payments_id": {
+      "type": "biginteger"
+    },
+    "payed_time": {
+      "type": "datetime"
+    },
+    "trial": {
+      "type": "integer",
+      "default": 0
+    },
+    "is_rerun": {
+      "type": "boolean"
+    },
+    "is_deduction": {
+      "type": "boolean"
+    },
+    "payment_method_id": {
+      "type": "integer"
+    }
+  }
+}

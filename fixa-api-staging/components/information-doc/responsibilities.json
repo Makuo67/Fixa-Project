@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_information_doc_responsibilities",
+  "info": {
+    "name": "responsibilities",
+    "icon": "bars"
+  },
+  "options": {},
+  "attributes": {
+    "career_responsibility": {
+      "model": "career-responsibilities"
+    }
+  }
+}

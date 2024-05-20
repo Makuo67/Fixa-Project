@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/fixa-documents",
+      "handler": "fixa-documents.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fixa-documents/count",
+      "handler": "fixa-documents.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fixa-documents/:id",
+      "handler": "fixa-documents.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/fixa-documents",
+      "handler": "fixa-documents.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/fixa-documents/:id",
+      "handler": "fixa-documents.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/fixa-documents/:id",
+      "handler": "fixa-documents.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

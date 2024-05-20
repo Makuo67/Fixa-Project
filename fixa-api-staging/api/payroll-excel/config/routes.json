@@ -1,0 +1,84 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payroll-excels",
+      "handler": "payroll-excel.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-excels/count",
+      "handler": "payroll-excel.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payroll-excels/:id",
+      "handler": "payroll-excel.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payroll-excels",
+      "handler": "payroll-excel.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-excels/updates",
+      "handler": "payroll-excel.updateEntry",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-excels/pay",
+      "handler": "payroll-excel.payWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-excels/regenerateuuid",
+      "handler": "payroll-excel.regenarateUUID",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/payroll-excels/status",
+      "handler": "payroll-excel.checkStatus",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/payroll-excels/:id",
+      "handler": "payroll-excel.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payroll-excels/:id",
+      "handler": "payroll-excel.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

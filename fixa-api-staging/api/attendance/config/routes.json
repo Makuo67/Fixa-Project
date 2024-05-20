@@ -1,0 +1,84 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/attendances",
+      "handler": "attendance.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendances/count",
+      "handler": "attendance.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendances/:id",
+      "handler": "attendance.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendances/app/:date",
+      "handler": "attendance.filter",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendances/app/client/:date",
+      "handler": "attendance.filterClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendances",
+      "handler": "attendance.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendances/app/record-attendance",
+      "handler": "attendance.appattendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/attendances/:id",
+      "handler": "attendance.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/attendances/app/:id",
+      "handler": "attendance.changeStatus",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/attendances/:id",
+      "handler": "attendance.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "name": "invoice",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "approved",
+        "paid"
+      ],
+      "default": "unpaid"
+    },
+    "date": {
+      "type": "date"
+    },
+    "invoiced_services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "services.invoiced-services"
+    }
+  }
+}

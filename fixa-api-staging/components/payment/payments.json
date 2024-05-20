@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_payment_payments",
+  "info": {
+    "name": "payments",
+    "icon": "file-contract",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "momo",
+        "airteltigo",
+        "bank"
+      ]
+    },
+    "value": {
+      "type": "string"
+    },
+    "account_name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+[
+    {
+        "short_name": "IMBANK",
+        "bankid": "010",
+        "full_name": "INVESTMENT AND MORTGAGE BANK"
+    },
+    {
+        "short_name": "BK",
+        "bankid": "040",
+        "full_name": "BANQUE DE KIGALI"
+    },
+    {
+        "short_name": "GTBANK",
+        "bankid": "070",
+        "full_name": "GUARANTY TRUST BANK (RWANDA)"
+    },
+    {
+        "short_name": "ECOBANK",
+        "bankid": "100",
+        "full_name": "ECOBANK RWANDA"
+    },
+    {
+        "short_name": "ACCESS",
+        "bankid": "115",
+        "full_name": "ACCESS BANK RWANDA"
+    },
+    {
+        "short_name": "COGEBANQUE",
+        "bankid": "130",
+        "full_name": "COMPAGNIE GENERALE DE BANQUES "
+    },
+    {
+        "short_name": "UOB",
+        "bankid": "145",
+        "full_name": "URWEGO OPPORTUNITY BANK"
+    },
+    {
+        "short_name": "KCB",
+        "bankid": "160",
+        "full_name": "KENYA COMMERCIAL BANK"
+    },
+    {
+        "short_name": "EQUITY",
+        "bankid": "192",
+        "full_name": "EQUITY BANK"
+    },
+    {
+        "short_name": "BPR",
+        "bankid": "400",
+        "full_name": "BANQUE POPULAIRE DU RWANDA"
+    },
+    {
+        "short_name": "BRD",
+        "bankid": "750",
+        "full_name": "BANQUE RWANDAISE DE DEVELOPEMENT"
+    },
+    {
+        "short_name": "ZIGAMA",
+        "bankid": "800",
+        "full_name": "ZIGAMA CREDIT AND SAVINGS SCHEME"
+    },
+    {
+        "short_name": "BOA",
+        "bankid": "900",
+        "full_name": "BANK OF AFRICA RWANDA"
+    },
+    {
+        "short_name": "UNGUKA",
+        "bankid": "950",
+        "full_name": "UNGUKA BANK"
+    },
+    {
+        "short_name": "BNR",
+        "bankid": "951",
+        "full_name": "BANQUE NATIONALE DU RWANDA"
+    }
+]

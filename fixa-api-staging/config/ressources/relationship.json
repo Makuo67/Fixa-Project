@@ -1,0 +1,106 @@
+[
+    {
+        "is_active": true,
+        "name": "father"
+    },
+    {
+        "is_active": true,
+        "name": "mother"
+    },
+    {
+        "is_active": true,
+        "name": "parent"
+    },
+    {
+        "is_active": true,
+        "name": "son"
+    },
+    {
+        "is_active": true,
+        "name": "daughter"
+    },
+    {
+        "is_active": true,
+        "name": "child"
+    },
+    {
+        "is_active": true,
+        "name": "husband"
+    },
+    {
+        "is_active": true,
+        "name": "wife"
+    },
+    {
+        "is_active": true,
+        "name": "spouse"
+    },
+    {
+        "is_active": true,
+        "name": "brother"
+    },
+    {
+        "is_active": true,
+        "name": "sister"
+    },
+    {
+        "is_active": true,
+        "name": "sibling"
+    },
+    {
+        "is_active": true,
+        "name": "grandfather"
+    },
+    {
+        "is_active": true,
+        "name": "grandmother"
+    },
+    {
+        "is_active": true,
+        "name": "grandparents"
+    },
+    {
+        "is_active": true,
+        "name": "grandson"
+    },
+    {
+        "is_active": true,
+        "name": "granddaughter"
+    },
+    {
+        "is_active": true,
+        "name": "grandchild"
+    },
+    {
+        "is_active": true,
+        "name": "uncle"
+    },
+    {
+        "is_active": true,
+        "name": "aunt"
+    },
+    {
+        "is_active": true,
+        "name": "parent's sibling"
+    },
+    {
+        "is_active": true,
+        "name": "nephew"
+    },
+    {
+        "is_active": true,
+        "name": "niece"
+    },
+    {
+        "is_active": true,
+        "name": "sibling's child"
+    },
+    {
+        "is_active": true,
+        "name": "cousin"
+    },
+    {
+        "is_active": true,
+        "name": "aunt's/uncle's child"
+    }
+]

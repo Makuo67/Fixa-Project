@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_daily_invoice_attendance_records",
+  "info": {
+    "name": "attendance_records",
+    "icon": "calendar-day"
+  },
+  "options": {},
+  "attributes": {}
+}

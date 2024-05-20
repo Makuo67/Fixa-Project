@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "careers",
+  "info": {
+    "name": "career",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "career_name": {
+      "type": "string"
+    },
+    "contract_terms_type": {
+      "model": "contract-terms-types"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "responsibilities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "information-doc.responsibilities"
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "career_requirements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "information-doc.requirements"
+    },
+    "location": {
+      "type": "string",
+      "default": "Kigali, Rwanda"
+    }
+  }
+}

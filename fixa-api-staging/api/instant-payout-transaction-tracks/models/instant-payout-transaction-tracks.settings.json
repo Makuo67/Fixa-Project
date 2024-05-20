@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instant_payout_transaction_tracks",
+  "info": {
+    "name": "Instant Payout Transaction Tracks",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payroll_type_id": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "biginteger"
+    },
+    "instant_payout_transaction_id": {
+      "type": "integer"
+    },
+    "reference_id": {
+      "type": "string"
+    }
+  }
+}

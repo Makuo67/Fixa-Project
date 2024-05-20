@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assigned_workers",
+  "info": {
+    "name": "assigned workers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker_id": {
+      "type": "integer"
+    },
+    "job_id": {
+      "type": "integer"
+    },
+    "worker_first_name": {
+      "type": "string"
+    },
+    "worker_last_name": {
+      "type": "string"
+    },
+    "worker_phone_number": {
+      "type": "biginteger",
+      "required": true,
+      "unique": false
+    },
+    "negotiation_daily_rate": {
+      "type": "float",
+      "default": 0
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "inactive"
+      ],
+      "default": "active",
+      "required": true
+    },
+    "status_changed": {
+      "type": "datetime"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    },
+    "shift_type": {
+      "type": "enumeration",
+      "enum": [
+        "day",
+        "night"
+      ],
+      "required": true
+    }
+  }
+}

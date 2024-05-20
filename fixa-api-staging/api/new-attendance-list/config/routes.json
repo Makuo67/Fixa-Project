@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/new-attendance-lists",
+      "handler": "new-attendance-list.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-attendance-lists/count",
+      "handler": "new-attendance-list.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-attendance-lists/:id",
+      "handler": "new-attendance-list.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-attendance-lists",
+      "handler": "new-attendance-list.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/new-attendance-lists/:id",
+      "handler": "new-attendance-list.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/new-attendance-lists/:id",
+      "handler": "new-attendance-list.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "run_payrolls",
+  "info": {
+    "name": "Run-payroll",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker_name": {
+      "type": "string"
+    },
+    "worker_phone": {
+      "type": "string"
+    },
+    "earnings": {
+      "type": "string"
+    },
+    "days_worked": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "payroll_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "worker_id": {
+      "type": "integer"
+    },
+    "attendance_day": {
+      "type": "date"
+    },
+    "service_name": {
+      "type": "string"
+    },
+    "deducted_earnings": {
+      "type": "integer"
+    },
+    "deduction_sum": {
+      "type": "integer"
+    }
+  }
+}

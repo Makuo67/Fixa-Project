@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_services_invoiced_services",
+  "info": {
+    "name": "invoiced_services",
+    "icon": "allergies",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "service": {
+      "model": "services"
+    },
+    "number_of_workers": {
+      "type": "biginteger"
+    },
+    "daily_rate": {
+      "type": "float"
+    },
+    "total_amount": {
+      "type": "float"
+    },
+    "workers": {
+      "collection": "service-providers"
+    }
+  }
+}

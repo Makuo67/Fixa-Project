@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "countries",
+  "info": {
+    "name": "countries",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "country_name": {
+      "type": "string"
+    },
+    "alpha_2_code": {
+      "type": "string"
+    },
+    "country_code": {
+      "type": "biginteger"
+    },
+    "show": {
+      "type": "boolean"
+    }
+  }
+}

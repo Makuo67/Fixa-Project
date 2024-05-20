@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_work_work_profiles",
+  "info": {
+    "name": "work_profile",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "company_name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    }
+  }
+}

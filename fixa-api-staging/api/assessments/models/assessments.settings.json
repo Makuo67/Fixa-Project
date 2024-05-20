@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assessments",
+  "info": {
+    "name": "Assessments",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "level": {
+      "type": "integer"
+    },
+    "is_available": {
+      "type": "boolean"
+    },
+    "metrics": {
+      "type": "component",
+      "repeatable": true,
+      "component": "information-doc.assessments"
+    }
+  }
+}

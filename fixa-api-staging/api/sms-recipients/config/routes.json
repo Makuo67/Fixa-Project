@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/sms-recipients",
+      "handler": "sms-recipients.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/sms-recipients/count",
+      "handler": "sms-recipients.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/sms-recipients/:id",
+      "handler": "sms-recipients.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/sms-recipients",
+      "handler": "sms-recipients.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/sms-recipients/:id",
+      "handler": "sms-recipients.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/sms-recipients/:id",
+      "handler": "sms-recipients.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

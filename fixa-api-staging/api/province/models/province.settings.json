@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "provinces",
+  "info": {
+    "name": "Province",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "code": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "districts": {
+      "via": "province",
+      "collection": "district"
+    },
+    "country": {
+      "model": "countries"
+    }
+  }
+}

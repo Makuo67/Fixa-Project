@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/users-levels",
+      "handler": "users-levels.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users-levels/access",
+      "handler": "users-levels.getLevelAccess",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users-levels/count",
+      "handler": "users-levels.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/users-levels/:id",
+      "handler": "users-levels.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/users-levels",
+      "handler": "users-levels.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/users-levels/:id",
+      "handler": "users-levels.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/users-levels/:id",
+      "handler": "users-levels.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

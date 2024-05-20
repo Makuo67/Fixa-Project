@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "otp_verifications",
+  "info": {
+    "name": "otp_verification",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pin_sent": {
+      "type": "biginteger"
+    },
+    "pin_received": {
+      "type": "biginteger"
+    },
+    "user_id": {
+      "type": "biginteger"
+    },
+    "time_created": {
+      "type": "datetime"
+    },
+    "payment_id": {
+      "type": "biginteger"
+    },
+    "is_sms": {
+      "type": "boolean"
+    },
+    "is_running": {
+      "type": "boolean"
+    },
+    "is_verified": {
+      "type": "boolean"
+    },
+    "opt_verification_type_id": {
+      "type": "biginteger"
+    },
+    "is_paying": {
+      "type": "boolean"
+    },
+    "runned_by": {
+      "type": "string"
+    },
+    "is_runned": {
+      "type": "boolean"
+    },
+    "is_login": {
+      "type": "boolean"
+    },
+    "email": {
+      "type": "richtext"
+    },
+    "is_jwt": {
+      "type": "boolean"
+    },
+    "is_external": {
+      "type": "boolean"
+    },
+    "payment_method_id": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

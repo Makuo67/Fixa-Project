@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/temp-payout-paments",
+      "handler": "temp-payout-pament.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/temp-payout-paments/count",
+      "handler": "temp-payout-pament.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/temp-payout-paments/:id",
+      "handler": "temp-payout-pament.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/custom/temp-payout-paments",
+      "handler": "temp-payout-pament.getTempPayees",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/temp-payout-paments",
+      "handler": "temp-payout-pament.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/temp-payout-paments/:id",
+      "handler": "temp-payout-pament.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/temp-payout-paments/:id",
+      "handler": "temp-payout-pament.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/custom/temp-payout-paments/:payment_id",
+      "handler": "temp-payout-pament.saveTempPayoutExcel",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/custom/temp-payout-paments/all/:payment_id",
+      "handler": "temp-payout-pament.deleteTempPayout",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

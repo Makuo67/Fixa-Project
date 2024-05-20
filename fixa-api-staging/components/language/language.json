@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_language_languages",
+  "info": {
+    "name": "language",
+    "icon": "language"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "fluency": {
+      "type": "enumeration",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ]
+    }
+  }
+}

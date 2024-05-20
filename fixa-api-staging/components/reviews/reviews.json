@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_reviews_reviews",
+  "info": {
+    "name": "reviews",
+    "icon": "marker"
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "integer"
+    },
+    "reviewed_by": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

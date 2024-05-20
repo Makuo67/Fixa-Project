@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payroll_details",
+  "info": {
+    "name": "payroll_details",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payroll_id": {
+      "type": "integer"
+    },
+    "total_earnings": {
+      "type": "biginteger"
+    },
+    "take_home": {
+      "type": "float"
+    },
+    "total_deductions": {
+      "type": "biginteger"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "successful",
+        "failed",
+        "initiated"
+      ]
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "deductions": {
+      "collection": "deductions"
+    },
+    "error_message": {
+      "type": "string"
+    },
+    "total_shifts": {
+      "type": "integer",
+      "default": 0
+    },
+    "on_hold": {
+      "type": "boolean",
+      "default": false
+    },
+    "assigned_worker_id": {
+      "type": "integer"
+    },
+    "payroll_type_id": {
+      "type": "integer"
+    },
+    "worker_name": {
+      "type": "string"
+    },
+    "worker_phone_number": {
+      "type": "string"
+    },
+    "payout_transaction_tracks_id": {
+      "type": "integer"
+    },
+    "momo": {
+      "type": "boolean"
+    }
+  }
+}

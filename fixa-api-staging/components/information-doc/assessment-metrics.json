@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_information_doc_assessment_metrics",
+  "info": {
+    "name": "Assessment_metrics",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "assessment_metric": {
+      "model": "assessment-metrics"
+    }
+  }
+}

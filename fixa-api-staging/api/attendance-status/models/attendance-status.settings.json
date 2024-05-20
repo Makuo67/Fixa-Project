@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendance_statuses",
+  "info": {
+    "name": "attendance_status",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "string"
+    },
+    "attendance_id": {
+      "type": "integer"
+    },
+    "approved_by": {
+      "type": "integer"
+    },
+    "approved_time": {
+      "type": "datetime"
+    },
+    "comment": {
+      "type": "text"
+    }
+  }
+}

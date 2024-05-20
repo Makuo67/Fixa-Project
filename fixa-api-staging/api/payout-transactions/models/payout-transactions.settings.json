@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payout_transactions",
+  "info": {
+    "name": "payout_transactions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payment_id": {
+      "type": "biginteger"
+    },
+    "payee_type_id": {
+      "type": "biginteger"
+    },
+    "payee_name": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "biginteger"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "payee_type_name": {
+      "type": "string"
+    },
+    "worker_id": {
+      "type": "integer",
+      "default": 0
+    },
+    "service_name": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "string"
+    },
+    "payment_method": {
+      "type": "string"
+    },
+    "payment_method_id": {
+      "type": "string"
+    },
+    "is_payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "blue",
+        "red",
+        "nothing"
+      ]
+    },
+    "payment_method_verification_desc": {
+      "type": "string"
+    },
+    "is_editable": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_bank": {
+      "type": "boolean"
+    }
+  }
+}

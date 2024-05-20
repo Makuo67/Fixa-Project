@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "name": "Projects",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "start_date": {
+      "type": "datetime"
+    },
+    "end_date": {
+      "type": "datetime"
+    },
+    "address": {
+      "type": "string"
+    },
+    "supervisors": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "shifts": {
+      "collection": "shifts"
+    },
+    "progress_status": {
+      "type": "enumeration",
+      "enum": [
+        "not_started",
+        "ongoing",
+        "onhold",
+        "completed",
+        "cancelled",
+        "hidden"
+      ],
+      "default": "not_started"
+    },
+    "project_profile_url": {
+      "type": "string"
+    },
+    "deduction_types": {
+      "collection": "deduction-types"
+    },
+    "payee_names": {
+      "collection": "payee-names"
+    },
+    "country": {
+      "model": "countries"
+    },
+    "province": {
+      "model": "province"
+    },
+    "taxes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "taxes.taxes-settings"
+    },
+    "client_id": {
+      "type": "integer"
+    }
+  }
+}

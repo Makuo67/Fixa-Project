@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/career-responsibilities",
+      "handler": "career-responsibilities.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/career-responsibilities/count",
+      "handler": "career-responsibilities.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/career-responsibilities/:id",
+      "handler": "career-responsibilities.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/career-responsibilities",
+      "handler": "career-responsibilities.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/career-responsibilities/:id",
+      "handler": "career-responsibilities.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/career-responsibilities/:id",
+      "handler": "career-responsibilities.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

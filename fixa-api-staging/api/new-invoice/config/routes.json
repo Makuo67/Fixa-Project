@@ -1,0 +1,100 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/new-invoices",
+      "handler": "new-invoice.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-invoices/app",
+      "handler": "new-invoice.findInvoice",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-invoices/app/client",
+      "handler": "new-invoice.findInvoiceClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-invoices/count",
+      "handler": "new-invoice.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-invoices/app/:id",
+      "handler": "new-invoice.findOneInvoice",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/new-invoices/:id",
+      "handler": "new-invoice.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-invoices",
+      "handler": "new-invoice.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-invoices/app",
+      "handler": "new-invoice.createInvoice",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/new-invoices/app/:id",
+      "handler": "new-invoice.updateDraftInvoice",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/new-invoices/update",
+      "handler": "new-invoice.updateInvoice",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/new-invoices/:id",
+      "handler": "new-invoice.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/new-invoices/:id",
+      "handler": "new-invoice.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

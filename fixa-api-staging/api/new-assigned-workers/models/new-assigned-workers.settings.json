@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_assigned_workers",
+  "info": {
+    "name": "new_assigned_workers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "is_active": {
+      "type": "boolean"
+    }
+  }
+}

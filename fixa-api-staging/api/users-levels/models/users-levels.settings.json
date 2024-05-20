@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users_levels",
+  "info": {
+    "name": "users_levels",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

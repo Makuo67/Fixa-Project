@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sms_logs",
+  "info": {
+    "name": "SMS-LOGS",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "message": {
+      "type": "text"
+    },
+    "senderID": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "messageId": {
+      "type": "string"
+    },
+    "statusCode": {
+      "type": "string"
+    },
+    "receivers": {
+      "type": "json"
+    },
+    "cost": {
+      "type": "string"
+    }
+  }
+}

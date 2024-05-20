@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "default_settings",
+  "info": {
+    "name": "default_settings"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "is_set": {
+      "type": "boolean"
+    }
+  }
+}

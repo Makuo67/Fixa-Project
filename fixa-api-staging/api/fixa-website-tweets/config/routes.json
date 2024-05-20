@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/fixa-website-tweets",
+      "handler": "fixa-website-tweets.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fixa-website-tweets/count",
+      "handler": "fixa-website-tweets.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/fixa-website-tweets/:id",
+      "handler": "fixa-website-tweets.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/fixa-website-tweets",
+      "handler": "fixa-website-tweets.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/fixa-website-tweets/:id",
+      "handler": "fixa-website-tweets.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/fixa-website-tweets/:id",
+      "handler": "fixa-website-tweets.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

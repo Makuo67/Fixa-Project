@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "review",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company": {
+      "via": "reviewed",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "panctuality": {
+      "type": "enumeration",
+      "enum": [
+        "always_on_time",
+        "needs_to_improve",
+        "always_late"
+      ],
+      "default": "always_on_time"
+    },
+    "expertise": {
+      "type": "enumeration",
+      "enum": [
+        "top_in_country",
+        "would_hire_again",
+        "would_not_hire_again"
+      ],
+      "default": "top_in_country"
+    },
+    "rating_value": {
+      "type": "decimal"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "service_provider": {
+      "via": "reviews",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "days_missed": {
+      "type": "integer"
+    },
+    "worker": {
+      "via": "reviews",
+      "model": "service-providers"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "career_responsibilities",
+  "info": {
+    "name": "career_responsibilities",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "is_active": {
+      "type": "boolean"
+    }
+  }
+}

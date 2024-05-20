@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payroll_excels",
+  "info": {
+    "name": "payroll_excel",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "momo_acount": {
+      "type": "string"
+    },
+    "momo_status": {
+      "type": "boolean"
+    },
+    "payroll_id": {
+      "type": "integer"
+    },
+    "reference_id": {
+      "type": "string"
+    },
+    "transaction_status": {
+      "type": "string"
+    },
+    "total_earnings": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    }
+  }
+}

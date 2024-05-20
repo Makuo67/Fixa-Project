@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instant_payout_transactions",
+  "info": {
+    "name": "Instant Payout Transactions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "instant_payout_id": {
+      "type": "integer"
+    },
+    "entity_name": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "float"
+    },
+    "created_on": {
+      "type": "biginteger"
+    },
+    "updated_on": {
+      "type": "biginteger"
+    }
+  }
+}

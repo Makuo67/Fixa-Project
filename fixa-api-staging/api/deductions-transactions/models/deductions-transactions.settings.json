@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deductions_transactions",
+  "info": {
+    "name": "deductions_transactions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "biginteger"
+    },
+    "payee_name": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "payment_id": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string"
+    },
+    "payee_name_id": {
+      "type": "integer"
+    },
+    "external_link": {
+      "type": "string"
+    },
+    "payment_method": {
+      "type": "string"
+    },
+    "payment_method_id": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "string"
+    },
+    "account_verified_desc": {
+      "type": "string"
+    },
+    "is_account_verified": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "blue",
+        "red",
+        "nothing"
+      ]
+    }
+  }
+}

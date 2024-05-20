@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_quotation_quotations",
+  "info": {
+    "name": "quotation",
+    "icon": "file-invoice",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "file": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "declined",
+        "approved"
+      ]
+    },
+    "item": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "biginteger"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workers_educations",
+  "info": {
+    "name": "workers_educations",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "school_name": {
+      "type": "string"
+    },
+    "field": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "level": {
+      "type": "string"
+    },
+    "worker_id": {
+      "type": "integer"
+    }
+  }
+}

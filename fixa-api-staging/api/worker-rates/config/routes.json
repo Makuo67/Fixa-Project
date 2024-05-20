@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/worker-rates",
+      "handler": "worker-rates.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-rates/count",
+      "handler": "worker-rates.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-rates/:id",
+      "handler": "worker-rates.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker-rates",
+      "handler": "worker-rates.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/worker-rates/:id",
+      "handler": "worker-rates.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/worker-rates/:id",
+      "handler": "worker-rates.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

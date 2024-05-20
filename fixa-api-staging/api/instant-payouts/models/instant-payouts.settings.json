@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instant_payouts",
+  "info": {
+    "name": "Instant Payouts"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payroll_type_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "added_on": {
+      "type": "biginteger"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payroll_summaries",
+  "info": {
+    "name": "payroll_summary"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker": {
+      "model": "service-providers"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "success",
+        "failed"
+      ]
+    },
+    "earnings": {
+      "type": "biginteger"
+    },
+    "total_shifts": {
+      "type": "integer"
+    },
+    "payroll_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/rra-taxes",
+      "handler": "rra-taxes.find",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rra-taxes/count",
+      "handler": "rra-taxes.count",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/rra-taxes/:id",
+      "handler": "rra-taxes.findOne",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/rra-taxes",
+      "handler": "rra-taxes.create",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/rra-taxes/generate-taxes",
+      "handler": "rra-taxes.generateTaxes",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/rra-taxes/re-generate-taxes",
+      "handler": "rra-taxes.reGenerate",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/rra-taxes/:id",
+      "handler": "rra-taxes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/rra-taxes/:id",
+      "handler": "rra-taxes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

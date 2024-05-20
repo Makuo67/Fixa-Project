@@ -1,0 +1,2272 @@
+{
+    "public": [
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "companies",
+            "action": "getlogo"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "createlocalization"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "excel",
+            "action": "getfile"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-excel",
+            "action": "payworkers"
+        },
+        {
+            "type": "application",
+            "controller": "transaction-cron-logs",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payout-transactions",
+            "action": "apispreadsheetintegration"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "migrateassignedworkers"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "registertempexcel"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "registerworker"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "savetempexcel"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "login"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "migratecorporateusers"
+        },
+        {
+            "type": "application",
+            "controller": "client_dashboard",
+            "action": "updateattendanceplotdata"
+        },
+        {
+            "type": "application",
+            "controller": "opt-verification-types",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "opt-verification-types",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "payout-transactions",
+            "action": "addexcelpayee"
+        },
+        {
+            "type": "application",
+            "controller": "payout-transactions",
+            "action": "apispreadsheetintegration"
+        },
+        {
+            "type": "application",
+            "controller": "payout-transactions",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "payout-transactions",
+            "action": "removeallpayouttemptransaction"
+        },
+        {
+            "type": "application",
+            "controller": "payout-transactions",
+            "action": "removepayouttransaction"
+        },
+        {
+            "type": "application",
+            "controller": "ussd-workers",
+            "action": "ussdworkers"
+        },
+        {
+            "type": "application",
+            "controller": "worker-profile",
+            "action": "buildworkerprofileremoveattendance"
+        },
+        {
+            "type": "application",
+            "controller": "worker-profile",
+            "action": "buildworkerprofilesaveattendance"
+        },
+        {
+            "type": "application",
+            "controller": "workforce",
+            "action": "workforcebuild"
+        },
+        {
+            "type": "application",
+            "controller": "otp-verification",
+            "action": "createotplogin"
+        },
+        {
+            "type": "application",
+            "controller": "otp-verification",
+            "action": "verifyotplogin"
+        },
+        {
+            "type": "application",
+            "controller": "user-admin-access",
+            "action": "forgotpassword"
+        },
+        {
+            "type": "application",
+            "controller": "user-admin-access",
+            "action": "checkstaffemail"
+        },
+         {
+            "type": "application",
+            "controller": "user-admin-access",
+            "action": "completeprofilestaff"
+        },
+        {
+            "type": "application",
+            "controller": "user-admin-access",
+            "action": "resetpassword"
+        },
+        {
+            "type": "application",
+            "controller": "user-admin-access",
+            "action": "registeradminuser"
+        },
+        {
+            "type": "application",
+            "controller": "user-admin-access",
+            "action": "completeprofilestaff"
+        },
+        {
+            "type": "application",
+            "controller": "blog-posts",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "blog-posts",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "career",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "career",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "career",
+            "action": "webstats"
+        },
+        {
+            "type": "application",
+            "controller": "fixa-website-tweets",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "success-stories",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "worker-leaderboard",
+            "action": "buildleaderboard"
+        },
+        {
+            "type": "application",
+            "controller": "deductions-transactions",
+            "action": "getdeductiontransactionwithpayrollworkers"
+        },
+        {
+            "type": "application",
+            "controller": "deductions-transactions",
+            "action": "updatedeductiontransactionwithpayrollworkers"
+        },
+        {
+            "type": "application",
+            "controller": "otp-verification",
+            "action": "createotpexternaldeduction"
+        },
+        {
+            "type": "application",
+            "controller": "otp-verification",
+            "action": "verifyotpexternaldeduction"
+        }
+        
+    ],
+    "supervisor": [
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "contact-position",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "contact",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "countries",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "district",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "fixa-documents",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "fixa-documents",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "fixa-documents",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "fixa-documents",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "fixa-documents",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "fixa-documents",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "invoice",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "invoice",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "invoice",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "invoice",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "invoice",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "invoice",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "issue",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "issue",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "issue",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "issue",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "issue",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "issue",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "jobs",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "jobs",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "jobs",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "jobs",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "jobs",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "jobs",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "pages",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "pages",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "pages",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "pages",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "pages",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "pages",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "pages",
+            "action": "createlocalization"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "province",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "quotation",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "quotation",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "quotation",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "quotation",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "quotation",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "quotation",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "review",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "review",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "review",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "review",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "review",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "review",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "sector",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "services",
+            "action": "createlocalization"
+        },
+        {
+            "type": "application",
+            "controller": "task",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "task",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "task",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "task",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "task",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "task",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "text-message",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "text-message",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "text-message",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "text-message",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "text-message",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "text-message",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "assigned-workers",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "assigned-workers",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "assigned-workers",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "assigned-workers",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "assigned-workers",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "jobs",
+            "action": "apphome"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "appattendance"
+        },
+        {
+            "type": "application",
+            "controller": "attendance",
+            "action": "filter"
+        },
+        {
+            "type": "application",
+            "controller": "payroll",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "payroll",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "payroll",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "payroll",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "payroll",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "projectstatistics"
+        },
+        {
+            "type": "application",
+            "controller": "run-payroll",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "run-payroll",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "run-payroll",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "run-payroll",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "run-payroll",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "payroll",
+            "action": "payrollavailable"
+        },
+        {
+            "type": "application",
+            "controller": "deduction-types",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "deduction-types",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "deduction-types",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "deduction-types",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "deduction-types",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "findbypayroll"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "getsummary"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "runpayroll"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "deduct"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "momocheckbalance"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "populatetable"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "transferstatus"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "validateaccountholder"
+        },
+        {
+            "type": "application",
+            "controller": "emails",
+            "action": "sendmail"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "specifyrerunpayroll"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "specifytransferstatus"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-metrics",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-metrics",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-metrics",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-metrics",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-metrics",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-questions",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-questions",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-questions",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-questions",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "assessment-questions",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "assessments",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "assessments",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "assessments",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "assessments",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "assessments",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "populatetotalshifts"
+        },
+        {
+            "type": "application",
+            "controller": "payroll",
+            "action": "populatetotalworkers"
+        },
+        {
+            "type": "application",
+            "controller": "workers-assessments",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "workers-assessments",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "workers-assessments",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "workers-assessments",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "workers-assessments",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-status",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-status",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-status",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-status",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-status",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-status",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payout-transaction-tracks",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payout-transaction-tracks",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payout-transaction-tracks",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payout-transaction-tracks",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payout-transaction-tracks",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payouts",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payouts",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payouts",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payouts",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payouts",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payouts",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "enableworker"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "holdworker"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-types",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-types",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-types",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-types",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-types",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-types",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "listworkforce"
+        },
+        {
+            "type": "application",
+            "controller": "shifts",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "shifts",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "shifts",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "shifts",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "shifts",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "shifts",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "worker-rates",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "worker-rates",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "worker-rates",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "worker-rates",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "worker-rates",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-status",
+            "action": "appcreate"
+        },
+        {
+            "type": "application",
+            "controller": "attendancelist",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "attendancelist",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "attendancelist",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "attendancelist",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "attendancelist",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "attendancelist",
+            "action": "getaggregate"
+        },
+        {
+            "type": "application",
+            "controller": "attendancelist",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "client_dashboard",
+            "action": "getaggregates"
+        },
+        {
+            "type": "application",
+            "controller": "client_dashboard",
+            "action": "getattendance"
+        },
+        {
+            "type": "application",
+            "controller": "client_dashboard",
+            "action": "getattendancebyproject"
+        },
+        {
+            "type": "application",
+            "controller": "client_dashboard",
+            "action": "gettotalworkers"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "app_update"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payouts",
+            "action": "checkstatus"
+        },
+        {
+            "type": "application",
+            "controller": "instant-payouts",
+            "action": "run"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "assignbulkworkers"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "getallassignedworkers"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "migrateassignedworkers"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "getattendance"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details-deductions",
+            "action": "appcreate"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details-deductions",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details-deductions",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "check_routine_payroll_transaction_status"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "run_routine_payroll"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "validatephonenumberroutine"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "appfindone"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "assignworkertoproject"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "generateexcel"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "getworkerpaymenthistory"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "registertempexcel"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "registerworker"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "savetempexcel"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "sendsms"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "testphone"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "unassignworkertoproject"
+        },
+        {
+            "type": "application",
+            "controller": "take-home-increments",
+            "action": "addtakehome"
+        },
+        {
+            "type": "application",
+            "controller": "take-home-increments",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "take-home-increments",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "take-home-increments",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "take-home-increments",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "take-home-increments",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "take-home-increments",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "worker-profile",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "worker-profile",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "worker-profile",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "worker-profile",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "worker-profile",
+            "action": "getworkerworkinghistory"
+        },
+        {
+            "type": "application",
+            "controller": "worker-profile",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "workforce",
+            "action": "buildworkforce"
+        },
+        {
+            "type": "application",
+            "controller": "workforce",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "workforce",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "workforce",
+            "action": "delete"
+        },
+        {
+            "type": "application",
+            "controller": "workforce",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "workforce",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "workforce",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "getattendanceformobile"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "invitecorporateuser"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "setpassword"
+        },
+        {
+            "type": "application",
+            "controller": "client_dashboard",
+            "action": "getattendanceondate"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "doattendance"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "halfshift"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "changepassword"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "login"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "migratecorporateusers"
+        },
+        {
+            "type": "application",
+            "controller": "build-log",
+            "action": "updateuser"
+        },
+        {
+            "type": "application",
+            "controller": "client-dashboard",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "client-dashboard",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "client-dashboard",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "client-dashboard",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "client-dashboard",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "client_dashboard",
+            "action": "totalshiftsbyservice"
+        },
+        {
+            "type": "application",
+            "controller": "client_dashboard",
+            "action": "updateattendanceplotdata"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "counting"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "getattendancenotification"
+        },
+        {
+            "type": "application",
+            "controller": "new-attendance",
+            "action": "removeworkertoattendance"
+        },
+        {
+            "type": "application",
+            "controller": "notifications",
+            "action": "count"
+        },
+        {
+            "type": "application",
+            "controller": "notifications",
+            "action": "create"
+        },
+        {
+            "type": "application",
+            "controller": "notifications",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "notifications",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "notifications",
+            "action": "pusherauth"
+        },
+        {
+            "type": "application",
+            "controller": "notifications",
+            "action": "pusheruserauth"
+        },
+        {
+            "type": "application",
+            "controller": "notifications",
+            "action": "send"
+        },
+        {
+            "type": "application",
+            "controller": "notifications",
+            "action": "update"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-details",
+            "action": "getsinglepayrollhistory"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "updateworker"
+        },
+        {
+            "type": "application",
+            "controller": "service-providers",
+            "action": "verifyworker"
+        },
+        {
+            "type": "application",
+            "controller": "new-assigned-workers",
+            "action": "updateworkerstatus"
+        },
+        {
+            "type": "application",
+            "controller": "payment-types",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "payment-types",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "payments",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "payments",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "payments",
+            "action": "getallpayments"
+        },
+        {
+            "type": "application",
+            "controller": "payout-transactions",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "payout-transactions",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-transactions",
+            "action": "allattendanceshift"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-transactions",
+            "action": "find"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-transactions",
+            "action": "findone"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "getattendanceformobilerange"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "findworkerdeduction"
+        },
+        {
+            "type": "application",
+            "controller": "projects",
+            "action": "getprojectsbyuser"
+        },
+        {
+            "type": "application",
+            "controller": "payroll-transactions",
+            "action": "payrolltransactiondetails"
+        },
+        {
+            "type": "application",
+            "controller": "workers-assessments",
+            "action": "customcreate"
+        },
+        {
+            "type": "application",
+            "controller": "attendance-details",
+            "action": "getmobileattendance"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "createattendancededuction"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "createinternalpayrolldeduction"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "getmobileattendancedeductions"
+        },
+        {
+            "type": "application",
+            "controller": "deductions",
+            "action": "getpayrolldeductions"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_payment_methods_company_payment_methods",
+  "info": {
+    "name": "company_payment_methods",
+    "icon": "apple-alt"
+  },
+  "options": {},
+  "attributes": {
+    "payment_method": {
+      "model": "payment-methods"
+    },
+    "is_payment_method_active": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

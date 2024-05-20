@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deducted_workers",
+  "info": {
+    "name": "deducted_workers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "deductions": {
+      "collection": "deductions"
+    },
+    "worker": {
+      "model": "service-providers"
+    },
+    "payroll_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "earnings": {
+      "type": "biginteger"
+    },
+    "deducted_earnings": {
+      "type": "biginteger"
+    },
+    "total_deductions": {
+      "type": "biginteger"
+    }
+  }
+}

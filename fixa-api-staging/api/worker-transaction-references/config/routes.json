@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/worker-transaction-references",
+      "handler": "worker-transaction-references.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-transaction-references/count",
+      "handler": "worker-transaction-references.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-transaction-references/:id",
+      "handler": "worker-transaction-references.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker-transaction-references",
+      "handler": "worker-transaction-references.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/worker-transaction-references/:id",
+      "handler": "worker-transaction-references.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/worker-transaction-references/:id",
+      "handler": "worker-transaction-references.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

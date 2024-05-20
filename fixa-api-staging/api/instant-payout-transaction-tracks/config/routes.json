@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/instant-payout-transaction-tracks",
+      "handler": "instant-payout-transaction-tracks.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/instant-payout-transaction-tracks/count",
+      "handler": "instant-payout-transaction-tracks.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/instant-payout-transaction-tracks/:id",
+      "handler": "instant-payout-transaction-tracks.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/instant-payout-transaction-tracks",
+      "handler": "instant-payout-transaction-tracks.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/instant-payout-transaction-tracks/:id",
+      "handler": "instant-payout-transaction-tracks.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/instant-payout-transaction-tracks/:id",
+      "handler": "instant-payout-transaction-tracks.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

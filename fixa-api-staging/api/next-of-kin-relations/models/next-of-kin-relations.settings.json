@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "next_of_kin_relations",
+  "info": {
+    "name": "Next_of_Kin_relations"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

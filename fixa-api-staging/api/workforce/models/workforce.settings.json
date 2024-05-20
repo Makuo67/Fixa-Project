@@ -1,0 +1,115 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workforces",
+  "info": {
+    "name": "workforce",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker_id": {
+      "type": "integer"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "is_phone_number_verified": {
+      "type": "boolean"
+    },
+    "national_id": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "last_attendance": {
+      "type": "date"
+    },
+    "assigned": {
+      "type": "boolean"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "daily_earnings": {
+      "type": "float"
+    },
+    "trade_id": {
+      "type": "integer"
+    },
+    "trade": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "names": {
+      "type": "string"
+    },
+    "date_onboarded": {
+      "type": "date"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "attendance": {
+      "type": "decimal"
+    },
+    "assigned_worker_id": {
+      "type": "integer"
+    },
+    "rate_type": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "negotiated"
+      ]
+    },
+    "worker_type": {
+      "type": "enumeration",
+      "enum": [
+        "casual",
+        "permanent"
+      ],
+      "default": "casual"
+    },
+    "is_rssb_verified": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "nothing"
+      ]
+    },
+    "is_momo_verified_and_rssb": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "blue",
+        "red"
+      ]
+    },
+    "country": {
+      "type": "string"
+    },
+    "is_momo_verified_and_rssb_desc": {
+      "type": "string"
+    },
+    "default_payment_method": {
+      "type": "json"
+    },
+    "is_assessed": {
+      "type": "boolean"
+    }
+  }
+}

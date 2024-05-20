@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "attendancelists",
+  "info": {
+    "name": "attendancelist",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "names": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "service": {
+      "type": "string"
+    },
+    "day": {
+      "type": "string"
+    },
+    "night": {
+      "type": "string"
+    },
+    "total_shift": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "assigned_worker_id": {
+      "type": "integer"
+    },
+    "shift_id": {
+      "type": "integer"
+    },
+    "attendance_id": {
+      "type": "integer"
+    },
+    "attendance_date": {
+      "type": "date"
+    },
+    "daily_rate": {
+      "type": "biginteger"
+    },
+    "worker_id": {
+      "type": "integer"
+    },
+    "shift": {
+      "type": "string"
+    },
+    "supervisor_name": {
+      "type": "string"
+    },
+    "supervisor_id": {
+      "type": "integer"
+    },
+    "attendance_details_id": {
+      "type": "biginteger"
+    },
+    "nid_number": {
+      "type": "string"
+    }
+  }
+}

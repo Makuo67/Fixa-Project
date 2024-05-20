@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/contract-terms-types",
+      "handler": "contract-terms-types.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/contract-terms-types/count",
+      "handler": "contract-terms-types.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/contract-terms-types/:id",
+      "handler": "contract-terms-types.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/contract-terms-types",
+      "handler": "contract-terms-types.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/contract-terms-types/:id",
+      "handler": "contract-terms-types.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/contract-terms-types/:id",
+      "handler": "contract-terms-types.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

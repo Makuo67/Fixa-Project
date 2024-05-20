@@ -1,0 +1,116 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/worker-leaderboards/get-score/:metric/:worker_id",
+      "handler": "worker-leaderboard.getScore",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-leaderboards/get-aggregates",
+      "handler": "worker-leaderboard.getAggregates",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker-leaderboards/create/:worker_id",
+      "handler": "worker-leaderboard.createLeaderBoardEntry",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker-leaderboards/build-leaderboard",
+      "handler": "worker-leaderboard.buildLeaderboard",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker-leaderboards/calculate-streak",
+      "handler": "worker-leaderboard.calculateLeaderboardStreaks",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-leaderboards/get-distribution/:metric",
+      "handler": "worker-leaderboard.getMetricDistribution",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-leaderboards",
+      "handler": "worker-leaderboard.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/worker-leaderboards",
+      "handler": "worker-leaderboard.getLeaderboard",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-leaderboards/count",
+      "handler": "worker-leaderboard.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-leaderboards/:id",
+      "handler": "worker-leaderboard.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/worker-leaderboards/:id",
+      "handler": "worker-leaderboard.getWorkerScores",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker-leaderboards",
+      "handler": "worker-leaderboard.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/worker-leaderboards/:id",
+      "handler": "worker-leaderboard.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/worker-leaderboards/:id",
+      "handler": "worker-leaderboard.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

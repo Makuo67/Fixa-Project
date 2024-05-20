@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_service_services",
+  "info": {
+    "name": "service",
+    "icon": "handshake",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "service_provider": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "daily_rate": {
+      "type": "float"
+    },
+    "fixa_take_home": {
+      "type": "float"
+    },
+    "service": {
+      "model": "services"
+    }
+  }
+}

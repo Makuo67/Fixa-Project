@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_daily_invoice_daily_invoices",
+  "info": {
+    "name": "daily_invoice",
+    "icon": "database",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "services.services"
+    }
+  }
+}

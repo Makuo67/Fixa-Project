@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_information_doc_requirements",
+  "info": {
+    "name": "requirements",
+    "icon": "caret-down"
+  },
+  "options": {},
+  "attributes": {
+    "career_requirement": {
+      "model": "career-requirements"
+    }
+  }
+}

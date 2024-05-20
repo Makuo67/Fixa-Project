@@ -1,0 +1,116 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/payout-transactions",
+      "handler": "payout-transactions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payout-transactions/count",
+      "handler": "payout-transactions.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payout-transactions/payment_details/:id",
+      "handler": "payout-transactions.payoutTransactionDetails",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payout-transactions/:id",
+      "handler": "payout-transactions.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payout-transactions/payout_transactions_details/:id",
+      "handler": "payout-transactions.payoutTransactionsDetails",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/payout-transactions/disbursement_details/:id",
+      "handler": "payout-transactions.payoutDisbursementDetails",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/payout-transactions",
+      "handler": "payout-transactions.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bulk/payout/payout-transactions",
+      "handler": "payout-transactions.uploadBulkPayee",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/one/payout-transactions",
+      "handler": "payout-transactions.addPayee",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/payout-transactions/:id",
+      "handler": "payout-transactions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/one/payout-transactions/:id",
+      "handler": "payout-transactions.editPayee",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payout-transactions/delete/:id",
+      "handler": "payout-transactions.removePayoutTransaction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payout-transactions/:id",
+      "handler": "payout-transactions.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/payout-transactions/temp/delete",
+      "handler": "payout-transactions.removeAllPayoutTempTransaction",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

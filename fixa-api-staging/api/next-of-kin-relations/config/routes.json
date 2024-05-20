@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/next-of-kin-relations",
+      "handler": "next-of-kin-relations.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/next-of-kin-relations/count",
+      "handler": "next-of-kin-relations.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/next-of-kin-relations/:id",
+      "handler": "next-of-kin-relations.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/next-of-kin-relations",
+      "handler": "next-of-kin-relations.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/next-of-kin-relations/:id",
+      "handler": "next-of-kin-relations.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/next-of-kin-relations/:id",
+      "handler": "next-of-kin-relations.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "kind": "collectionType",
+  "collectionName": "temp_workers_tables",
+  "info": {
+    "name": "temp_workers_table",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "sector": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "is_verified": {
+      "type": "boolean"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "date_of_birth": {
+      "type": "date"
+    },
+    "phone_number_verified": {
+      "type": "boolean"
+    },
+    "phone_number_exist": {
+      "type": "boolean"
+    },
+    "service_available": {
+      "type": "boolean"
+    },
+    "service": {
+      "type": "string"
+    },
+    "daily_earnings": {
+      "type": "biginteger"
+    },
+    "is_active": {
+      "type": "boolean"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "service_id": {
+      "type": "integer"
+    },
+    "file_id": {
+      "type": "string"
+    },
+    "file_name": {
+      "type": "string"
+    },
+    "first_name_error": {
+      "type": "boolean"
+    },
+    "last_name_error": {
+      "type": "boolean"
+    },
+    "valid_nid": {
+      "type": "boolean"
+    },
+    "nid_exist": {
+      "type": "boolean"
+    },
+    "phone_number": {
+      "type": "string",
+      "unique": false
+    },
+    "valid_daily_earnings": {
+      "type": "boolean"
+    },
+    "done_by": {
+      "type": "email"
+    },
+    "phone_numbers_masked": {
+      "type": "json"
+    },
+    "is_rssb_verified": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "nothing"
+      ]
+    },
+    "is_momo_verified_and_rssb": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "blue",
+        "red"
+      ]
+    },
+    "is_momo_verified_and_rssb_desc": {
+      "type": "string"
+    },
+    "nid_number": {
+      "type": "string",
+      "unique": false
+    }
+  }
+}

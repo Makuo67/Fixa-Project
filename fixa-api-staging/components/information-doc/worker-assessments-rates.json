@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_information_doc_worker_assessments_rates",
+  "info": {
+    "name": "worker_assessments_rates",
+    "icon": "angle-double-down",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "assessment_level": {
+      "type": "string"
+    },
+    "worker_assessment_id": {
+      "type": "integer"
+    },
+    "assessment_level_rank": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}

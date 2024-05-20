@@ -1,0 +1,84 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/worker/app/attendance/:worker_id",
+      "handler": "worker-profile.getWorkerAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-profiles/buildSaveWorkerProfile/:id",
+      "handler": "worker-profile.buildWorkerProfileSaveAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-profiles/buildRemoveWorkerProfile/:id",
+      "handler": "worker-profile.buildWorkerProfileRemoveAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-profiles",
+      "handler": "worker-profile.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker/app/working_history/:id",
+      "handler": "worker-profile.getWorkerWorkingHistory",
+      "config": {
+        "policies": ["global::workforce_policies"]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-profiles/count",
+      "handler": "worker-profile.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/worker-profiles/:id",
+      "handler": "worker-profile.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/worker-profiles",
+      "handler": "worker-profile.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/worker-profiles/:id",
+      "handler": "worker-profile.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/worker-profiles/:id",
+      "handler": "worker-profile.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

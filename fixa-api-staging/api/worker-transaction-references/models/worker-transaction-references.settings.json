@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transaction_references",
+  "info": {
+    "name": "transaction_references",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reference_id": {
+      "type": "string"
+    },
+    "assigned_worker_id": {
+      "type": "integer"
+    },
+    "payroll_id": {
+      "type": "integer"
+    },
+    "timestamp": {
+      "type": "datetime"
+    }
+  }
+}

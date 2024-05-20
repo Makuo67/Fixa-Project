@@ -1,0 +1,172 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/otp-verifications",
+      "handler": "otp-verification.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/otp-verifications/company-info",
+      "handler": "otp-verification.getCompanyInfo",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/otp-verifications/get-all-admin-users",
+      "handler": "otp-verification.findAllAdminUsers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/otp-verifications/count",
+      "handler": "otp-verification.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/otp-verifications/:id",
+      "handler": "otp-verification.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/otp-verifications/get-admin-user/:id",
+      "handler": "otp-verification.findadminUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/create-otp",
+      "handler": "otp-verification.sendOtp",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/create-otp-login",
+      "handler": "otp-verification.createOtpLogin",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/verify-otp-login",
+      "handler": "otp-verification.verifyOtpLogin",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/verify-otp",
+      "handler": "otp-verification.verifyOtp",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications",
+      "handler": "otp-verification.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/invite-user",
+      "handler": "otp-verification.inviteUserAdmin",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/stop",
+      "handler": "otp-verification.stopAction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/create-otp-deduction",
+      "handler": "otp-verification.createOtpExternalDeduction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/create-otp-payment",
+      "handler": "otp-verification.paymentSendOtp",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/verify-otp-payment",
+      "handler": "otp-verification.paymentVerifyOtp",
+      "config": {
+        "policies": ["global::finance_policies"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/otp-verifications/verify-otp-deduction",
+      "handler": "otp-verification.verifyOtpExternalDeduction",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/otp-verifications/:id",
+      "handler": "otp-verification.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/otp-verifications/update-company-info/:id",
+      "handler": "otp-verification.updateCompanyInfo",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/otp-verifications/update-user-admin-info/:id",
+      "handler": "otp-verification.updateAdminInfo",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/otp-verifications/:id",
+      "handler": "otp-verification.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

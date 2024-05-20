@@ -1,0 +1,14 @@
+{
+  "collectionName": "attendance_pages",
+  "info": {
+    "name": "attendance-page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {}
+}

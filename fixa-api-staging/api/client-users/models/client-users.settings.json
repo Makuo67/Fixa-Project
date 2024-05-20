@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_users",
+  "info": {
+    "name": "Client Users",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "full_name": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "text"
+    },
+    "status": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "added_by": {
+      "type": "text"
+    },
+    "position_name": {
+      "type": "text"
+    },
+    "user_id": {
+      "type": "integer"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "access": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "client_id": {
+      "model": "clients"
+    }
+  }
+}

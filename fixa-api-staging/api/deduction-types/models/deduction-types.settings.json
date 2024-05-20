@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deduction_types",
+  "info": {
+    "name": "deduction_types",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "is_available": {
+      "type": "boolean"
+    },
+    "is_external": {
+      "type": "boolean"
+    },
+    "is_custom": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

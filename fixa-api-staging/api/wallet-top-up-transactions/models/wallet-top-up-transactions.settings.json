@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wallet_top_up_transactions",
+  "info": {
+    "name": "wallet_top_up_transactions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "submit_by": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "initiated",
+        "processing",
+        "completed",
+        "cancelled"
+      ]
+    },
+    "balance_receipt_link": {
+      "type": "string"
+    },
+    "submition_date": {
+      "type": "datetime"
+    },
+    "balance_loaded_date": {
+      "type": "datetime"
+    },
+    "balance_before_is_loaded": {
+      "type": "biginteger"
+    },
+    "top_up_balance": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "balance_after_is_loaded": {
+      "type": "biginteger"
+    },
+    "top_up_email_recipients": {
+      "type": "json"
+    },
+    "wallet_id": {
+      "type": "string"
+    },
+    "wallet_top_up_notification_recipients": {
+      "type": "string"
+    },
+    "transaction_type": {
+      "type": "string",
+      "default": "TOP UP"
+    },
+    "transaction_desc": {
+      "type": "string",
+      "default": "Wallet top up via Bank"
+    }
+  }
+}

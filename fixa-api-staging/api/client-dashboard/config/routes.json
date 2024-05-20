@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/client-dashboard/getaggregates",
+      "handler": "client_dashboard.getAggregates",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/client-dashboard/aggregates",
+      "handler": "client_dashboard.ClientMetrics",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/client-dashboard/attendance",
+      "handler": "client_dashboard.getAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/client-dashboard/total-workers",
+      "handler": "client_dashboard.getTotalWorkers",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/client-dashboard/total-shifts-by-service",
+      "handler": "client_dashboard.totalShiftsByService",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/client-dashboard/attendance-by-project",
+      "handler": "client_dashboard.getAttendanceByProject",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/client-dashboard/attendance-on-date",
+      "handler": "client_dashboard.getAttendanceOnDate",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/client-dashboard/update-attendance-plot-data",
+      "handler": "client_dashboard.updateAttendancePlotData",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

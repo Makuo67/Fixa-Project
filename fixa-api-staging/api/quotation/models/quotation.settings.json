@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotations",
+  "info": {
+    "name": "quotation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved_by_fixa",
+        "approved_by_client",
+        "declined_by_client"
+      ]
+    },
+    "service": {
+      "type": "component",
+      "repeatable": true,
+      "component": "service.service"
+    }
+  }
+}

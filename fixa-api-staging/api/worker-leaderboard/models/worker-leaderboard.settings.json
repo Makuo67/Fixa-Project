@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "worker_leaderboards",
+  "info": {
+    "name": "Worker Leaderboard",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "worker": {
+      "model": "service-providers"
+    },
+    "flexibility_score": {
+      "type": "decimal"
+    },
+    "attendance_score": {
+      "type": "decimal"
+    },
+    "kyc_score": {
+      "type": "decimal"
+    },
+    "kyc_score_difference": {
+      "type": "decimal"
+    },
+    "technical_score": {
+      "type": "decimal"
+    },
+    "technical_score_difference": {
+      "type": "decimal"
+    },
+    "multiple_skills_score": {
+      "type": "decimal"
+    },
+    "multiple_skills_score_difference": {
+      "type": "decimal"
+    },
+    "total_score": {
+      "type": "decimal"
+    },
+    "total_score_difference": {
+      "type": "decimal"
+    },
+    "streak": {
+      "type": "integer"
+    },
+    "flexibility_score_difference": {
+      "type": "decimal"
+    },
+    "attendance_score_difference": {
+      "type": "decimal"
+    },
+    "streak_difference": {
+      "type": "decimal"
+    },
+    "flagged": {
+      "type": "boolean"
+    },
+    "flagReasons": {
+      "type": "json"
+    }
+  }
+}

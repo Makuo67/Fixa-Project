@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "career_requirements",
+  "info": {
+    "name": "career_requirements"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "is_available": {
+      "type": "boolean"
+    }
+  }
+}

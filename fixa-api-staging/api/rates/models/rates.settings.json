@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rates",
+  "info": {
+    "name": "rates",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service_id": {
+      "type": "integer"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "default_rate": {
+      "type": "integer",
+      "default": 0
+    },
+    "beginner_rate": {
+      "type": "integer",
+      "default": 0
+    },
+    "intermediate_rate": {
+      "type": "integer",
+      "default": 0
+    },
+    "advanced_rate": {
+      "type": "integer",
+      "default": 0
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "maximum_rate": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

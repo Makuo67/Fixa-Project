@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/assigned-workers",
+      "handler": "assigned-workers.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/assigned-workers/count",
+      "handler": "assigned-workers.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/assigned-workers/:id",
+      "handler": "assigned-workers.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/assigned-workers",
+      "handler": "assigned-workers.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/assigned-workers/:id",
+      "handler": "assigned-workers.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/assigned-workers/:id",
+      "handler": "assigned-workers.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

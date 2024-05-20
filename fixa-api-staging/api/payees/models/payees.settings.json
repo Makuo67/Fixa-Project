@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payees",
+  "info": {
+    "name": "Payee-types",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payee_type": {
+      "type": "string"
+    }
+  }
+}

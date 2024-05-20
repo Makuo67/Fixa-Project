@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "name": "payments",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "total_payees": {
+      "type": "biginteger"
+    },
+    "payment_types_id": {
+      "type": "biginteger"
+    },
+    "project_id": {
+      "type": "biginteger"
+    },
+    "description": {
+      "type": "text"
+    },
+    "added_on": {
+      "type": "datetime"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "done_by": {
+      "type": "integer"
+    },
+    "total_amount": {
+      "type": "biginteger"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "open",
+        "closed"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "project_name": {
+      "type": "string"
+    },
+    "done_by_name": {
+      "type": "string"
+    },
+    "payment_id_claim": {
+      "type": "integer",
+      "default": 0
+    },
+    "is_claim": {
+      "type": "boolean",
+      "default": false
+    },
+    "parent_claim": {
+      "type": "string"
+    }
+  }
+}

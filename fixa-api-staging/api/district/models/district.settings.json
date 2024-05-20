@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "districts",
+  "info": {
+    "name": "District",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "code": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "sectors": {
+      "via": "district",
+      "collection": "sector"
+    },
+    "province": {
+      "via": "districts",
+      "model": "province"
+    },
+    "country": {
+      "model": "countries"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "issues",
+  "info": {
+    "name": "issue",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company": {
+      "via": "issues",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "ongoing",
+        "resolved"
+      ]
+    },
+    "service": {
+      "model": "services"
+    },
+    "chats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "chats.chats"
+    },
+    "service_providers": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "group_name": {
+      "type": "string"
+    },
+    "initial_message": {
+      "type": "richtext"
+    }
+  }
+}

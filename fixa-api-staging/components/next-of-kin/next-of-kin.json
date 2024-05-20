@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_next_of_kin_next_of_kins",
+  "info": {
+    "name": "next_of_kin",
+    "icon": "user-shield",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "worker_id": {
+      "type": "integer"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "relation": {
+      "model": "next-of-kin-relations"
+    }
+  }
+}

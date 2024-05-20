@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_time_slot_time_slots",
+  "info": {
+    "name": "time_slot",
+    "icon": "business-time",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "slot_a_start_time": {
+      "type": "time"
+    },
+    "slot_a_end_time": {
+      "type": "time"
+    },
+    "slot_b_start_time": {
+      "type": "time"
+    },
+    "slot_b_end_time": {
+      "type": "time"
+    },
+    "slot_c_start_time": {
+      "type": "time"
+    },
+    "slot_c_end_time": {
+      "type": "time"
+    },
+    "slot_d_start_time": {
+      "type": "time"
+    },
+    "slot_d_end_time": {
+      "type": "time"
+    }
+  }
+}

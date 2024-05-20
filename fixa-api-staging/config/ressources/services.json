@@ -1,0 +1,51 @@
+[
+    {
+        "name": "No service",
+        "default_rate": 1000,
+        "beginner_rate": 2000,
+        "intermediate_rate": 3000,
+        "advanced_rate": 4000
+    },
+    {
+        "name": "Plumber",
+        "default_rate": 1000,
+        "beginner_rate": 2000,
+        "intermediate_rate": 3000,
+        "advanced_rate": 4000
+    },
+    {
+        "name": "Electrician",
+        "default_rate": 1000,
+        "beginner_rate": 2000,
+        "intermediate_rate": 3000,
+        "advanced_rate": 4000
+    },
+    {
+        "name": "Carpenter",
+        "default_rate": 1000,
+        "beginner_rate": 2000,
+        "intermediate_rate": 3000,
+        "advanced_rate": 4000
+    },
+    {
+        "name": "Helper",
+        "default_rate": 1000,
+        "beginner_rate": 2000,
+        "intermediate_rate": 3000,
+        "advanced_rate": 4000
+    },
+    {
+        "name": "Scaffolder",
+        "default_rate": 1000,
+        "beginner_rate": 2000,
+        "intermediate_rate": 3000,
+        "advanced_rate": 4000
+    },
+    {
+        "name": "Mason",
+        "default_rate": 1000,
+        "beginner_rate": 2000,
+        "intermediate_rate": 3000,
+        "advanced_rate": 4000
+    }
+]

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opt_verification_types",
+  "info": {
+    "name": "opt_verification_types"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type_name": {
+      "type": "string"
+    }
+  }
+}

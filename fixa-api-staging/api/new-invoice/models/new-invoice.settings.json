@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_invoices",
+  "info": {
+    "name": "new_invoice",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount_due": {
+      "type": "float"
+    },
+    "date": {
+      "type": "date"
+    },
+    "expected_amount": {
+      "type": "float"
+    },
+    "note": {
+      "type": "richtext"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "unpaid",
+        "draft",
+        "paid_partially"
+      ]
+    },
+    "certificate_url": {
+      "type": "string"
+    },
+    "ebm_url": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "certificate_name": {
+      "type": "string"
+    },
+    "ebm_name": {
+      "type": "string"
+    },
+    "outstanding_amount": {
+      "type": "float"
+    },
+    "amount_paid": {
+      "type": "float"
+    },
+    "history": {
+      "type": "json"
+    }
+  }
+}

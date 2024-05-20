@@ -1,0 +1,116 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/attendance-pages",
+      "handler": "attendance-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendance-page/aggregates",
+      "handler": "attendance-page.getAggregates",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendance-pages/app",
+      "handler": "attendance-page.getAttendanceClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendance-pages/new_app",
+      "handler": "attendance-page.getNewAttendanceClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-pages/new_attendance_list",
+      "handler": "attendance-page.getProjectAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-pages/new_app/:id",
+      "handler": "attendance-page.getNewAttendanceDetailsClient",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-pages/user",
+      "handler": "attendance-page.getUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendance-pages/search",
+      "handler": "attendance-page.searchProject",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-pages/count",
+      "handler": "attendance-page.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-pages/:id",
+      "handler": "attendance-page.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendance-pages",
+      "handler": "attendance-page.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/attendance-pages/:id",
+      "handler": "attendance-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/attendance-pages/:id",
+      "handler": "attendance-page.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendances/export",
+      "handler": "attendance-page.exportAttendance",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

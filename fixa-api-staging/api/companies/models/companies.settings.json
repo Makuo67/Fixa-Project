@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "name": "companies",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company_name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "tin_number": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "img_url": {
+      "type": "text"
+    },
+    "is_site_created": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_staff_members_added": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_workforce_added": {
+      "type": "boolean",
+      "default": false
+    },
+    "country": {
+      "model": "countries"
+    },
+    "province": {
+      "model": "province"
+    },
+    "payment_methods": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment-methods.company-payment-methods"
+    },
+    "is_staffing": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

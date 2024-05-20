@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "name": "notifications",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "datetime": {
+      "type": "datetime"
+    },
+    "content": {
+      "type": "string"
+    },
+    "is_clickable": {
+      "type": "boolean"
+    },
+    "seen": {
+      "type": "boolean",
+      "default": false
+    },
+    "query_params": {
+      "type": "json"
+    },
+    "recipient_id": {
+      "type": "integer"
+    },
+    "redirect_url": {
+      "type": "string"
+    }
+  }
+}

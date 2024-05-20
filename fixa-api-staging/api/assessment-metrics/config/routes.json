@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/assessment-metrics",
+      "handler": "assessment-metrics.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/assessment-metrics/count",
+      "handler": "assessment-metrics.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/assessment-metrics/:id",
+      "handler": "assessment-metrics.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/assessment-metrics",
+      "handler": "assessment-metrics.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/assessment-metrics/:id",
+      "handler": "assessment-metrics.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/assessment-metrics/:id",
+      "handler": "assessment-metrics.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

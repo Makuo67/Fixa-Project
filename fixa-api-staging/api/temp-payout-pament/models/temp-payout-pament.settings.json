@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "temp_payout_paments",
+  "info": {
+    "name": "temp_payout_payment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "account_name": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "string",
+      "unique": false,
+      "required": false
+    },
+    "amount": {
+      "type": "biginteger"
+    },
+    "file_name": {
+      "type": "string"
+    },
+    "file_id": {
+      "type": "string"
+    },
+    "is_account_verified": {
+      "type": "enumeration",
+      "enum": [
+        "green",
+        "blue",
+        "red",
+        "nothing"
+      ]
+    },
+    "account_verification_desc": {
+      "type": "string"
+    },
+    "payment_method_id": {
+      "type": "integer"
+    },
+    "payment_method": {
+      "type": "string"
+    },
+    "payment_id": {
+      "type": "integer"
+    },
+    "payee_type": {
+      "type": "string"
+    },
+    "is_account_number_exist": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_account_number_valid": {
+      "type": "boolean",
+      "default": false
+    },
+    "momo_account_name": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_admin_accesses",
+  "info": {
+    "name": "user_admin_access",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "type": "biginteger"
+    },
+    "payment_view": {
+      "type": "boolean",
+      "default": false
+    },
+    "payment_edit": {
+      "type": "boolean",
+      "default": false
+    },
+    "settings_edit": {
+      "type": "boolean",
+      "default": false
+    },
+    "title": {
+      "model": "titles"
+    },
+    "avatar_url": {
+      "type": "text"
+    },
+    "project_view": {
+      "type": "boolean",
+      "default": false
+    },
+    "project_edit": {
+      "type": "boolean",
+      "default": false
+    },
+    "workforce_view": {
+      "type": "boolean",
+      "default": false
+    },
+    "workforce_edit": {
+      "type": "boolean",
+      "default": false
+    },
+    "attendance_view": {
+      "type": "boolean",
+      "default": false
+    },
+    "attendance_edit": {
+      "type": "boolean",
+      "default": false
+    },
+    "attendance_approve": {
+      "type": "boolean",
+      "default": false
+    },
+    "settings_view": {
+      "type": "boolean",
+      "default": false
+    },
+    "user_level_id": {
+      "type": "integer"
+    },
+    "client": {
+      "model": "clients"
+    },
+    "user_access": {
+      "type": "json"
+    },
+    "projects": {
+      "type": "json"
+    }
+  }
+}

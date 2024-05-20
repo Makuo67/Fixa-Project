@@ -1,0 +1,84 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/attendance-details",
+      "handler": "attendance-details.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-details/update-worker-id",
+      "handler": "attendance-details.updateWorkerId",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/attendance-details/mobile",
+      "handler": "attendance-details.getMobileAttendance",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/app/attendance-details/mobile_range",
+      "handler": "attendance-details.getAttendanceForMobileRange",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-details/count",
+      "handler": "attendance-details.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/attendance-details/:id",
+      "handler": "attendance-details.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/attendance-details",
+      "handler": "attendance-details.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/app/attendance-details/half",
+      "handler": "attendance-details.halfShift",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/attendance-details/:id",
+      "handler": "attendance-details.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/attendance-details/:id",
+      "handler": "attendance-details.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

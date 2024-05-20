@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deduction-types",
+      "handler": "deduction-types.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deduction-types/count",
+      "handler": "deduction-types.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deduction-types/:id",
+      "handler": "deduction-types.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deduction-types",
+      "handler": "deduction-types.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/deduction-types/:id",
+      "handler": "deduction-types.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deduction-types/:id",
+      "handler": "deduction-types.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
