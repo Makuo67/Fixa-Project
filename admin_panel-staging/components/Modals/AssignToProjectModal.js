@@ -12,17 +12,11 @@ import { capitalizeAll } from "../../helpers/capitalize";
 
 const { Option } = Select;
 
-// Date range Picker
-const { RangePicker } = DatePicker;
-
 const AssignToProjectModal = (props) => {
   const dispatch = useDispatch();
   const [project_id, set_project_id] = useState(null);
   const [worker_list, setWorker_list] = useState([]);
   const [filtersApplied, setFiltersApplied] = useState(false);
-  // Date and Shift Type
-  const [dateRange, setDateRange] = useState([]);
-  const [shiftType, setShiftType] = useState(null);
 
   const projects = useSelector((state) => state.project.list);
   var workersLength = 0;
@@ -69,17 +63,9 @@ const AssignToProjectModal = (props) => {
     props.hideModal();
   };
   const handleOk = () => {
-    if (dateRange.length < 2 || !shiftType) {
-      openNotificationError();
-      return;
-    }
-    // Adding date range and shift type
     const scheduleData = {
       worker_ids,
       project_id,
-      start_date: dateRange[0].format("YYYY-MM-DD"),
-      end_date: dateRange[1].format("YYYY-MM-DD"),
-      shift_type: shiftType,
     };
 
     dispatch(assignToProject(scheduleData)).then((data) => {
@@ -106,15 +92,6 @@ const AssignToProjectModal = (props) => {
     set_project_id(value);
   };
 
-  // Addition to Handle Date change and Shift Change
-  const handleDateRangeChange = (dates) => {
-    setDateRange(dates);
-  };
-
-  const handleShiftTypeChange = (value) => {
-    setShiftType(value);
-  };
-
   useEffect(() => {
     dispatch(getAllProjects());
   }, []);
@@ -139,13 +116,9 @@ const AssignToProjectModal = (props) => {
           </Button>
           <Button
             type="primary"
-            className={`${
-              project_id && dateRange.length === 2 && shiftType
-                ? "primaryBtn"
-                : "primaryBtnDisabled"
-            }`}
+            className={`${project_id ? "primaryBtn" : "primaryBtnDisabled"}`}
             onClick={handleOk}
-            disabled={!project_id || dateRange.length !== 2 || !shiftType}
+            disabled={!project_id}
           >
             Assign
           </Button>
@@ -170,21 +143,6 @@ const AssignToProjectModal = (props) => {
             </Option>
           );
         })}
-      </Select>
-
-      <RangePicker
-        style={{ width: "100%", marginTop: "16px" }}
-        onChange={handleDateRangeChange}
-      />
-      <Select
-        allowClear
-        placeholder="Select shift type"
-        style={{ width: "100%", marginTop: "16px" }}
-        size="large"
-        onChange={handleShiftTypeChange}
-      >
-        <Option value="day">Day</Option>
-        <Option value="night">Night</Option>
       </Select>
     </Modal>
   );

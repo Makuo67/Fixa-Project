@@ -525,6 +525,16 @@
           "name": {
             "type": "string"
           },
+          "project_id": {
+            "type": "integer"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "shift_type": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -534,6 +544,16 @@
       "NewShifts": {
         "properties": {
           "name": {
+            "type": "string"
+          },
+          "project_id": {
+            "type": "integer"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "shift_type": {
             "type": "string"
           },
           "published_at": {

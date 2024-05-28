@@ -30,6 +30,22 @@ export const getAllWorkforce =
       return Promise.reject(err);
     }
   };
+// Getting worker names
+export const getWorkersWithNames = () => async (dispatch) => {
+  dispatch({ type: WORKFORCE_ALL_LOADING });
+  try {
+    const token = await retriveAuthTokenFromLocalStorage();
+    const res = await workforceService.getWorkersWithNames(token);
+    dispatch({
+      type: WORKFORCE_ALL_REQUESTED,
+      payload: res.data,
+    });
+    return Promise.resolve(res.data);
+  } catch (err) {
+    dispatch({ type: WORKFORCE_ALL_ERROR, payload: err.response?.status });
+    return Promise.reject(err);
+  }
+};
 export const getWorkforceList = (filters) => async (dispatch) => {
   dispatch({ type: WORKFORCE_ALL_LOADING });
   try {

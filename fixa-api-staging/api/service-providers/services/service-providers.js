@@ -1,8 +1,8 @@
 "use strict";
 const axios = require("axios");
 const _ = require("underscore");
-const moment = require('moment');
-const Validator = require('validatorjs');
+const moment = require("moment");
+const Validator = require("validatorjs");
 const utils = require("../../../config/functions/utils");
 const MOMO_URL_DISB = process.env.MOMO_URL_DISB;
 const STASH_URL = process.env.AFRICA_S_TALKING_AT_STASH_BALANCE_URL;
@@ -10,12 +10,18 @@ const AFRICA_S_TALKING_API_KEY = process.env.AFRICA_S_TALKING_API_KEY;
 const MOMO_PRIMARY_KEY = process.env.MOMO_PRIMARY_KEY;
 const MOMO_X_TARGET_ENV = process.env.MOMO_X_TARGET_ENV;
 const { sendSMS } = require("../../sms/services/sms");
-const { createUpdateAttendance } = require("../../new-attendance/services/new-attendance");
-const { getProjectList } = require("../../projects/controllers/projects")
+const {
+  createUpdateAttendance,
+} = require("../../new-attendance/services/new-attendance");
+const { getProjectList } = require("../../projects/controllers/projects");
 const { getMomoToken } = require("../../../config/functions/momotoken");
-const { getRssbKycs } = require("../../../config/functions/third_part_api_functions")
+const {
+  getRssbKycs,
+} = require("../../../config/functions/third_part_api_functions");
 const { getWorkerDays } = require("../../workforce/services/workforce");
-const { accountVerification } = require("../../payment-methods/services/payment-methods");
+const {
+  accountVerification,
+} = require("../../payment-methods/services/payment-methods");
 
 /**
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-services)
@@ -27,76 +33,119 @@ module.exports = {
     let response;
     try {
       // check if country is available
-      let country = await strapi.query("countries").findOne({ id: data.country });
+      let country = await strapi
+        .query("countries")
+        .findOne({ id: data.country });
       if (country) {
-        if (country.alpha_2_code.toString().toLowerCase() === 'rw') {
+        if (country.alpha_2_code.toString().toLowerCase() === "rw") {
           if (utils.nidValidation(data.nid_number)) {
             let is_rssb_verified = false;
-            if (!data.phone_numbers_masked || data.phone_numbers_masked.length === 0) {
-              const responseRsbInformation = await module.exports.getWorkerInfoFromRssb(data.nid_number);
-              if (responseRsbInformation.status === 'success') {
-                let new_phone_numbers_masked = responseRsbInformation.data.phoneNumbers.map((itemx) => itemx.phoneNumber);
-                data.phone_numbers_masked = ["[" + new_phone_numbers_masked.join(', ') + "]"];
-                data.is_rssb_verified = 'green';
+            if (
+              !data.phone_numbers_masked ||
+              data.phone_numbers_masked.length === 0
+            ) {
+              const responseRsbInformation =
+                await module.exports.getWorkerInfoFromRssb(data.nid_number);
+              if (responseRsbInformation.status === "success") {
+                let new_phone_numbers_masked =
+                  responseRsbInformation.data.phoneNumbers.map(
+                    (itemx) => itemx.phoneNumber
+                  );
+                data.phone_numbers_masked = [
+                  "[" + new_phone_numbers_masked.join(", ") + "]",
+                ];
+                data.is_rssb_verified = "green";
                 is_rssb_verified = true;
               } else {
-                data.default_phone_number = '';
-                data.is_rssb_verified = 'nothing';
+                data.default_phone_number = "";
+                data.is_rssb_verified = "nothing";
                 is_rssb_verified = false;
               }
             } else {
-              data.phone_numbers_masked = ["[" + data.phone_numbers_masked.join(', ') + "]"];
+              data.phone_numbers_masked = [
+                "[" + data.phone_numbers_masked.join(", ") + "]",
+              ];
             }
-            const momo_verification = await accountVerification("MTN", { account_number: data.default_phone_number, account_name: { first_name: data.first_name, last_name: data.last_name }, account_belong_to: "MTN" }, is_rssb_verified);
+            const momo_verification = await accountVerification(
+              "MTN",
+              {
+                account_number: data.default_phone_number,
+                account_name: {
+                  first_name: data.first_name,
+                  last_name: data.last_name,
+                },
+                account_belong_to: "MTN",
+              },
+              is_rssb_verified
+            );
             if (momo_verification.status) {
-              data.is_momo_verified_and_rssb = momo_verification.data.verification_result_boolean;
-              data.is_momo_verified_and_rssb_desc = momo_verification.data.verification_result_desc;
+              data.is_momo_verified_and_rssb =
+                momo_verification.data.verification_result_boolean;
+              data.is_momo_verified_and_rssb_desc =
+                momo_verification.data.verification_result_desc;
             }
             data.phone_number = data.default_phone_number;
             delete data.default_phone_number;
-            let new_worker = await strapi.query("service-providers").create(data, mode);
+            let new_worker = await strapi
+              .query("service-providers")
+              .create(data, mode);
             response = {
-              status: 'success',
+              status: "success",
               data: new_worker,
-              message: ""
-            }
+              message: "",
+            };
           } else {
             response = {
-              status: 'failed',
+              status: "failed",
               data: {},
-              message: "ID must be 16 integers"
-            }
+              message: "ID must be 16 integers",
+            };
           }
         } else {
-          data.is_rssb_verified = 'nothing';
-          const momo_verification = await accountVerification("MTN", { account_number: data.default_phone_number, account_name: { first_name: data.first_name, last_name: data.last_name }, account_belong_to: "MTN" }, false);
+          data.is_rssb_verified = "nothing";
+          const momo_verification = await accountVerification(
+            "MTN",
+            {
+              account_number: data.default_phone_number,
+              account_name: {
+                first_name: data.first_name,
+                last_name: data.last_name,
+              },
+              account_belong_to: "MTN",
+            },
+            false
+          );
           if (momo_verification.status) {
-            data.is_momo_verified_and_rssb = momo_verification.data.verification_result_boolean;
-            data.is_momo_verified_and_rssb_desc = momo_verification.data.verification_result_desc;
+            data.is_momo_verified_and_rssb =
+              momo_verification.data.verification_result_boolean;
+            data.is_momo_verified_and_rssb_desc =
+              momo_verification.data.verification_result_desc;
           }
           data.phone_number = data.default_phone_number;
           delete data.default_phone_number;
-          let new_worker = await strapi.query("service-providers").create(data, mode);
+          let new_worker = await strapi
+            .query("service-providers")
+            .create(data, mode);
           response = {
-            status: 'success',
+            status: "success",
             data: new_worker,
-            message: ""
-          }
+            message: "",
+          };
         }
       } else {
         response = {
-          status: 'failed',
+          status: "failed",
           data: {},
-          message: "country not found"
-        }
+          message: "country not found",
+        };
       }
     } catch (error) {
-      console.log('error in workerRegistration ', error.message);
+      console.log("error in workerRegistration ", error.message);
       response = {
-        status: 'failed',
+        status: "failed",
         data: {},
-        message: error.message
-      }
+        message: error.message,
+      };
     }
     return response;
   },
@@ -107,35 +156,41 @@ module.exports = {
         const responseKycs = await getRssbKycs(nid);
         if (responseKycs.status) {
           response = {
-            status: 'success',
+            status: "success",
             data: responseKycs.data,
-            message: ""
+            message: "",
           };
         } else {
           response = {
-            status: 'failed',
+            status: "failed",
             data: {},
-            message: responseKycs.message
-          }
+            message: responseKycs.message,
+          };
         }
       } else {
         response = {
-          status: 'failed',
+          status: "failed",
           data: {},
-          message: "National Id not valid"
-        }
+          message: "National Id not valid",
+        };
       }
     } catch (error) {
-      console.log('Error in getWorkerInfoFromRssb() ', error.message);
+      console.log("Error in getWorkerInfoFromRssb() ", error.message);
       response = {
-        status: 'failed',
+        status: "failed",
         data: {},
-        message: error.message
-      }
+        message: error.message,
+      };
     }
     return response;
   },
-  async saveBulkTemporaryWorkerRegistration(data, file_name, file_id, services, user_id) {
+  async saveBulkTemporaryWorkerRegistration(
+    data,
+    file_name,
+    file_id,
+    services,
+    user_id
+  ) {
     try {
       const knex = strapi.connections.default;
 
@@ -145,11 +200,13 @@ module.exports = {
         services = services_query[0];
       }
 
-      const workers_raw = "SELECT nid_number,phone_number FROM service_providers";
+      const workers_raw =
+        "SELECT nid_number,phone_number FROM service_providers";
       const workers_query = await knex.raw(workers_raw);
       const workers = workers_query[0];
 
-      const temp_workers_raw = "SELECT id,phone_number,nid_number FROM temp_workers_tables";
+      const temp_workers_raw =
+        "SELECT id,phone_number,nid_number FROM temp_workers_tables";
       const temp_workers_query = await knex.raw(temp_workers_raw);
       const temp_workers = temp_workers_query[0];
 
@@ -158,12 +215,21 @@ module.exports = {
         const workerTemporaryInformation = {};
         const item = data[index];
         total_temp_workers = total_temp_workers + 1;
-        if (item.phoneNumber && utils.validatePhoneNumber(item.phoneNumber).status) {
-          const workerPhoneNumberExist = workers.find((i) => i.phone_number === utils.validatePhoneNumber(item.phoneNumber).phoneNumber);
-          workerTemporaryInformation.phone_number = utils.validatePhoneNumber(item.phoneNumber).phoneNumber;
+        if (
+          item.phoneNumber &&
+          utils.validatePhoneNumber(item.phoneNumber).status
+        ) {
+          const workerPhoneNumberExist = workers.find(
+            (i) =>
+              i.phone_number ===
+              utils.validatePhoneNumber(item.phoneNumber).phoneNumber
+          );
+          workerTemporaryInformation.phone_number = utils.validatePhoneNumber(
+            item.phoneNumber
+          ).phoneNumber;
           workerTemporaryInformation.phone_number_verified = true;
           if (workerPhoneNumberExist) {
-            workerTemporaryInformation.phone_number_exist = true
+            workerTemporaryInformation.phone_number_exist = true;
           } else {
             workerTemporaryInformation.phone_number_exist = false;
           }
@@ -178,7 +244,10 @@ module.exports = {
         } else {
           workerTemporaryInformation.valid_nid = true; //just to allow the false NIDA
         }
-        const workerIdnumberExist = workers.find((i) => i.nid_number === item.idNumber && utils.nidValidation(item.idNumber));
+        const workerIdnumberExist = workers.find(
+          (i) =>
+            i.nid_number === item.idNumber && utils.nidValidation(item.idNumber)
+        );
         if (workerIdnumberExist) {
           workerTemporaryInformation.nid_exist = true;
         } else {
@@ -221,12 +290,16 @@ module.exports = {
         workerTemporaryInformation.file_name = file_name;
         workerTemporaryInformation.file_id = file_id;
         workerTemporaryInformation.nid_number = item.idNumber;
-        workerTemporaryInformation.is_rssb_verified = 'nothing';
+        workerTemporaryInformation.is_rssb_verified = "nothing";
 
         // check if trade exist and apply validation
         if (item.service) {
           workerTemporaryInformation.service = item.service;
-          const service = services.find((itemService) => itemService.name.toString().toLowerCase() === item.service.toString().toLowerCase());
+          const service = services.find(
+            (itemService) =>
+              itemService.name.toString().toLowerCase() ===
+              item.service.toString().toLowerCase()
+          );
           if (service) {
             workerTemporaryInformation.service_available = true;
             workerTemporaryInformation.service_id = service.id;
@@ -250,20 +323,41 @@ module.exports = {
           workerTemporaryInformation.daily_earnings = 0;
           workerTemporaryInformation.valid_daily_earnings = false;
         }
-        const temp_info_nid = temp_workers.find((i) => i.nid_number === workerTemporaryInformation.nid_number);
-        const temp_info_phone = temp_workers.find((i) => i.phone_number === workerTemporaryInformation.phone_number);
+        const temp_info_nid = temp_workers.find(
+          (i) => i.nid_number === workerTemporaryInformation.nid_number
+        );
+        const temp_info_phone = temp_workers.find(
+          (i) => i.phone_number === workerTemporaryInformation.phone_number
+        );
         if (!temp_info_nid && !temp_info_phone) {
-          await strapi.query("temp-workers-table").create(workerTemporaryInformation);
+          await strapi
+            .query("temp-workers-table")
+            .create(workerTemporaryInformation);
         }
 
-        console.log(total_temp_workers, `temporary-workers-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${file_id}-${user_id} : ${utils.calculatePercentage(total_temp_workers, 0, data.length)}`);
-        utils.eventPublisher(`temporary-workers-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${file_id}-${user_id}`, {
-          entity_id: file_id,
-          status: total_temp_workers,
-        });
+        console.log(
+          total_temp_workers,
+          `temporary-workers-${
+            process.env.PUSHER_ATTENDANCE_CHANNEL
+          }-${file_id}-${user_id} : ${utils.calculatePercentage(
+            total_temp_workers,
+            0,
+            data.length
+          )}`
+        );
+        utils.eventPublisher(
+          `temporary-workers-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${file_id}-${user_id}`,
+          {
+            entity_id: file_id,
+            status: total_temp_workers,
+          }
+        );
       }
     } catch (error) {
-      console.log('Error in saveBulkTemporaryWorkerRegistration()', error.message);
+      console.log(
+        "Error in saveBulkTemporaryWorkerRegistration()",
+        error.message
+      );
     }
   },
 
@@ -286,7 +380,10 @@ module.exports = {
         apiKey: AFRICA_S_TALKING_API_KEY,
       },
     });
-    if (response.data.UserData.balance && response.data.UserData.balance.length > 4) {
+    if (
+      response.data.UserData.balance &&
+      response.data.UserData.balance.length > 4
+    ) {
       balance = response.data.UserData.balance.substring(3);
     }
     return balance;
@@ -327,18 +424,17 @@ module.exports = {
     for (let index = 0; index < assigned_workers_query[0].length; index++) {
       const item = assigned_workers_query[0][index];
       // if(item['first_name'] && item['last_name']){
-      item['first_name'] = item['first_name'] ? item['first_name'] : 'xxx';
-      item['last_name'] = item['last_name'] ? item['last_name'] : 'xxx';
-      // } 
-      let service = `[${item['services']}]`;
-      let rate = `[${item['rates']}]`;
+      item["first_name"] = item["first_name"] ? item["first_name"] : "xxx";
+      item["last_name"] = item["last_name"] ? item["last_name"] : "xxx";
+      // }
+      let service = `[${item["services"]}]`;
+      let rate = `[${item["rates"]}]`;
 
-      item['services'] = service;
-      item['is_verified'] = "false";
-      item['rates'] = rate;
+      item["services"] = service;
+      item["is_verified"] = "false";
+      item["rates"] = rate;
       new_assigned_workers.push(item);
     }
-
 
     return new_assigned_workers;
   },
@@ -379,7 +475,6 @@ module.exports = {
         rates: `[${getWorkerRateInfo(id, worker_rates).toString()}]`,
       });
     }
-
 
     return new_assigned_workers;
   },
@@ -451,13 +546,17 @@ module.exports = {
               .create(entryAssignedAttendance)
               .then(async (assigned) => {
                 // filtering beginer rates from project_rates
-                let rates = project_rates.filter((item) => item.service_id === workerData.services);
+                let rates = project_rates.filter(
+                  (item) => item.service_id === workerData.services
+                );
                 const entryWorkerRates = {
                   assigned_worker_id: assigned.id,
                   service_id: workerData.services,
                   rate_type: workerData.daily_rate ? "negotiated" : "standard",
                   // daily rate from project service
-                  value: workerData.daily_rate ? workerData.daily_rate : rates[0].beginner_rate,
+                  value: workerData.daily_rate
+                    ? workerData.daily_rate
+                    : rates[0].beginner_rate,
                 };
                 await strapi
                   .query("worker-rates")
@@ -483,7 +582,7 @@ module.exports = {
             date,
             supervisor_id,
             shift_id,
-            project_rates
+            project_rates,
           ])
           .then((resp) => {
             // console.log("what is this again", mode, resp);
@@ -502,8 +601,21 @@ module.exports = {
       }
     }
   },
-  async saveWorkerAttendance(workerData, project_id, date, supervisor_id, shift_id, project_rates) {
-    let worker_response = { status: "failed", message: "", data: [], error: "", meta: "" };
+  async saveWorkerAttendance(
+    workerData,
+    project_id,
+    date,
+    supervisor_id,
+    shift_id,
+    project_rates
+  ) {
+    let worker_response = {
+      status: "failed",
+      message: "",
+      data: [],
+      error: "",
+      meta: "",
+    };
     try {
       const rules = {
         nid_number: "required|string",
@@ -516,7 +628,9 @@ module.exports = {
       const validation = new Validator(workerData, rules);
       if (validation.passes()) {
         if (!workerData.country) {
-          const rwanda = await strapi.query("countries").findOne({ alpha_2_code: "RW" });
+          const rwanda = await strapi
+            .query("countries")
+            .findOne({ alpha_2_code: "RW" });
           workerData.country = rwanda.id;
         }
         const getPhone = await phoneExists(workerData.phone_number);
@@ -540,19 +654,46 @@ module.exports = {
               worker_existing_id = 0;
             }
             if (parseInt(worker_existing_id) >= 1) {
-              const worker_project_assign_exist = await strapi.query("new-assigned-workers").findOne({ worker_id: worker_existing_id, project_id: project_id });
+              const worker_project_assign_exist = await strapi
+                .query("new-assigned-workers")
+                .findOne({
+                  worker_id: worker_existing_id,
+                  project_id: project_id,
+                });
               if (worker_project_assign_exist) {
-                let attendancebody = { project_id: project_id, date: date, supervisor_id: supervisor_id, shift_id: shift_id, workers_assigned: [worker_project_assign_exist.id] };
+                let attendancebody = {
+                  project_id: project_id,
+                  date: date,
+                  supervisor_id: supervisor_id,
+                  shift_id: shift_id,
+                  workers_assigned: [worker_project_assign_exist.id],
+                };
                 worker_response.status = "success";
-                worker_response.message = "The worker you are trying to add while recording this attendance is already assigned to this project";
+                worker_response.message =
+                  "The worker you are trying to add while recording this attendance is already assigned to this project";
                 createUpdateAttendance(attendancebody, "attendance");
               } else {
-                const entryAssignedAttendance = { worker_id: worker_existing_id, project_id: project_id, is_active: false };
-                const assigned_id = await assignWorkerAttendance(entryAssignedAttendance, project_rates, workerData);
+                const entryAssignedAttendance = {
+                  worker_id: worker_existing_id,
+                  project_id: project_id,
+                  is_active: false,
+                };
+                const assigned_id = await assignWorkerAttendance(
+                  entryAssignedAttendance,
+                  project_rates,
+                  workerData
+                );
                 if (assigned_id) {
-                  let attendancebody = { project_id: project_id, date: date, supervisor_id: supervisor_id, shift_id: shift_id, workers_assigned: [assigned_id] };
+                  let attendancebody = {
+                    project_id: project_id,
+                    date: date,
+                    supervisor_id: supervisor_id,
+                    shift_id: shift_id,
+                    workers_assigned: [assigned_id],
+                  };
                   worker_response.status = "success";
-                  worker_response.message = "The worker you are trying to add while recording this attendance exist but we will assign him/her to this project.";
+                  worker_response.message =
+                    "The worker you are trying to add while recording this attendance exist but we will assign him/her to this project.";
                   createUpdateAttendance(attendancebody, "attendance");
                 }
               }
@@ -561,39 +702,76 @@ module.exports = {
             }
           } else {
             let worker_payment_methods = [];
-            workerData.is_rssb_verified = 'green';
-            const momo_verification = await accountVerification("MTN", { account_number: workerData.phone_number, account_name: { first_name: workerData.first_name, last_name: workerData.last_name }, account_belong_to: "MTN" }, false); // I have any choice here. I can't verify this phone number at this time because the NID information are not available.
+            workerData.is_rssb_verified = "green";
+            const momo_verification = await accountVerification(
+              "MTN",
+              {
+                account_number: workerData.phone_number,
+                account_name: {
+                  first_name: workerData.first_name,
+                  last_name: workerData.last_name,
+                },
+                account_belong_to: "MTN",
+              },
+              false
+            ); // I have any choice here. I can't verify this phone number at this time because the NID information are not available.
             if (momo_verification.status) {
-              workerData.is_momo_verified_and_rssb = momo_verification.data.verification_result_boolean;
-              workerData.is_momo_verified_and_rssb_desc = momo_verification.data.verification_result_desc;
+              workerData.is_momo_verified_and_rssb =
+                momo_verification.data.verification_result_boolean;
+              workerData.is_momo_verified_and_rssb_desc =
+                momo_verification.data.verification_result_desc;
             }
-            const entity = await strapi.query("service-providers").create(workerData, "saveWorker", [project_id, date, supervisor_id, shift_id, project_rates]);
-            const payment_methods = await strapi.query("payment-methods").findOne({ code_name: "mtn" });
-            if (utils.phoneNumberValidation(workerData.phone_number) && payment_methods) {
+            const entity = await strapi
+              .query("service-providers")
+              .create(workerData, "saveWorker", [
+                project_id,
+                date,
+                supervisor_id,
+                shift_id,
+                project_rates,
+              ]);
+            const payment_methods = await strapi
+              .query("payment-methods")
+              .findOne({ code_name: "mtn" });
+            if (
+              utils.phoneNumberValidation(workerData.phone_number) &&
+              payment_methods
+            ) {
               worker_payment_methods.push({
                 worker_id: entity.id,
                 is_verified: workerData.is_momo_verified_and_rssb,
                 provider: "MTN",
-                account_verified_desc: workerData.is_momo_verified_and_rssb_desc,
+                account_verified_desc:
+                  workerData.is_momo_verified_and_rssb_desc,
                 payment_method: payment_methods.id,
                 account_number: workerData.phone_number,
-                account_name: momo_verification.data.verification_result_account_name,
-                is_active: true
+                account_name:
+                  momo_verification.data.verification_result_account_name,
+                is_active: true,
               });
-              await strapi.query("service-providers").update({ id: entity.id }, { payment_methods: worker_payment_methods })
+              await strapi
+                .query("service-providers")
+                .update(
+                  { id: entity.id },
+                  { payment_methods: worker_payment_methods }
+                );
             }
             if (entity) {
               worker_response.status = "success";
-              worker_response.message = "Worker successfully created! We will assign and do attendance as well";
+              worker_response.message =
+                "Worker successfully created! We will assign and do attendance as well";
             }
           }
         } else {
-          worker_response.message = "The worker you are trying to add while recording this attendance, the service can't be found, we can't do anything to this worker"
+          worker_response.message =
+            "The worker you are trying to add while recording this attendance, the service can't be found, we can't do anything to this worker";
         }
       } else {
         worker_response = {
           status: "failed",
-          message: `The worker you are trying to add while recording this attendance doesn't have all the requirement to be registered in the system ${utils.makeStringOfErrorsFromValidation(validation.errors.all())}`,
+          message: `The worker you are trying to add while recording this attendance doesn't have all the requirement to be registered in the system ${utils.makeStringOfErrorsFromValidation(
+            validation.errors.all()
+          )}`,
           data: validation.data,
           error: validation.failedRules,
           meta: validation.rules,
@@ -612,7 +790,9 @@ module.exports = {
     let filtered_worker_services = null;
     if ((worker_id, project_id)) {
       const knex = strapi.connections.default;
-      let worker_info = await strapi.query("service-providers").findOne({ id: worker_id });
+      let worker_info = await strapi
+        .query("service-providers")
+        .findOne({ id: worker_id });
       let needed_info = {
         first_name: worker_info.first_name,
         last_name: worker_info.last_name,
@@ -626,8 +806,8 @@ module.exports = {
         sector: worker_info.sector,
         created_at: worker_info.created_at,
         is_verified: worker_info.is_verified,
-        is_active: null
-      }
+        is_active: null,
+      };
 
       if (needed_info) {
         let workforce = await strapi.query("workforce").findOne({ worker_id });
@@ -640,43 +820,85 @@ module.exports = {
       }
 
       let all_services = await strapi.query("services").find();
-      let all_assigned = await strapi.query("new-assigned-workers").find({ worker_id, project_id, _sort: 'created_at:DESC' });
-      let current_assigned = await strapi.query("new-assigned-workers").findOne({ worker_id, project_id, _sort: 'created_at:DESC' });
+      let all_assigned = await strapi
+        .query("new-assigned-workers")
+        .find({ worker_id, project_id, _sort: "created_at:DESC" });
+      let current_assigned = await strapi
+        .query("new-assigned-workers")
+        .findOne({ worker_id, project_id, _sort: "created_at:DESC" });
       if (current_assigned && all_assigned && all_assigned.length >= 1) {
-        let all_assigned_ids = _.map(all_assigned, all => all.id);
-        let all_rates = await strapi.query("worker-rates").find({ assigned_worker_id: all_assigned_ids, _sort: 'created_at:DESC' });
+        let all_assigned_ids = _.map(all_assigned, (all) => all.id);
+        let all_rates = await strapi.query("worker-rates").find({
+          assigned_worker_id: all_assigned_ids,
+          _sort: "created_at:DESC",
+        });
         if (all_rates) {
           _.map(all_rates, function (all) {
-            all.service_name = _.find(all_services, s => s.id === all.service_id) ? _.find(all_services, s => s.id === all.service_id).name : "";
+            all.service_name = _.find(
+              all_services,
+              (s) => s.id === all.service_id
+            )
+              ? _.find(all_services, (s) => s.id === all.service_id).name
+              : "";
             return all;
           });
         } else {
-          console.log("INFO: no worker_rates found with assigned_worker_id::" + all_assigned_ids);
-          message.push("INFO: no worker_rates found with assigned_worker_id::" + all_assigned_ids);
+          console.log(
+            "INFO: no worker_rates found with assigned_worker_id::" +
+              all_assigned_ids
+          );
+          message.push(
+            "INFO: no worker_rates found with assigned_worker_id::" +
+              all_assigned_ids
+          );
         }
-        let current_rate = await strapi.query("worker-rates").findOne({ assigned_worker_id: current_assigned.id, _sort: 'created_at:DESC' });
+        let current_rate = await strapi.query("worker-rates").findOne({
+          assigned_worker_id: current_assigned.id,
+          _sort: "created_at:DESC",
+        });
         if (current_rate) {
-          current_rate.service_name = _.find(all_services, s => s.id === current_rate.service_id) ? _.find(all_services, s => s.id === current_rate.service_id).name : "";
+          current_rate.service_name = _.find(
+            all_services,
+            (s) => s.id === current_rate.service_id
+          )
+            ? _.find(all_services, (s) => s.id === current_rate.service_id).name
+            : "";
         }
 
         worker_services = { current: current_rate, all: all_rates };
 
-        let all_services_worker_used = _.map(all_rates, all => all.service_id);
+        let all_services_worker_used = _.map(
+          all_rates,
+          (all) => all.service_id
+        );
         let uniqueService = [...new Set(all_services_worker_used)];
         filtered_worker_services = _.map(uniqueService, (all) => {
-          let service_name = _.find(all_services, (s) => { return s.id === all; }) ? _.find(all_services, (s) => { return s.id === all; }).name : "";
+          let service_name = _.find(all_services, (s) => {
+            return s.id === all;
+          })
+            ? _.find(all_services, (s) => {
+                return s.id === all;
+              }).name
+            : "";
           return { service_id: all, name: service_name };
         });
-
       } else {
-        console.log(`INFO: no new-assigned-workers found with worker_id::${worker_id} and project_id::${project_id}`);
-        message.push(`INFO: no new-assigned-workers found with worker_id::${worker_id} and project_id::${project_id}`);
+        console.log(
+          `INFO: no new-assigned-workers found with worker_id::${worker_id} and project_id::${project_id}`
+        );
+        message.push(
+          `INFO: no new-assigned-workers found with worker_id::${worker_id} and project_id::${project_id}`
+        );
       }
 
       // get qualification and certificates
-      var sql_certificates_raw = "SELECT * FROM components_education_educations WHERE components_education_educations.worker_id=" + worker_id;
+      var sql_certificates_raw =
+        "SELECT * FROM components_education_educations WHERE components_education_educations.worker_id=" +
+        worker_id;
       // next of kin
-      var sql_next_of_kin_raw = "SELECT * FROM components_next_of_kin_next_of_kins WHERE components_next_of_kin_next_of_kins.worker_id=" + worker_id;
+      var sql_next_of_kin_raw =
+        "SELECT * FROM components_next_of_kin_next_of_kins WHERE components_next_of_kin_next_of_kins.worker_id=" +
+        worker_id;
 
       if (worker_id) {
         workers_assessments_results = await getAssessmentResult(worker_id);
@@ -689,13 +911,28 @@ module.exports = {
       let last_attendance_data = null;
       let attendance_worker = null;
       if (worker_services && needed_info) {
-        let assigned_worker_info = await strapi.query("new-assigned-workers").findOne({ worker_id: worker_id, project_id: project_id, _sort: 'created_at:DESC' });
+        let assigned_worker_info = await strapi
+          .query("new-assigned-workers")
+          .findOne({
+            worker_id: worker_id,
+            project_id: project_id,
+            _sort: "created_at:DESC",
+          });
         if (assigned_worker_info) {
-          last_attendance_data = await strapi.query("attendance-details").findOne({ assigned_worker_id: assigned_worker_info.id, _sort: 'created_at:DESC' });
+          last_attendance_data = await strapi
+            .query("attendance-details")
+            .findOne({
+              assigned_worker_id: assigned_worker_info.id,
+              _sort: "created_at:DESC",
+            });
           if (last_attendance_data) {
-            attendance_worker = await strapi.query("new-attendance").findOne({ id: last_attendance_data.attendance_id });
+            attendance_worker = await strapi
+              .query("new-attendance")
+              .findOne({ id: last_attendance_data.attendance_id });
           } else {
-            console.log(`INFO: we can't get attendance-details with assigned_worker_id:: ${assigned_worker_info.id}`);
+            console.log(
+              `INFO: we can't get attendance-details with assigned_worker_id:: ${assigned_worker_info.id}`
+            );
           }
           worker = {
             worker_information: {
@@ -709,7 +946,9 @@ module.exports = {
                 is_worker_active: needed_info.is_active,
               },
               assessments: workers_assessments_results,
-              last_attendance: attendance_worker ? attendance_worker.date : null,
+              last_attendance: attendance_worker
+                ? attendance_worker.date
+                : null,
               date_onboarded: needed_info.created_at,
             },
             worker_details: {
@@ -719,8 +958,12 @@ module.exports = {
             },
           };
         } else {
-          console.log(`INFO: we can't get new-assigned-workers with worker_id:: ${worker_id} AND project_id:: ${project_id}`);
-          message.push(`INFO: we can't get new-assigned-workers with worker_id:: ${worker_id} AND project_id:: ${project_id}`);
+          console.log(
+            `INFO: we can't get new-assigned-workers with worker_id:: ${worker_id} AND project_id:: ${project_id}`
+          );
+          message.push(
+            `INFO: we can't get new-assigned-workers with worker_id:: ${worker_id} AND project_id:: ${project_id}`
+          );
         }
       }
       if (message.length != 0) {
@@ -728,7 +971,6 @@ module.exports = {
       } else {
         return { status: "success", message: message, data: worker };
       }
-
     }
   },
   // get worker-info on Web by id
@@ -739,17 +981,29 @@ module.exports = {
       let worker_services = null;
       let attendance_worker = null;
       if (worker_id) {
-        const work_force = await strapi.query("workforce").findOne({ worker_id });
+        const work_force = await strapi
+          .query("workforce")
+          .findOne({ worker_id });
         const passed_object = { state: { user: user_id } };
         const projects = await getProjectList(passed_object);
         const all_services = await strapi.query("services").find();
-        const all_assigned = await strapi.query("new-assigned-workers").find({ worker_id, _sort: 'created_at:DESC' });
+        const all_assigned = await strapi
+          .query("new-assigned-workers")
+          .find({ worker_id, _sort: "created_at:DESC" });
         if (all_assigned && all_assigned.length >= 1) {
-          const all_assigned_ids = _.map(all_assigned, (all) => { return all.id; });
-          const all_rates = await strapi.query("worker-rates").find({ assigned_worker_id: all_assigned_ids, _sort: 'created_at:DESC' });
+          const all_assigned_ids = _.map(all_assigned, (all) => {
+            return all.id;
+          });
+          const all_rates = await strapi.query("worker-rates").find({
+            assigned_worker_id: all_assigned_ids,
+            _sort: "created_at:DESC",
+          });
           if (all_rates) {
             _.map(all_rates, function (all) {
-              const service = _.find(all_services, s => parseInt(s.id) === parseInt(all.service_id));
+              const service = _.find(
+                all_services,
+                (s) => parseInt(s.id) === parseInt(all.service_id)
+              );
               if (service) {
                 all.service_name = service.name;
               } else {
@@ -760,7 +1014,10 @@ module.exports = {
           }
           const current_service = _.first(all_rates);
           const others_services = _.filter(all_rates, (s) => {
-            return (s.service_id != current_service.service_id) || (s.value != current_service.value);
+            return (
+              s.service_id != current_service.service_id ||
+              s.value != current_service.value
+            );
           });
           if (work_force && work_force.assigned_worker_id && current_service) {
             current_service.assigned_worker_id = work_force.assigned_worker_id;
@@ -768,14 +1025,25 @@ module.exports = {
           worker_services = { current: current_service, all: others_services };
         }
         if (worker_services && worker_services.current) {
-          const last_attendance = await strapi.query("attendance-details").findOne({ assigned_worker_id: worker_services.current.assigned_worker_id, _sort: 'created_at:DESC' });
-          attendance_worker = last_attendance ? await strapi.query("new-attendance").findOne({ id: last_attendance.attendance_id }) : null;
+          const last_attendance = await strapi
+            .query("attendance-details")
+            .findOne({
+              assigned_worker_id: worker_services.current.assigned_worker_id,
+              _sort: "created_at:DESC",
+            });
+          attendance_worker = last_attendance
+            ? await strapi
+                .query("new-attendance")
+                .findOne({ id: last_attendance.attendance_id })
+            : null;
         }
 
         const knex = strapi.connections.default;
         const sql_certificates_raw = `SELECT * FROM components_education_educations WHERE components_education_educations.worker_id=${worker_id}`;
         const sql_next_of_kin_raw = `SELECT * FROM components_next_of_kin_next_of_kins WHERE components_next_of_kin_next_of_kins.worker_id=${worker_id}`;
-        const worker_info = await strapi.query("service-providers").findOne({ id: worker_id });
+        const worker_info = await strapi
+          .query("service-providers")
+          .findOne({ id: worker_id });
 
         if (worker_id) {
           workers_assessments_results = await getAssessmentResult(worker_id);
@@ -814,7 +1082,14 @@ module.exports = {
               assessments: workers_assessments_results,
               last_attendance: {
                 date: attendance_worker ? attendance_worker.date : null,
-                project_name: attendance_worker ? _.find(projects, p => parseInt(p.id) === parseInt(attendance_worker.project_id)).name : null
+                project_name: attendance_worker
+                  ? _.find(
+                      projects,
+                      (p) =>
+                        parseInt(p.id) ===
+                        parseInt(attendance_worker.project_id)
+                    ).name
+                  : null,
               },
               date_onboarded: worker_info.created_at,
             },
@@ -837,62 +1112,176 @@ module.exports = {
       let total_workers_assigned = 0;
       for (let index = 0; index < worker_ids.length; index++) {
         if (index === 0) {
-          console.log("ASSIGNING: ", total_workers_assigned, `workforce-assigning-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}: ${utils.calculatePercentage(total_workers_assigned, 0, worker_ids.length)}`);
-          utils.eventPublisher(`workforce-assigning-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}`, {
-            entity_id: 'workforce',
-            action: "Assigning workers in progress",
-            status: utils.calculatePercentage(total_workers_assigned, 0, worker_ids.length),
-            current: total_workers_assigned,
-            total: worker_ids.length,
-          });
+          console.log(
+            "ASSIGNING: ",
+            total_workers_assigned,
+            `workforce-assigning-status-${
+              process.env.PUSHER_ATTENDANCE_CHANNEL
+            }-${utils.replaceSpacesWithUnderscores(
+              companies[0].company_name
+            )}-${user_id}: ${utils.calculatePercentage(
+              total_workers_assigned,
+              0,
+              worker_ids.length
+            )}`
+          );
+          utils.eventPublisher(
+            `workforce-assigning-status-${
+              process.env.PUSHER_ATTENDANCE_CHANNEL
+            }-${utils.replaceSpacesWithUnderscores(
+              companies[0].company_name
+            )}-${user_id}`,
+            {
+              entity_id: "workforce",
+              action: "Assigning workers in progress",
+              status: utils.calculatePercentage(
+                total_workers_assigned,
+                0,
+                worker_ids.length
+              ),
+              current: total_workers_assigned,
+              total: worker_ids.length,
+            }
+          );
         }
-        const worker_assigned = await strapi.query("new-assigned-workers").findOne({ worker_id: worker_ids[index], project_id: project_id });
-        if (!worker_assigned) {
-          const assigned_worker = await strapi.query("new-assigned-workers").create({ worker_id: worker_ids[index], project_id: project_id, is_active: false }, "assignWorker");
-          if (assigned_worker.id) {
-            const worker_rate = await strapi.query("worker-rates").findOne({ assigned_worker_id: assigned_worker.id });
-            if (worker_rate.service_id && worker_rate.value) {
-              const project_rates = await strapi.query("rates").find({ project_id: project_id });
-              let existing_project_rates = [];
-              if (project_rates.length >= 1) {
-                existing_project_rates = _.map(project_rates, (item) => {
-                  return { service_id: item.service_id, maximum_rate: item.maximum_rate };
-                });
-                if (!existing_project_rates.some(obj => parseInt(obj.service_id) === parseInt(worker_rate.service_id))) {
-                  existing_project_rates.push({ service_id: worker_rate.service_id, maximum_rate: worker_rate.value });
+
+        for (
+          let d = new Date(start_date);
+          d <= new Date(end_date);
+          d.setDate(d.getDate() + 1)
+        ) {
+          const worker_assigned = await strapi
+            .query("new-assigned-workers")
+            .findOne({
+              worker_id: worker_ids[index],
+              project_id: project_id,
+            });
+          if (!worker_assigned) {
+            const assigned_worker = await strapi
+              .query("new-assigned-workers")
+              .create(
+                {
+                  worker_id: worker_ids[index],
+                  project_id: project_id,
+                  is_active: false,
+                },
+                "assignWorker"
+              );
+            if (assigned_worker.id) {
+              const worker_rate = await strapi
+                .query("worker-rates")
+                .findOne({ assigned_worker_id: assigned_worker.id });
+              if (worker_rate.service_id && worker_rate.value) {
+                const project_rates = await strapi
+                  .query("rates")
+                  .find({ project_id: project_id });
+                let existing_project_rates = [];
+                if (project_rates.length >= 1) {
+                  existing_project_rates = _.map(project_rates, (item) => {
+                    return {
+                      service_id: item.service_id,
+                      maximum_rate: item.maximum_rate,
+                    };
+                  });
+                  if (
+                    !existing_project_rates.some(
+                      (obj) =>
+                        parseInt(obj.service_id) ===
+                        parseInt(worker_rate.service_id)
+                    )
+                  ) {
+                    existing_project_rates.push({
+                      service_id: worker_rate.service_id,
+                      maximum_rate: worker_rate.value,
+                    });
+                  }
+                } else {
+                  existing_project_rates = [
+                    {
+                      service_id: worker_rate.service_id,
+                      maximum_rate: worker_rate.value,
+                    },
+                  ];
                 }
-              } else {
-                existing_project_rates = [{ service_id: worker_rate.service_id, maximum_rate: worker_rate.value }];
-              }
-              for (let z = 0; z < existing_project_rates.length; z++) {
-                const rate_to_add_exist = await strapi.query("rates").findOne({ project_id: project_id, service_id: existing_project_rates[z].service_id });
-                if (!rate_to_add_exist) {
-                  await strapi.query("rates").create({ project_id: project_id, service_id: existing_project_rates[z].service_id, maximum_rate: existing_project_rates[z].maximum_rate, status: true, default_rate: 0, advanced_rate: 0, intermediate_rate: 0, beginner_rate: 0 });
+                for (let z = 0; z < existing_project_rates.length; z++) {
+                  const rate_to_add_exist = await strapi
+                    .query("rates")
+                    .findOne({
+                      project_id: project_id,
+                      service_id: existing_project_rates[z].service_id,
+                    });
+                  if (!rate_to_add_exist) {
+                    await strapi.query("rates").create({
+                      project_id: project_id,
+                      service_id: existing_project_rates[z].service_id,
+                      maximum_rate: existing_project_rates[z].maximum_rate,
+                      status: true,
+                      default_rate: 0,
+                      advanced_rate: 0,
+                      intermediate_rate: 0,
+                      beginner_rate: 0,
+                    });
+                  }
                 }
               }
             }
-          }
-        } else {
-          const allAssigned = await strapi.query("new-assigned-workers").find({ worker_id: worker_ids[index], _limit: -1 });
-          if (allAssigned && allAssigned.length >= 1) {
-            for (let x = 0; x < allAssigned.length; x++) {
-              await strapi.query("new-assigned-workers").update({ id: allAssigned[x].id }, { is_active: false });
+          } else {
+            const allAssigned = await strapi
+              .query("new-assigned-workers")
+              .find({ worker_id: worker_ids[index], _limit: -1 });
+            if (allAssigned && allAssigned.length >= 1) {
+              for (let x = 0; x < allAssigned.length; x++) {
+                await strapi
+                  .query("new-assigned-workers")
+                  .update({ id: allAssigned[x].id }, { is_active: false });
+              }
+              await strapi
+                .query("new-assigned-workers")
+                .update(
+                  { id: worker_assigned.id },
+                  { is_active: false, project_id: project_id },
+                  "assignWorker"
+                );
             }
-            await strapi.query("new-assigned-workers").update({ id: worker_assigned.id }, { is_active: false, project_id: project_id }, "assignWorker");
           }
         }
 
         total_workers_assigned = total_workers_assigned + 1;
-        console.log("ASSIGNING: ", total_workers_assigned, `workforce-assigning-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}: ${utils.calculatePercentage(total_workers_assigned, 0, worker_ids.length)}`);
-        utils.eventPublisher(`workforce-assigning-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}`, {
-          entity_id: 'workforce',
-          action: "Assigning workers in progress",
-          status: utils.calculatePercentage(total_workers_assigned, 0, worker_ids.length),
-          current: total_workers_assigned,
-          total: worker_ids.length,
-        });
+        console.log(
+          "ASSIGNING: ",
+          total_workers_assigned,
+          `workforce-assigning-status-${
+            process.env.PUSHER_ATTENDANCE_CHANNEL
+          }-${utils.replaceSpacesWithUnderscores(
+            companies[0].company_name
+          )}-${user_id}: ${utils.calculatePercentage(
+            total_workers_assigned,
+            0,
+            worker_ids.length
+          )}`
+        );
+        utils.eventPublisher(
+          `workforce-assigning-status-${
+            process.env.PUSHER_ATTENDANCE_CHANNEL
+          }-${utils.replaceSpacesWithUnderscores(
+            companies[0].company_name
+          )}-${user_id}`,
+          {
+            entity_id: "workforce",
+            action: "Assigning workers in progress",
+            status: utils.calculatePercentage(
+              total_workers_assigned,
+              0,
+              worker_ids.length
+            ),
+            current: total_workers_assigned,
+            total: worker_ids.length,
+          }
+        );
         if (total_workers_assigned === worker_ids.length) {
-          global.all_workforces = await strapi.query("workforce").find({ _limit: -1 });
+          global.all_workforces = await strapi
+            .query("workforce")
+            .find({ _limit: -1 });
         }
       }
       return true;
@@ -900,13 +1289,24 @@ module.exports = {
   },
   async unAssignWorker(worker_ids, project_id) {
     for (let index = 0; index < worker_ids.length; index++) {
-      const worker_assigned = await strapi.query("new-assigned-workers").findOne({ worker_id: worker_ids[index], project_id: project_id });
+      const worker_assigned = await strapi
+        .query("new-assigned-workers")
+        .findOne({ worker_id: worker_ids[index], project_id: project_id });
       if (worker_assigned) {
-        const workforce = await strapi.query("workforce").findOne({ worker_id: worker_assigned.worker_id });
+        const workforce = await strapi
+          .query("workforce")
+          .findOne({ worker_id: worker_assigned.worker_id });
         if (workforce) {
-          const update_workforce = await strapi.query("workforce").update({ worker_id: worker_assigned.worker_id }, { is_active: false, project_id: 0 });
+          const update_workforce = await strapi
+            .query("workforce")
+            .update(
+              { worker_id: worker_assigned.worker_id },
+              { is_active: false, project_id: 0 }
+            );
           if (update_workforce) {
-            await strapi.query("new-assigned-workers").delete({ id: worker_assigned.id });
+            await strapi
+              .query("new-assigned-workers")
+              .delete({ id: worker_assigned.id });
           }
         }
       }
@@ -918,9 +1318,9 @@ module.exports = {
     let string_balance = await getAtStashBalancData();
     let balance = parseInt(string_balance);
     if (balance && !isNaN(balance)) {
-      let sms_charge = worker_phones.length * (parseInt(message.length / 160) + 1) * 10;
+      let sms_charge =
+        worker_phones.length * (parseInt(message.length / 160) + 1) * 10;
       if (sms_charge < balance) {
-
         const apiInfo = {
           apiKey: process.env.AFRICA_S_TALKING_API_KEY,
           username: process.env.AFRICA_S_TALKING_USERNAME,
@@ -952,8 +1352,7 @@ module.exports = {
           meta: "",
         };
       }
-    }
-    else {
+    } else {
       response = {
         status: "error",
         message: "balance not found",
@@ -967,15 +1366,18 @@ module.exports = {
   },
 
   async momoValidatePhoneNumber(phone_number) {
-    let { access_token } = await getMomoToken(process.env.MOMO_URL_DISB, process.env.MOMO_PRIMARY_KEY);
+    let { access_token } = await getMomoToken(
+      process.env.MOMO_URL_DISB,
+      process.env.MOMO_PRIMARY_KEY
+    );
     const result = { is_valid: false };
     //if the number is length of above 8
     if (phone_number.length > 8) {
       const response = await axios.get(
         MOMO_URL_DISB +
-        "v1_0/accountholder/msisdn/250" +
-        phone_number +
-        "/active",
+          "v1_0/accountholder/msisdn/250" +
+          phone_number +
+          "/active",
         {
           headers: {
             "Content-Length": 0,
@@ -999,23 +1401,23 @@ module.exports = {
       const knex = strapi.connections.default;
       let history = await knex.raw(
         "SELECT" +
-        " t3.date AS date," + //date,
-        " t5.name AS project, t5.id AS project_id," + // project and Id
-        " t6.first_name AS supervisor, t6.id AS supervisor_id," + //supervisor and Id
-        " t4.name AS shift, t4.id AS shift_id," + //shift and Id
-        " t8.name AS service, t8.id AS service_id," + //service and Id
-        " t1.attendance_id AS attendance_id," + //attendance_id and Id
-        " t7.value AS daily_earnings" + // earnings
-        " FROM new_assigned_workers AS t2" +
-        " INNER JOIN attendance_details AS t1 ON t1.assigned_worker_id = t2.id" +
-        " LEFT JOIN new_attendances AS t3 ON t1.attendance_id = t3.id" +
-        " LEFT JOIN shifts AS t4 ON t3.shift_id = t4.id" +
-        " LEFT JOIN projects AS t5 ON t3.project_id = t5.id" +
-        " LEFT JOIN `users-permissions_user` AS t6 ON t3.supervisor_id = t6.id" +
-        " LEFT JOIN worker_rates AS t7 ON t1.worker_rate_id = t7.id" +
-        " LEFT JOIN services AS t8 ON t7.service_id = t8.id" +
-        " WHERE t2.worker_id = " +
-        worker_id
+          " t3.date AS date," + //date,
+          " t5.name AS project, t5.id AS project_id," + // project and Id
+          " t6.first_name AS supervisor, t6.id AS supervisor_id," + //supervisor and Id
+          " t4.name AS shift, t4.id AS shift_id," + //shift and Id
+          " t8.name AS service, t8.id AS service_id," + //service and Id
+          " t1.attendance_id AS attendance_id," + //attendance_id and Id
+          " t7.value AS daily_earnings" + // earnings
+          " FROM new_assigned_workers AS t2" +
+          " INNER JOIN attendance_details AS t1 ON t1.assigned_worker_id = t2.id" +
+          " LEFT JOIN new_attendances AS t3 ON t1.attendance_id = t3.id" +
+          " LEFT JOIN shifts AS t4 ON t3.shift_id = t4.id" +
+          " LEFT JOIN projects AS t5 ON t3.project_id = t5.id" +
+          " LEFT JOIN `users-permissions_user` AS t6 ON t3.supervisor_id = t6.id" +
+          " LEFT JOIN worker_rates AS t7 ON t1.worker_rate_id = t7.id" +
+          " LEFT JOIN services AS t8 ON t7.service_id = t8.id" +
+          " WHERE t2.worker_id = " +
+          worker_id
       );
       return history[0];
     } catch (err) {
@@ -1035,8 +1437,7 @@ module.exports = {
     try {
       const { token, expiration } = await authenticateWithRssbServer();
       return { token, expiration };
-    }
-    catch (error) {
+    } catch (error) {
       console.error("ERROR IN authenticateWithRssbServer ==>", error);
     }
   },
@@ -1055,16 +1456,19 @@ module.exports = {
       },...]
    */
   async workersRssbRegistration(workers) {
-    let results = []
+    let results = [];
     try {
       for (const worker of workers) {
         const knex = strapi.connections.default;
-        const workerRssbCode = await knex("service_providers").select("rssb_code").where({ id: worker.worker_id }).first();
+        const workerRssbCode = await knex("service_providers")
+          .select("rssb_code")
+          .where({ id: worker.worker_id })
+          .first();
         if (!workerRssbCode.rssb_code) {
           results.push(result);
         }
       }
-      return results
+      return results;
     } catch (error) {
       console.error("ERROR IN workersRssbRegistration() ==>", error.message);
     }
@@ -1079,20 +1483,22 @@ module.exports = {
   // TODO: call this after attendance created and getWorkerIds()
   async retrieveWorkerRssbIdNumbers(worker_ids) {
     try {
-      const allWorkers = await getWorkerDays(worker_ids)
-      const permanentWorkers = allWorkers.filter(item => item.working_days >= 30);
+      const allWorkers = await getWorkerDays(worker_ids);
+      const permanentWorkers = allWorkers.filter(
+        (item) => item.working_days >= 30
+      );
       if (!permanentWorkers || permanentWorkers.length <= 0) {
-        throw new Error("No available Workers")
+        throw new Error("No available Workers");
       }
       const allWorkerNids = _.reject(permanentWorkers, function (worker) {
         return _.isNull(worker.nid_number);
-      })
+      });
       const results = await submitNidToRssb(allWorkerNids);
       verifyWorkers(allWorkerNids, results);
       return results;
     } catch (error) {
-      console.log("RETURNING NID ERROR", error)
-      throw new Error(error.message || "Invalid NID")
+      console.log("RETURNING NID ERROR", error);
+      throw new Error(error.message || "Invalid NID");
     }
   },
 
@@ -1103,12 +1509,21 @@ module.exports = {
       const mtn_default_payment = {
         payment_method: 1,
         is_active: true,
-        provider: "MTN"
-      }
+        provider: "MTN",
+      };
       if (mode === "live") {
         let total_workers_save = 0;
-        const temp_data = all_temp_data.filter((x) => !x.phone_number_exist && !x.first_name_error && !x.last_name_error && x.valid_nid && !x.nid_exist);
-        console.log(`*********** START SAVING ${temp_data.length} WORKERS ********************`);
+        const temp_data = all_temp_data.filter(
+          (x) =>
+            !x.phone_number_exist &&
+            !x.first_name_error &&
+            !x.last_name_error &&
+            x.valid_nid &&
+            !x.nid_exist
+        );
+        console.log(
+          `*********** START SAVING ${temp_data.length} WORKERS ********************`
+        );
         for (let i = 0; i < temp_data.length; i++) {
           const element = temp_data[i];
           if (!element.service_available) {
@@ -1117,9 +1532,13 @@ module.exports = {
               const services_raw = "SELECT id,name FROM services";
               const services_query = await knex.raw(services_raw);
               const services = services_query[0];
-              const is_service_in = services.find((x) => x.name === element.service);
+              const is_service_in = services.find(
+                (x) => x.name === element.service
+              );
               if (!is_service_in) {
-                const added_service = await strapi.query("services").create({ name: element.service });
+                const added_service = await strapi
+                  .query("services")
+                  .create({ name: element.service });
                 if (added_service) {
                   element.service_id = added_service.id;
                   temp_data[i].service_id = added_service.id;
@@ -1131,42 +1550,95 @@ module.exports = {
             }
           }
           if (i === 0) {
-            console.log(total_workers_save, ". National_id", element.nid_number, `workforce-saving-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}: ${utils.calculatePercentage(total_workers_save, 0, temp_data.length)}`);
-            utils.eventPublisher(`workforce-saving-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}`, {
-              entity_id: 'workforce',
-              action: "Saving workers in progress",
-              status: utils.calculatePercentage(total_workers_save, 0, temp_data.length),
-              current: total_workers_save,
-              total: temp_data.length,
-            });
+            console.log(
+              total_workers_save,
+              ". National_id",
+              element.nid_number,
+              `workforce-saving-status-${
+                process.env.PUSHER_ATTENDANCE_CHANNEL
+              }-${utils.replaceSpacesWithUnderscores(
+                companies[0].company_name
+              )}-${user_id}: ${utils.calculatePercentage(
+                total_workers_save,
+                0,
+                temp_data.length
+              )}`
+            );
+            utils.eventPublisher(
+              `workforce-saving-status-${
+                process.env.PUSHER_ATTENDANCE_CHANNEL
+              }-${utils.replaceSpacesWithUnderscores(
+                companies[0].company_name
+              )}-${user_id}`,
+              {
+                entity_id: "workforce",
+                action: "Saving workers in progress",
+                status: utils.calculatePercentage(
+                  total_workers_save,
+                  0,
+                  temp_data.length
+                ),
+                current: total_workers_save,
+                total: temp_data.length,
+              }
+            );
           }
           element.services = [temp_data[i].service_id];
           mtn_default_payment.account_name = `${element.first_name} ${element.last_name}`;
           if (utils.phoneNumberValidation(element.phone_number)) {
             mtn_default_payment.account_number = element.phone_number;
             mtn_default_payment.is_verified = "nothing";
-            mtn_default_payment.account_verified_desc = "This account number is not verified";
+            mtn_default_payment.account_verified_desc =
+              "This account number is not verified";
           } else {
             mtn_default_payment.account_number = "";
             mtn_default_payment.is_verified = "nothing";
-            mtn_default_payment.account_verified_desc = "This account number is not verified";
+            mtn_default_payment.account_verified_desc =
+              "This account number is not verified";
           }
           mtn_default_payment.worker_id = 0;
           if (utils.phoneNumberValidation(element.phone_number)) {
             element.payment_methods = [mtn_default_payment];
           }
-          const worker_saved = await strapi.query("service-providers").create(element, "saveTempExcel");
+          const worker_saved = await strapi
+            .query("service-providers")
+            .create(element, "saveTempExcel");
           if (worker_saved) {
             total_workers_save = total_workers_save + 1;
-            console.log("SAVING: ", total_workers_save, ". National_id", element.nid_number, `workforce-saving-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}: ${utils.calculatePercentage(total_workers_save, 0, temp_data.length)}`);
+            console.log(
+              "SAVING: ",
+              total_workers_save,
+              ". National_id",
+              element.nid_number,
+              `workforce-saving-status-${
+                process.env.PUSHER_ATTENDANCE_CHANNEL
+              }-${utils.replaceSpacesWithUnderscores(
+                companies[0].company_name
+              )}: ${utils.calculatePercentage(
+                total_workers_save,
+                0,
+                temp_data.length
+              )}`
+            );
 
-            utils.eventPublisher(`workforce-saving-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}`, {
-              entity_id: 'workforce',
-              action: "Saving workers in progress",
-              status: utils.calculatePercentage(total_workers_save, 0, temp_data.length),
-              current: total_workers_save,
-              total: temp_data.length,
-            });
+            utils.eventPublisher(
+              `workforce-saving-status-${
+                process.env.PUSHER_ATTENDANCE_CHANNEL
+              }-${utils.replaceSpacesWithUnderscores(
+                companies[0].company_name
+              )}-${user_id}`,
+              {
+                entity_id: "workforce",
+                action: "Saving workers in progress",
+                status: utils.calculatePercentage(
+                  total_workers_save,
+                  0,
+                  temp_data.length
+                ),
+                current: total_workers_save,
+                total: temp_data.length,
+              }
+            );
 
             element.worker_id = worker_saved.id;
             data.push(element);
@@ -1176,88 +1648,188 @@ module.exports = {
         data = all_temp_data;
       }
       let total_workers = 0;
-      console.log(`*********** END ADDING WORKER START VERIFY ${data.length} WORKERS ********************`);
+      console.log(
+        `*********** END ADDING WORKER START VERIFY ${data.length} WORKERS ********************`
+      );
 
       for (let i = 0; i < data.length; i++) {
         if (mode === "live") {
           if (i === 0) {
-            utils.eventPublisher(`workforce-verification-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}`, {
-              entity_id: 'workforce',
-              action: "Verification in progress",
-              status: utils.calculatePercentage(total_workers, 0, data.length),
-              current: total_workers,
-              total: data.length,
-            });
+            utils.eventPublisher(
+              `workforce-verification-status-${
+                process.env.PUSHER_ATTENDANCE_CHANNEL
+              }-${utils.replaceSpacesWithUnderscores(
+                companies[0].company_name
+              )}-${user_id}`,
+              {
+                entity_id: "workforce",
+                action: "Verification in progress",
+                status: utils.calculatePercentage(
+                  total_workers,
+                  0,
+                  data.length
+                ),
+                current: total_workers,
+                total: data.length,
+              }
+            );
           }
         }
-        const rssb_info = await module.exports.getWorkerInfoFromRssb(data[i].nid_number);
+        const rssb_info = await module.exports.getWorkerInfoFromRssb(
+          data[i].nid_number
+        );
         let is_rssb_verified = null;
         let date_of_birth = null;
         let is_momo_verified_and_rssb = null;
         let is_momo_verified_and_rssb_desc = null;
         if (rssb_info.status === "success") {
           is_rssb_verified = "green";
-          date_of_birth = moment(rssb_info.data.dateOfBirth, 'DD/MM/YYYY').format("YYYY-MM-DD");
-          const momo_verification = await accountVerification("MTN", { account_number: data[i].phone_number, account_name: { first_name: data[i].first_name, last_name: data[i].last_name }, account_belong_to: "MTN" }, true);
+          date_of_birth = moment(
+            rssb_info.data.dateOfBirth,
+            "DD/MM/YYYY"
+          ).format("YYYY-MM-DD");
+          const momo_verification = await accountVerification(
+            "MTN",
+            {
+              account_number: data[i].phone_number,
+              account_name: {
+                first_name: data[i].first_name,
+                last_name: data[i].last_name,
+              },
+              account_belong_to: "MTN",
+            },
+            true
+          );
           if (momo_verification.status) {
-            is_momo_verified_and_rssb = momo_verification.data.verification_result_boolean;
-            is_momo_verified_and_rssb_desc = momo_verification.data.verification_result_desc;
+            is_momo_verified_and_rssb =
+              momo_verification.data.verification_result_boolean;
+            is_momo_verified_and_rssb_desc =
+              momo_verification.data.verification_result_desc;
             mtn_default_payment.account_name = `${data[i].first_name} ${data[i].last_name}`;
             if (utils.phoneNumberValidation(data[i].phone_number)) {
               mtn_default_payment.account_number = data[i].phone_number;
               mtn_default_payment.is_verified = is_momo_verified_and_rssb;
-              mtn_default_payment.account_verified_desc = is_momo_verified_and_rssb_desc;
+              mtn_default_payment.account_verified_desc =
+                is_momo_verified_and_rssb_desc;
             } else {
               mtn_default_payment.account_number = "";
               mtn_default_payment.is_verified = "nothing";
-              mtn_default_payment.account_verified_desc = "This account number is not verified";
+              mtn_default_payment.account_verified_desc =
+                "This account number is not verified";
             }
             mtn_default_payment.worker_id = data[i].worker_id;
             if (utils.phoneNumberValidation(data[i].phone_number)) {
-              await strapi.query("service-providers").update({ id: data[i].worker_id }, { is_rssb_verified: is_rssb_verified, is_momo_verified_and_rssb: is_momo_verified_and_rssb, is_momo_verified_and_rssb_desc: is_momo_verified_and_rssb_desc, date_of_birth: date_of_birth, payment_methods: [mtn_default_payment] });
+              await strapi.query("service-providers").update(
+                { id: data[i].worker_id },
+                {
+                  is_rssb_verified: is_rssb_verified,
+                  is_momo_verified_and_rssb: is_momo_verified_and_rssb,
+                  is_momo_verified_and_rssb_desc:
+                    is_momo_verified_and_rssb_desc,
+                  date_of_birth: date_of_birth,
+                  payment_methods: [mtn_default_payment],
+                }
+              );
             } else {
-              await strapi.query("service-providers").update({ id: data[i].worker_id }, { is_rssb_verified: is_rssb_verified, is_momo_verified_and_rssb: is_momo_verified_and_rssb, is_momo_verified_and_rssb_desc: is_momo_verified_and_rssb_desc, date_of_birth: date_of_birth });
+              await strapi.query("service-providers").update(
+                { id: data[i].worker_id },
+                {
+                  is_rssb_verified: is_rssb_verified,
+                  is_momo_verified_and_rssb: is_momo_verified_and_rssb,
+                  is_momo_verified_and_rssb_desc:
+                    is_momo_verified_and_rssb_desc,
+                  date_of_birth: date_of_birth,
+                }
+              );
             }
           }
         } else {
           is_rssb_verified = "nothing";
-          const momo_verification = await accountVerification("MTN", { account_number: data[i].phone_number, account_name: { first_name: data[i].first_name, last_name: data[i].last_name }, account_belong_to: "MTN" }, false);
+          const momo_verification = await accountVerification(
+            "MTN",
+            {
+              account_number: data[i].phone_number,
+              account_name: {
+                first_name: data[i].first_name,
+                last_name: data[i].last_name,
+              },
+              account_belong_to: "MTN",
+            },
+            false
+          );
           if (momo_verification.status) {
-            is_momo_verified_and_rssb = momo_verification.data.verification_result_boolean;
-            is_momo_verified_and_rssb_desc = momo_verification.data.verification_result_desc;
+            is_momo_verified_and_rssb =
+              momo_verification.data.verification_result_boolean;
+            is_momo_verified_and_rssb_desc =
+              momo_verification.data.verification_result_desc;
             mtn_default_payment.account_name = `${data[i].first_name} ${data[i].last_name}`;
             if (utils.phoneNumberValidation(data[i].phone_number)) {
               mtn_default_payment.account_number = data[i].phone_number;
               mtn_default_payment.is_verified = is_momo_verified_and_rssb;
-              mtn_default_payment.account_verified_desc = is_momo_verified_and_rssb_desc;
+              mtn_default_payment.account_verified_desc =
+                is_momo_verified_and_rssb_desc;
             } else {
               mtn_default_payment.account_number = "";
               mtn_default_payment.is_verified = "nothing";
-              mtn_default_payment.account_verified_desc = "This account number is not verified";
+              mtn_default_payment.account_verified_desc =
+                "This account number is not verified";
             }
             mtn_default_payment.worker_id = data[i].worker_id;
             if (utils.phoneNumberValidation(data[i].phone_number)) {
-              await strapi.query("service-providers").update({ id: data[i].worker_id }, { is_rssb_verified: is_rssb_verified, is_momo_verified_and_rssb: is_momo_verified_and_rssb, is_momo_verified_and_rssb_desc: is_momo_verified_and_rssb_desc, payment_methods: [mtn_default_payment] });
+              await strapi.query("service-providers").update(
+                { id: data[i].worker_id },
+                {
+                  is_rssb_verified: is_rssb_verified,
+                  is_momo_verified_and_rssb: is_momo_verified_and_rssb,
+                  is_momo_verified_and_rssb_desc:
+                    is_momo_verified_and_rssb_desc,
+                  payment_methods: [mtn_default_payment],
+                }
+              );
             } else {
-              await strapi.query("service-providers").update({ id: data[i].worker_id }, { is_rssb_verified: is_rssb_verified, is_momo_verified_and_rssb: is_momo_verified_and_rssb, is_momo_verified_and_rssb_desc: is_momo_verified_and_rssb_desc });
+              await strapi.query("service-providers").update(
+                { id: data[i].worker_id },
+                {
+                  is_rssb_verified: is_rssb_verified,
+                  is_momo_verified_and_rssb: is_momo_verified_and_rssb,
+                  is_momo_verified_and_rssb_desc:
+                    is_momo_verified_and_rssb_desc,
+                }
+              );
             }
           }
         }
         total_workers = total_workers + 1;
-        console.log("VERIFICATION: ", total_workers, ". National_id", data[i].nid_number, `workforce-verification-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}: ${utils.calculatePercentage(total_workers, 0, data.length)}`);
+        console.log(
+          "VERIFICATION: ",
+          total_workers,
+          ". National_id",
+          data[i].nid_number,
+          `workforce-verification-status-${
+            process.env.PUSHER_ATTENDANCE_CHANNEL
+          }-${utils.replaceSpacesWithUnderscores(
+            companies[0].company_name
+          )}: ${utils.calculatePercentage(total_workers, 0, data.length)}`
+        );
         if (mode === "live") {
-          utils.eventPublisher(`workforce-verification-status-${process.env.PUSHER_ATTENDANCE_CHANNEL}-${utils.replaceSpacesWithUnderscores(companies[0].company_name)}-${user_id}`, {
-            entity_id: 'workforce',
-            action: "Verification in progress",
-            status: utils.calculatePercentage(total_workers, 0, data.length),
-            current: total_workers,
-            total: data.length,
-          });
+          utils.eventPublisher(
+            `workforce-verification-status-${
+              process.env.PUSHER_ATTENDANCE_CHANNEL
+            }-${utils.replaceSpacesWithUnderscores(
+              companies[0].company_name
+            )}-${user_id}`,
+            {
+              entity_id: "workforce",
+              action: "Verification in progress",
+              status: utils.calculatePercentage(total_workers, 0, data.length),
+              current: total_workers,
+              total: data.length,
+            }
+          );
         }
       }
     }
   },
-
 };
 
 const getServicesIds = (assigned_worker_id, worker_rates) => {
@@ -1293,28 +1865,35 @@ const phoneExists = async (phone) => {
   if (phone === "") {
     return false;
   } else {
-    const getPhone = await strapi.query("service-providers").findOne({ phone_number: phone });
+    const getPhone = await strapi
+      .query("service-providers")
+      .findOne({ phone_number: phone });
     if (getPhone) {
       return getPhone.id;
     } else {
       return false;
     }
   }
-
 };
 const assignWorkerAttendance = async (obj, project_rates, workerData) => {
   let id = 0;
   try {
     let assigned = await strapi.query("new-assigned-workers").create(obj);
     if (assigned) {
-      let rates = project_rates.filter((item) => item.service_id === workerData.services);
+      let rates = project_rates.filter(
+        (item) => item.service_id === workerData.services
+      );
       const entryWorkerRates = {
         assigned_worker_id: assigned.id,
         service_id: workerData.services,
         rate_type: workerData.daily_rate ? "negotiated" : "standard",
-        value: workerData.daily_rate ? workerData.daily_rate : rates[0].beginner_rate
+        value: workerData.daily_rate
+          ? workerData.daily_rate
+          : rates[0].beginner_rate,
       };
-      let worker_rate = await strapi.query("worker-rates").create(entryWorkerRates);
+      let worker_rate = await strapi
+        .query("worker-rates")
+        .create(entryWorkerRates);
       if (worker_rate) {
         id = assigned.id;
       }
@@ -1323,7 +1902,7 @@ const assignWorkerAttendance = async (obj, project_rates, workerData) => {
     console.log("error in assignWorkerAttendance ", error.message);
   }
   return id;
-}
+};
 const iDNumberExists = async (idNumber) => {
   const getIdNumber = await strapi
     .query("service-providers")
@@ -1357,35 +1936,50 @@ const getAssessmentResult = async (worker_id) => {
   let rate = "";
   let workforce = await strapi.query("workforce").findOne({ worker_id });
   if (workforce) {
-    let workers_assessments = await strapi.query("workers-assessments").findOne({ worker_id: worker_id, service_id: workforce.trade_id });
+    let workers_assessments = await strapi
+      .query("workers-assessments")
+      .findOne({ worker_id: worker_id, service_id: workforce.trade_id });
     if (workers_assessments) {
-      if (workers_assessments.mean_score >= 80 && workers_assessments.mean_score <= 100) {
+      if (
+        workers_assessments.mean_score >= 80 &&
+        workers_assessments.mean_score <= 100
+      ) {
         rate = "advanced";
-      } else if (workers_assessments.mean_score >= 51 && workers_assessments.mean_score <= 79) {
+      } else if (
+        workers_assessments.mean_score >= 51 &&
+        workers_assessments.mean_score <= 79
+      ) {
         rate = "intermediate";
       } else {
         rate = "beginner";
       }
-      assessment.push({ "level": workers_assessments.assessment_level, "rate": rate, "mean_score": workers_assessments.mean_score });
+      assessment.push({
+        level: workers_assessments.assessment_level,
+        rate: rate,
+        mean_score: workers_assessments.mean_score,
+      });
     }
   }
   return assessment;
 };
 const submitNidToRssb = async (allWorkerNids) => {
-  let response = []
+  let response = [];
   try {
     // url
     const rssbUrl = process.env.RSSB_AUTH_URL;
     const { token } = await authenticateWithRssbServer();
     const config = {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` },
     };
 
     if (token && rssbUrl) {
       if (allWorkerNids.length > 0) {
         for (const nid of allWorkerNids) {
           try {
-            const res = await axios.get(`${rssbUrl}employee/${nid?.nid_number}/phone-numbers`, config)
+            const res = await axios.get(
+              `${rssbUrl}employee/${nid?.nid_number}/phone-numbers`,
+              config
+            );
             if (res && res.data) {
               response.push({
                 worker_id: nid.worker_id,
@@ -1394,18 +1988,18 @@ const submitNidToRssb = async (allWorkerNids) => {
                 date_of_birth: res.data?.dateOfBirth,
                 nationalId: nid.nid_number,
                 maskedPhoneNumberId: res.data?.phoneNumbers[0]?.id,
-                phone_numbers: res.data.phoneNumbers
-              })
+                phone_numbers: res.data.phoneNumbers,
+              });
             }
           } catch (error) {
-            console.error("error", error.message)
+            console.error("error", error.message);
           }
         }
         return response;
       }
     }
   } catch (error) {
-    throw new Error(error.message || "Incomplete NID, No worker found")
+    throw new Error(error.message || "Incomplete NID, No worker found");
   }
 };
 const verifyWorkers = async (existingWorkers, rssbInformation) => {
@@ -1418,7 +2012,7 @@ const verifyWorkers = async (existingWorkers, rssbInformation) => {
           break;
         }
       } catch (error) {
-        console.error('Error verifying worker:', error);
+        console.error("Error verifying worker:", error);
       }
     }
   }

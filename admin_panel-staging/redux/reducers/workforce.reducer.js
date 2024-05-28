@@ -46,27 +46,60 @@ const workforceReducer = (state = initialState, action) => {
       return { ...state, loading: false, error: payload };
 
     case WORKFORCE_ALL_REQUESTED:
-      return { ...state, loading: false, error: false, list: payload.data.list, exportList: payload.data.export, meta: payload.data.meta, aggregatez: payload.data.aggregates };
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        list: payload.data.list,
+        exportList: payload.data.export,
+        meta: payload.data.meta,
+        aggregatez: payload.data.aggregates,
+      };
 
     case AGGREGATES_ALL_LOADING:
-      return { ...state, aggregates: { ...state.aggregates, loading: true, error: false } };
+      return {
+        ...state,
+        aggregates: { ...state.aggregates, loading: true, error: false },
+      };
 
     case AGGREGATES_ALL_ERROR:
-      return { ...state, aggregates: { ...state.aggregates, loading: false, error: payload } };
+      return {
+        ...state,
+        aggregates: { ...state.aggregates, loading: false, error: payload },
+      };
 
     case AGGREGATES_ALL_REQUESTED:
-      return { ...state, aggregates: { ...state.aggregates, loading: false, data: payload.data.aggregates } };
+      return {
+        ...state,
+        aggregates: {
+          ...state.aggregates,
+          loading: false,
+          data: payload.data.aggregates,
+        },
+      };
 
     case FILTERS_LOADING:
       return { ...state, filters: { loading: true } };
     case PROJECTS_REQUESTED:
-      return { ...state, filters: { loading: false, ...state.filters, projects: payload } };
+      return {
+        ...state,
+        filters: { loading: false, ...state.filters, projects: payload },
+      };
     case SERVICES_REQUESTED:
-      return { ...state, filters: { loading: false, ...state.filters, trades: payload } };
+      return {
+        ...state,
+        filters: { loading: false, ...state.filters, trades: payload },
+      };
     case PROVINCES_REQUESTED:
-      return { ...state, filters: { loading: false, ...state.filters, provinces: payload } };
+      return {
+        ...state,
+        filters: { loading: false, ...state.filters, provinces: payload },
+      };
     case DISTRICTS_REQUESTED:
-      return { ...state, filters: { loading: false, ...state.filters, districts: payload } };
+      return {
+        ...state,
+        filters: { loading: false, ...state.filters, districts: payload },
+      };
     default:
       return state;
   }

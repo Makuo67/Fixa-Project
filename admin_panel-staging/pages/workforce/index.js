@@ -17,7 +17,6 @@ import Layout from "../../components/Layouts/DashboardLayout/Layout";
 import AssignToProjectModal from "../../components/Modals/AssignToProjectModal";
 import SendMessageModal from "../../components/Modals/SendMessageModal";
 import WorkforceFilters from "../../components/Filters/WorkforceFilters";
-import ViewRosterModal from "../../components/Modals/ViewRosterModal";
 import {
   getWorkforceList,
   getWorkforceAggregates,
@@ -372,12 +371,6 @@ export default function Workforce() {
             Assign Rate Type
           </Space>
         </Option>
-        <Option value="3">
-          <Space>
-            <UnorderedListOutlined />
-            View Roster
-          </Space>
-        </Option>
       </Select>
     );
   };
@@ -437,13 +430,6 @@ export default function Workforce() {
       isVisible={showModal}
       hideModal={() => setShowModal(-1)}
       selected_workers={assignRateData}
-      clearSelection={clearSelection}
-    />,
-    <ViewRosterModal
-      key={3}
-      isVisible={showModal}
-      title={"Shift Rosters"}
-      hideModal={() => setShowModal(-1)}
       clearSelection={clearSelection}
     />,
   ];

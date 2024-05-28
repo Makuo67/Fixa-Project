@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "shifts",
   "info": {
-    "name": "shifts"
+    "name": "shifts",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,6 +13,15 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "date"
+    },
+    "shift_type": {
       "type": "string"
     }
   }

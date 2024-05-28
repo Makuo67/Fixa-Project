@@ -1374,6 +1374,15 @@
                 "name": {
                   "type": "string"
                 },
+                "project_id": {
+                  "type": "integer"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "shift_type": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

@@ -19,26 +19,21 @@ export const sendSMS = (workers, message) => async (dispatch) => {
     return Promise.reject(err);
   }
 };
-export const assignToProject =
-  (worker_ids, project_id, start_date, end_date, shift_type) =>
-  async (dispatch) => {
-    try {
-      const token = await retriveAuthTokenFromLocalStorage();
-      const res = await bulkActionsService.assignToProject(
-        {
-          worker_ids,
-          project_id,
-          start_date,
-          end_date,
-          shift_type,
-        },
-        token
-      );
-      return Promise.resolve(res.data);
-    } catch (err) {
-      return Promise.reject(err);
-    }
-  };
+export const assignToProject = (worker_ids, project_id) => async (dispatch) => {
+  try {
+    const token = await retriveAuthTokenFromLocalStorage();
+    const res = await bulkActionsService.assignToProject(
+      {
+        worker_ids,
+        project_id,
+      },
+      token
+    );
+    return Promise.resolve(res.data);
+  } catch (err) {
+    return Promise.reject(err);
+  }
+};
 export const unassignFromProject =
   (worker_ids, project_id) => async (dispatch) => {
     try {
